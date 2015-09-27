@@ -72,3 +72,31 @@
 希望在12周的 Py二期中 改变思维 学会探索会学习的自己 认识更多的朋友
 
 9/27/2015 3:19:31 PM 
+
+
+----------
+
+## 学员团队 ##
+
+那个被触发的隐藏任务 在看到大妈在这次隐藏任务中的回复 
+
+> great! 任务埋下 24 小时以内被 digg 出来了, mark! 学点+1 @OpenMindClub/py2staff <https://github.com/orgs/OpenMindClub/teams/py2staff> logging it!
+
+在对比大妈在welcome邮件中
+
+> 学员列表: omooc2py@googlegroups.com   
+学员团队: @OpenMindClub/py2student  
+模板仓库: https://github.com/OpenMindClub/OMOOC.py/tree/primer2
+
+
+其中只有学员团队 @OpenMindClub/py2student 这个是没有链接的 
+
+联系大妈的回复 看来 学员团队如同老师上课学员名册一样 
+
+- 帮助大妈及助教们跟踪观察学员的学习情况 
+- 进行反馈
+- 分组
+
+ok 不知道对不对 
+
+咦 我发现自己越来越喜欢这种去探索 去猜测的游戏了 娃哈哈
