@@ -97,6 +97,8 @@
 - 进行反馈
 - 分组
 
-ok 不知道对不对 
+ok 不知道对不对 但为什么大妈回复中的那个 [link](https://github.com/orgs/OpenMindClub/teams/py2staff)会出现404呢？？？
 
 咦 我发现自己越来越喜欢这种去探索 去猜测的游戏了 娃哈哈
+
+9/27/2015 4:07:13 PM 
