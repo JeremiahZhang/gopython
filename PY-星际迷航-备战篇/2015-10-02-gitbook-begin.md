@@ -79,13 +79,13 @@ google了很多 惨烈 还是先直接去 gitbook 尝试写作
 - $ gitbook serve 可以查看书籍网址 在浏览器中键入 就可以查看了
 - $ echo "# bookname" > README.md 修改书名
 
-[主要参考文章](http://samwhelp.github.io/blog/read/platform/gitbook/start/)
+主要参考文章 [快速使用gitbook](http://samwhelp.github.io/blog/read/platform/gitbook/start/)
 
 ----------
 
 ## Build 使用GIT更新 ##
 
-[另外的参考](https://ilmvfx.wordpress.com/2015/09/30/gitbook-introduction-and-test-drive-maya-houdini-scripts-cookbook/)  
+使用gitbook editor的 [另外的参考](https://ilmvfx.wordpress.com/2015/09/30/gitbook-introduction-and-test-drive-maya-houdini-scripts-cookbook/)  
 [Issues](https://github.com/GitbookIO/gitbook/issues/660)
 
 我先参考的这篇[Update your book using GIT](http://help.gitbook.com/build/push.html) 然后按照里面非方法 遇到坑了
@@ -100,8 +100,75 @@ google了很多 惨烈 还是先直接去 gitbook 尝试写作
 纠正：
 
 		git remote rm gitbook
-		git git remote add gitbook https://username:apitoken@git.gitbook.com/marshallshen/ruby-api-best-practices.git
+		git remote add gitbook https://username:apitoken@git.gitbook.com/marshallshen/ruby-api-best-practices.git
 		git branch --track gitbook master
-		git pull gitbook mashter
+		git pull gitbook master
 在本地库中 稍作修改有些内容合并了   
 然后再进行Push 就成功了 
+
+----------
+
+## Link Github ##
+
+- 目标
+	- 直接在Github的repo中进行修改 然后直接同步到Gitbook  
+- 发现 [Link a book and a GitHub repository](http://help.gitbook.com/github/index.html)
+	- **同步**从 Github-》》》 Gitbook 可直接在Github修改repo内容 编辑gitbook
+	- **同步不可逆 **以上不可逆 在gitbook的builds不会改变Github远程库repo的内容
+> **Caution:** When you specify a GitHub repository in your book's settings, it will take priority over GitBook's git repository, this means that the editor will directly edit content on GitHub.  
+> 
+**The sync is unidirectional,** only changes made on GitHub will trigger builds on GitBook, GitBook will not update your GitHub repository with any content written before.
+
+- 执行 参考[Transferring content to GitHub](http://help.gitbook.com/github/transferring_to_github.html)
+	- 进入Gitbook网站 gitbook与github帐号连接
+	- 选择书籍 进入 setting --》》 Github --》》 Export to Github 
+		- 因为我现在Gitbook编辑了 所以Export to Github
+		- 如果先在Github上有书籍Repo 可以直接 Link
+			- 我可以将本地book的working dir与Github中repo连接 然后直接选择此处的 Link
+	- 进入 Github Importer --》》 check url 
+	- 因为之前我已经Pull了Gitbook的repo then 我直接push到上面所建立的Github Repo 但是发现不可行
+
+			git remote add gbhub git@github.com:<...>.git
+			git branch --track gbhub master
+			git pull gbhub master 
+
+		> fatal: 'gthub' does not appear to be a git repository
+		fatal: Could not read from remote repository.
+		
+		- 出错 我也明白 我之间就将本地repo与gitbook 进行关联了 
+		- 所以尝试另外建立一个文件夹 git pull 这个文件夹 但是我想直接在gitbook本地repo进行修改 不想再建 那么我就尝试 去掉本地repo与gitbook的关联 直接让本地repo与书籍github库进行关联 因上面也提到改变github repo可以直接改变gitbook 【这个想法我没有去尝试】
+		- 我将github repo clone到本地 
+			- 本地新建文件目录（文件夹）
+			- $ git init
+			- $ git clone https://github.com/JeremiahZhang/gitbookguide.git
+			- $ git remote add 
+			- $ git push 这里只推到了github repo
+		- 经历以上折腾后 不成功 哪里不成功
+			- 1 push 到github后 gitbook 无反应
+			- 这时候想到可能要双推 gitbook要推 github也要推
+		-  这时候突然想起了 OMOOC.py的[double push](https://openmindclub.gitbooks.io/omooc-py/content/support/dpush.html)
+- 嗯 走了这么多弯路 最后发现
+
+> - 我已经有了local repo 因为我之前就是在本地local repo 编辑图书 之后push 到gitbook的   
+> - 那么我在gitbook网页用GithubImporter与Github连接之后 
+> - 我可以直接将local repo 推送到 Github repo 之前不用进行Pull了
+> - 只要进行双推就OK了   
+> 因为相信Gitbookhelp文档说的 只要github repo更新 Gitbook自动同步 嗯 我试过了 不行
+
+- 结果
+	- 用double push解决了问题 现在理解了为什么double push Gitbook help中说的github同步gitbook 是个坑啊
+
+## 写在最后 ##
+
+阅读源文档为先 随时注意 注意条理  
+执行任务之前 请尽量5W1H
+
+- What 清晰目标 问题是什么
+- How 如何执行 解决问题
+- 结果如何
+
+本篇文档 是作者2天内探索gitbook制书的过程 遗漏和盲点在所难免  
+若您发现 或有更好的解决方法 请与作者联系 
+联系邮箱zhangleisuda@gmail.com
+
+10/3/2015 9:10:29 PM 
