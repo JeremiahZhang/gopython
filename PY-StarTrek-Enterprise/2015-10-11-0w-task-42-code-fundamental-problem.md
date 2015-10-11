@@ -2,7 +2,7 @@
 
 ## 现象 ##
 
-- 根据 极简Python上手导念 中的一页解说了 Python 代码
+- 根据 [极简Python上手导念](http://wiki.zoomquiet.io/pythonic/MinimalistPyStart) 中的一页解说了 Python 代码
 	- ![42 coder](http://wiki.woodpecker.org.cn/moin/ZqQuickIntoPy?action=AttachFile&do=get&target=coffeeghost-q-in-py.png)
 - 会解说了 但是如何去运用 将其功能化呢？
 - 这42行代码：
@@ -68,9 +68,11 @@
 	+ run successed as below
 		+ ![narresult](https://raw.githubusercontent.com/JeremiahZhang/pybeginner/master/_src/om2py0w/0wex1/nar_result.png)
 + 收获
-	+ 库的安装 使用
+	+ 库的安装 使用 及其查询
+		+ PIL Python Image Library Pillow
+		+ the image module
 	+ help 文档检索为先
 + 总
 	+ 在运行别人的代码
 	+ 发现问题 自己理解
-	+ 但是如何去自行解决呢？ 需要一步步积累
+	+ 但是如何去自行编码独立完成呢？ 需要一步步积累
