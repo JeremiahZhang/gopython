@@ -57,7 +57,7 @@
 - 执行
 	+ code [the code](https://github.com/JiYouMCC/python-show-me-the-code/blob/e0c7c1c37ccba38671078e0b0ff6238992a11499/0000/0000.py)
 	+ Python Image Library install
-	+ choose and install [Pillow 3.0.0](https://pypi.python.org/pypi/Pillow/2.2.1) 由此参考回答[Installing PIL with pip](http://stackoverflow.com/questions/20060096/installing-pil-with-pip)
+	+ choose and install [Pillow 3.0.0](https://pypi.python.org/pypi/Pillow/2.2.1) 由此参考回答[Installing PIL with pip](http://stackoverflow.com/questions/20060096/installing-pil-with-pip)对于小白的我 这个需要使用命令行 我用babun
 
 			$ pip install Pillow
 		+ 安装之后如何使用呢？因为只有`from PIL import Image`是没有用的 error 显示找不到图片 搜了好多 最后在此处 [The Image Module](http://effbot.org/imagingbook/image.htm) 发现答案 【先从help -> google key word is very important】
@@ -76,3 +76,5 @@
 	+ 在运行别人的代码
 	+ 发现问题 自己理解
 	+ 但是如何去自行编码独立完成呢？ 需要一步步积累
+
+10/11/2015 3h
