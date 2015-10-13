@@ -16,12 +16,13 @@
 	+ 大多数在那42行代码中运行到了 只是在填充数 构建python结构框架
 	+ 接下来  
 		- [] py tutorial
-			- [] statements `if` `for` `break` `continue` `pass`
-			- []`else` clauses On Loops 
-			- []`range()` function
-			- []def function
+			- [x] statements `if` `for` `break` `continue` `pass`
+			- [x]`else` clauses On Loops 
+			- [x]`range()` function
+			- []`def` function
 				- argument
 			- []coding style
-		- - [] 完成简单工程行为
+		- [] 完成简单工程行为
 
-10/12/2015 9:39:25 PM 
+10/12/2015 9:39:25 PM   
+10/13/2015 9:18:46 PM   完成 以上3个x
