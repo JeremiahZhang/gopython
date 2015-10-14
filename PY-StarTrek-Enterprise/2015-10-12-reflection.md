@@ -17,11 +17,11 @@
 	+ 接下来  
 		- [] py tutorial
 			- [x] statements `if` `for` `break` `continue` `pass`
-			- [x]`else` clauses On Loops 
-			- [x]`range()` function
-			- []`def` function
+			- [x] `else` clauses On Loops 
+			- [x] `range()` function
+			- [] `def` function
 				- argument
-			- []coding style
+			- [] coding style
 		- [] 完成简单工程行为
 
 10/12/2015 9:39:25 PM   
