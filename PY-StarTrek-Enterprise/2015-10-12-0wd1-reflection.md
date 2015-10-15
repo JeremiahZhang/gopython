@@ -24,5 +24,7 @@
 			- [] coding style
 		- [] 完成简单工程行为
 
+代码：[https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex2](https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex2)
+
 10/12/2015 9:39:25 PM   
 10/13/2015 9:18:46 PM   完成 以上3个x

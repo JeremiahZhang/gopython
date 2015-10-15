@@ -68,8 +68,9 @@
 
 - Coding 下去 
 - 7个蕃茄学习 1个蕃茄整理
-- [今日代码在这里](https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex2)
 - 反思
 	+ 代码练了 没有去完成一个项目 自定义的项目 发现还是不怎么入脑
 	+ 那么的思考 完成一个 怎样有趣的项目 如同show me the code的 learn by doing
 	+ 这么个循序渐进额可以
+
+[今日代码](https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex2)

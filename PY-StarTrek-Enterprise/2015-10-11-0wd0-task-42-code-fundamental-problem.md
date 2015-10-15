@@ -77,4 +77,6 @@
 	+ 发现问题 自己理解
 	+ 但是如何去自行编码独立完成呢？ 需要一步步积累
 
+代码：[https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex1](https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex1 "今日代码")
+
 10/11/2015 3h
