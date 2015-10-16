@@ -4,7 +4,7 @@
 
 - 根据 [极简Python上手导念](http://wiki.zoomquiet.io/pythonic/MinimalistPyStart) 中的一页解说了 Python 代码
 	- ![42 coder](http://wiki.woodpecker.org.cn/moin/ZqQuickIntoPy?action=AttachFile&do=get&target=coffeeghost-q-in-py.png)
-- 会解说了 但是如何去运用 将其功能化呢？
+- 会解说了 但是如何去运用 将其功能化呢？[https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex0](https://github.com/JeremiahZhang/pybeginner/tree/master/_src/om2py0w/0wex0)
 - 这42行代码：
 	+ 包含80%左右的 py 代码常见情景
 		+ 常见情景是什么？
