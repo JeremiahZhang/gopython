@@ -29,6 +29,8 @@
 
 10/16/2015 12:06:37 AM 
 
+![mindmap手绘思维导图](https://raw.githubusercontent.com/JeremiahZhang/gopython/master/_image/0wd4_C2T2_novie_advice.jpg)
+
 ----------
 
 ## 触动点 ##
