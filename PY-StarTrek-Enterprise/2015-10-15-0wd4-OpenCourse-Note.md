@@ -115,8 +115,9 @@
 - 慎独 不断与自己搏斗 
 - 不再视而不见 乃是信任导师
 
-大妈的公开课[0wd4 C2T2](http://openmindclub.qiniudn.com/res/tapes/omooc/omooc2py/151015_0wd4/index.html) 修补自己思维的漏洞 还得细听 继续修补 不断更新自己   
+谢谢ZQ大妈的公开课[0wd4 C2T2](http://openmindclub.qiniudn.com/res/tapes/omooc/omooc2py/151015_0wd4/index.html)   
+修补自己思维的漏洞 还得细听 继续修补 不断更新自己   
 
-> Rewminding in Coding and Everything in my life
+> Rewminding in Coding and Everything in My Life
 
 10/16/2015 11:37:30 AM 3个蕃茄
