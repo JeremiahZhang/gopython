@@ -1,6 +1,15 @@
 # Learn Git #
 
 - Version Control 版本控制
+- Git
+	- git basic 3大区
+	- 配置工具
+	- 本地与远程库联通
+- 常用命令
+	+ 版本回溯
+	+ Tag标签 commit
+	+ branch 分支
+- 小技巧
 
 ## Version Control ##
 
@@ -76,3 +85,101 @@ Git是一个免费且开源的[分布式版本控制系统](https://git-scm.com/
 	- `git commit -m "1st commit"`
 	- `git remote add name [the gopyhon SSH 或url 任选一]`注意`[]`不需要的 `name` 自定义远程库的名字
 	- `git push -u name master` 将远程库内容
+
+----------
+
+## 常用命令 ##
+1-代码库clone到本地文件目录
+
+	git clone {remote ssh or http link}
+2-在本地目录添加远程库
+
+	git remote add remote_name {remote ssh or http link}
+3-将远程库文件pull到本地
+
+	git pull remote_name {remote ssh or http link}
+4-本地新增or修改的文件添加到working dir
+
+	git add --a #添加所有
+5-添加之后 需要commit到staging area 暂存区
+
+	git commit -m "simple tag this commit"
+6-推送到github
+
+	git push remote_name {remote ssh or http link}
+7-查看Local repo所有变化修改
+	
+	git status
+
+### 版本回溯 ###
+1-查看版本历史
+	
+	git log
+	git log --pretty=oneline # 用一行来显示git 快照下来的commit历史或版本历史
+
+2-版本回退
+
+	git reflog # git log
+	git reset --hard {使用git log or git reflog中的hash值 前7位}
+3-查看所有commit历史
+
+	git hist master --all
+
+### Tag 标签 commit ###
+
+1-给刚commit的版本贴个标签 tag：好记 
+
+	git commit -m ""
+	git tag v1
+	git checkout v1 # 直接使用tag回退 v1^的话 表示上一个版本 commit
+2-查看所有标签
+	
+	git tag
+
+### git branch ###
+1-**查看**所有本地repo中所有分支 默认为master
+
+	git branch
+2-**创建分支**
+	
+	git branch {branch_name}
+创建分支后 HEAD(相当于一个指针) 就指向正在工作的本体分支了 branch_name的分支
+3-HEAD 指针回到原来的master分支
+
+	git checkout master
+4-**新建并切换到分支** branch_test
+
+	git checkout -b branch_test
+5-**合并分支** 与master合并
+	
+	git checkout master
+	git merge branch_test
+6-**删除分支**
+	
+	git branch -d branch_test # 合并好之后 branch_test分支可以删除了
+
+----------
+
+## 小技巧 ##
+
+文件目录中 修改.git/config中的命令**绰号** 如
+
+	[alias]
+		co = checkout
+		ci = commit -m
+		st = status
+		br = branch
+		pu = push origin master
+		pl = pull
+		ad = add --a
+		hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+		type = cat-file -t
+		dump = cat-file -p
+		rf = reflog
+设置好之后 `git st` 就代表 `git status` 
+
+----------
+
+10/20/2015 
+
+
