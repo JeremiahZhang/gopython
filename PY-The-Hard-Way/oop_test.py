@@ -32,34 +32,47 @@ else:
 for word in urlopen(WORD_URL).readlines():
 	WORDS.append(word.strip())
 
-
 def convert(snippet, phrase):
+	print "this snippet key is: ", snippet
+	print "this phrase relate to snippet key is: ", phrase
+
 	class_names = [w.capitalize() for w in \
 					random.sample(WORDS, snippet.count("%%%"))] # sample a k(snippet.count("%%%")) length list of unique elements chosen from WORDS list 
+	print "class_names is ", class_names
+
 	other_names = random.sample(WORDS, snippet.count("***"))
+	print "other_names is ", other_names
+
 	results = []
 	param_names = []
 
 	for i in range(0, snippet.count("@@@")):
 		param_count = random.randint(1,3) # return a random integer N such that 1<= N <=3
 		param_names.append(', '.join(random.sample(WORDS, param_count)))
+		print "param_names is: ", param_names
 
-	for sentence in snippet, phrase:
-		result = sentence[:]
+	for sentence in snippet, phrase: # for x in y, then for x in z
+		result = sentence[:] # 
+		print "1-st result:", result
 
 		# fake class names
 		for word in class_names:
 			result = result.replace("%%%", word, 1)
+			print "2nd result:", result
 
 		# fake other names
 		for word in other_names:
 			result = result.replace("***", word, 1)
+			print "3rd result:", result
 
 		# fake parameter lists
 		for word in param_names:
 			result = result.replace("@@@", word, 1)
+			print "4th result:", result
 
 		results.append(result)
+
+	print results	
 
 	return results
 
@@ -67,7 +80,10 @@ def convert(snippet, phrase):
 try:
 	while True:
 		snippets = PHRASES.keys() # PHRASES key
+		print "The key is: ", snippets
+
 		random.shuffle(snippets) # randomize these keys
+		print "the shuffled key is: ", snippets
 
 		for snippet in snippets: # snippet is one key in PHRASES
 			phrase = PHRASES[snippet] # value of the key in PHRASEs dict
