@@ -1,0 +1,28 @@
+# 隐藏文件 不被push
+
+*.pyc
+*.db
+*.log
+*.wsgic
+
+# 
+mykv.db
+
+.python-version
+
+*.~
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# eBook build output
+*.epub
+*.mobi
+*.pdf
+
+# one note file
+*.onetoc2
+
+# 
+_site
