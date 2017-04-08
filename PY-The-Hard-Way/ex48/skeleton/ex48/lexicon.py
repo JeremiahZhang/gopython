@@ -34,7 +34,7 @@ def scan(stuff):
             try:
                 num = int(word)
                 sentence.append(('number', num))
-            except ValueError:
-                print "Plest input correctly."
+            except:
+                sentence.append(('error', word))
 
     return sentence
