@@ -17,8 +17,6 @@ def scan(stuff):
 
     nouns = ['door', 'bear', 'princess', 'cabinet']
 
-    numbers = [i for i in range(0, 10)]
-
     sentence = []
 
     words = stuff.split()
@@ -33,6 +31,10 @@ def scan(stuff):
         elif word in nouns:
             sentence.append(('noun', word))
         else:
-            print "Can't recognize %s" % word
+            try:
+                num = int(word)
+                sentence.append(('number', num))
+            except ValueError:
+                print "Plest input correctly."
 
     return sentence
