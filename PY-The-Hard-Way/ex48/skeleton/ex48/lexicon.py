@@ -10,6 +10,15 @@ def scan(stuff):
 
     verbs = ['go', 'stop', 'kill', 'eat']
 
+    stop_words = [
+        'the', 'in', 'of',
+        'from', 'at', 'it'
+        ]
+
+    nouns = ['door', 'bear', 'princess', 'cabinet']
+
+    numbers = [i for i in range(0, 10)]
+
     sentence = []
 
     words = stuff.split()
@@ -19,6 +28,8 @@ def scan(stuff):
             sentence.append(('direction', word))
         elif word in verbs:
             sentence.append(('verb', word))
+        elif word in stop_words:
+            sentence.append(('stop', word))
         else:
             print "Can't recognize %s" % word
 
