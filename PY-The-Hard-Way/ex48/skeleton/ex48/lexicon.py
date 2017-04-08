@@ -38,3 +38,10 @@ def scan(stuff):
                 sentence.append(('error', word))
 
     return sentence
+
+if __name__ == "__main__":
+
+    stuff = raw_input("> ")
+    result = scan(stuff)
+
+    print result
