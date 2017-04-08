@@ -8,6 +8,8 @@ def scan(stuff):
         'back'
         ]
 
+    verbs = ['go', 'stop', 'kill', 'eat']
+
     sentence = []
 
     words = stuff.split()
@@ -15,7 +17,9 @@ def scan(stuff):
     for word in words:
         if word in direction_words:
             sentence.append(('direction', word))
+        elif word in verbs:
+            sentence.append(('verb', word))
         else:
-            print "%s is not a direction" % word
+            print "Can't recognize %s" % word
 
     return sentence
