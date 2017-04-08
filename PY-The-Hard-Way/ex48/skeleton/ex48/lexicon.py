@@ -30,6 +30,8 @@ def scan(stuff):
             sentence.append(('verb', word))
         elif word in stop_words:
             sentence.append(('stop', word))
+        elif word in nouns:
+            sentence.append(('noun', word))
         else:
             print "Can't recognize %s" % word
 

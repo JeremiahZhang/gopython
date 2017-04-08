@@ -21,3 +21,9 @@ def test_stops():
     assert_equal(result, [('stop', 'the'),
                           ('stop', 'in'),
                           ('stop', 'of')])
+
+def test_nouns():
+    assert_equal(lexicon.scan("bear"), [('noun', 'bear')])
+    result = lexicon.scan("bear princess")
+    assert_equal(result, [('noun', 'bear'),
+                          ('noun', 'princess')])
