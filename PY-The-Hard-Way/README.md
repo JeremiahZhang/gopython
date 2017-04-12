@@ -7,16 +7,16 @@
 
 自己还是在学，得一边用一边学，那么就从engineering vibration 的代码开始 [vibrationtoolbox/vibration_toolbox](https://github.com/vibrationtoolbox/vibration_toolbox) ，进入实际应用中，学习实战。
 
-学编程, 不求速成, 给自己7年时间, 慢慢来. 现在再过一遍 [Learn Python the Hard Way][0].
+---
+
+# 2017-03-29
+
+学编程, 不求速成, 至少给自己7年时间, 慢慢来. 现在再过一遍 [Learn Python the Hard Way][0].
 
     system: win
     editor: ST2
     shell: Powershell
     Python Version: 2.7.13 |Anaconda 4.3.0
-
----
-
-# 2017-03-29
 
 ## Exercise
 
