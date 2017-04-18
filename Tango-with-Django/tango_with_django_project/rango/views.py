@@ -9,6 +9,7 @@ def index(request): # creat one view called indext
     # 传递到 templates/index.html 中的 html 变量
     context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
     # 如何传递 就要使用 render
+    # 默认路径为 .../templates/
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
