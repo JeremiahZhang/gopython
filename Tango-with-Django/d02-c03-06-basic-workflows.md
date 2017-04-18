@@ -27,6 +27,17 @@ exercise：
 
 之后的主要内容就是: django basic workflow
 
+# extension
+
+- url
+    - [URL - Wikipedia](https://en.wikipedia.org/wiki/URL)
+    - [Using Django | Django documentation | Django](https://docs.djangoproject.com/en/1.10/topics/)
+- django 中 url 涉及 正则表达式
+    - [Regular expression - Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)
+    - [Regular Expression HOWTO — Python 2.7.13 documentation](https://docs.python.org/2/howto/regex.html)
+    - [Regex Cheat Sheet | Python, PHP, Perl, JavaScript, Ruby](http://regexcheatsheet.com/)
+
 ---
 
     @anifacc
+    2017-04-18
