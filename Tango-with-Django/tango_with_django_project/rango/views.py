@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 
 # Create your views here.
@@ -5,8 +6,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request): # creat one view called indext
-    html = "<html><body>Rango says Tango with Django!</body><br/><a href='/rango/about'>About</a></html>"
-    return HttpResponse(html)
+    # 传递到 templates/index.html 中的 html 变量
+    context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+    # 如何传递 就要使用 render
+    return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
     html = "<html><body>Hello, Rango says here is the about page!</body><br/><a href='/'>Index</a></html>"
