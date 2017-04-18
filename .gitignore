@@ -12,3 +12,6 @@
 
 # 
 _site
+
+# database
+db.sqlite3
