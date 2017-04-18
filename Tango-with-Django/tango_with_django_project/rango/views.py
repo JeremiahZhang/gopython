@@ -5,7 +5,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request): # creat one view called indext
-    return HttpResponse("Rango says Tango with Django!")
+    html = "<html><body>Rango says Tango with Django!</body><br/><a href='/rango/about'>About</a></html>"
+    return HttpResponse(html)
 
 def about(request):
-    return HttpResponse("Hello, Rango says here is the about page.")
+    html = "<html><body>Hello, Rango says here is the about page!</body><br/><a href='/'>Index</a></html>"
+    return HttpResponse(html)
