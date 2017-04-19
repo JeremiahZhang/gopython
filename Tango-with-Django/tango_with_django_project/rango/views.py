@@ -13,5 +13,4 @@ def index(request): # creat one view called indext
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
-    html = "<html><body>Hello, Rango says here is the about page!</body><br/><a href='/'>Index</a></html>"
-    return HttpResponse(html)
+    return render(request, 'rango/about.html')
