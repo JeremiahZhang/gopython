@@ -167,7 +167,7 @@ It's `0001_initial.py`. details in [this commit link](https://github.com/Jeremia
 
 > checking the underling SQL (optional) 非必需
 
-`$ python manage.py sqlmigrate rango 0001
+`$ python manage.py sqlmigrate rango 0001`
 
 ```
 [rango] PS E:\2016-for_Vocation\gopython\Tango-with-Django\tango_with_django_project> python manage.py sqlmigrate rango 0001
