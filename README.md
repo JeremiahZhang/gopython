@@ -8,8 +8,9 @@
 
 ## 说明
 
-- **doc** folder 存放2015年在开智学习Python时的一些文档记录等
-- **PY-The-Hard-Way** folder 存放2017年重启 Python 编程的脚本
+- [doc](https://github.com/JeremiahZhang/gopython/tree/master/doc) 存放2015年在开智学习Python时的一些文档记录等
+- [PY-The-Hard-Way](https://github.com/JeremiahZhang/gopython/tree/master/PY-The-Hard-Way) 存放2017年重启 Python 编程的脚本
+- [Tango-with-Django](https://github.com/JeremiahZhang/gopython/tree/master/Tango-with-Django)存放 Django 学习脚本及记录等文档
 
 ## 谈编程
 
@@ -23,3 +24,4 @@
 
 @Anifacc  
 2017-04-01 **增补** 说明 + 谈编程
+2017-04-24 TwD Tango with Django
