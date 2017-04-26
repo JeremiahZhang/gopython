@@ -3,38 +3,33 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 # from django.http import Http404
-from django.template import loader
+# from django.template import loader
 
 from django.urls import reverse
+from django.views import generic
 
 from .models import Question
 from .models import Choice
 
-def index(request): # display the lastest few question
-    lastest_question_list = Question.objects.order_by('-pub_date')[:5]
-    # template = loader.get_template('polls/index.html') # direct load from polls/templates/
-    context = {
-        'latest_question_list': lastest_question_list,
-    } # context transfer to polls/index.html then show the index page in polls/
-    # output = ', '.join([q.question_text for q in lastest_question_list])
-    # return HttpResponse(template.render(context, request))
-    return render(request, 'polls/index.html', context)
 
-def detail(request, question_id): # displays a question text, without results but with a form to vote
-    # try:
-    #     question = Question.objects.get(pk=question_id)
-    # except Question.DoesNotExist:
-    #     raise Http404("Sorry, Question does not exist!")
-    question = get_object_or_404(Question, pk=question_id)
-    context = {'question': question}
-    return render(request, 'polls/detail.html', context)
+class IndexView(generic.ListView):
+    template_name = 'polls/index.html'
+    context_object_name = 'latest_question_list'
     
-def results(request, question_id): # displays results for a particular question
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/results.html', {'question': question})
+    def get_queryset(self):
+        """ Ruturn the last five published questions."""
+        return Question.objects.order_by('-pub_date')[:5]
+
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'polls/detail.html'
+
+class ResultsView(generic.DetailView):
+    model = Question
+    template_name = 'polls/results.html'
 
 def vote(request, question_id): # handles voting for a particular choice in a particular question
     question = get_object_or_404(Question, pk=question_id)
