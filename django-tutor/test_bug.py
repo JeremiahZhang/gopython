@@ -127,3 +127,69 @@ Traceback (most recent call last):
   File "<console>", line 1, in <module>
 TypeError: 'NoneType' object has no attribute '__getitem__'
 """
+
+"""
+[rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
+Creating test database for alias 'default'...
+.....F.F.F
+======================================================================
+FAIL: test_index_view_with_a_future_question (polls.tests.QuestionViewTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\2016-for_Vocation\gopython\django-tutor\mysite\polls\tests.py", line 78, in test_index_view_with_a_future_que
+stion
+    self.assertContains(response, "No polls are available.")
+  File "D:\ProgramData\Anaconda2\envs\rango\lib\site-packages\django\test\testcases.py", line 382, in assertContains
+    self.assertTrue(real_count != 0, msg_prefix + "Couldn't find %s in response" % text_repr)
+AssertionError: Couldn't find 'No polls are available.' in response
+
+======================================================================
+FAIL: test_index_view_with_future_question_and_past_question (polls.tests.QuestionViewTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\2016-for_Vocation\gopython\django-tutor\mysite\polls\tests.py", line 91, in test_index_view_with_future_quest
+ion_and_past_question
+    ['<Question: Past question.>']
+  File "D:\ProgramData\Anaconda2\envs\rango\lib\site-packages\django\test\testcases.py", line 955, in assertQuerysetEqua
+l
+    return self.assertEqual(list(items), values, msg=msg)
+AssertionError: Lists differ: ['<Question: Future question.>... != ['<Question: Past question.>']
+
+First differing element 0:
+'<Question: Future question.>'
+'<Question: Past question.>'
+
+First list contains 1 additional elements.
+First extra element 1:
+'<Question: Past question.>'
+
+- ['<Question: Future question.>', '<Question: Past question.>']
++ ['<Question: Past question.>']
+
+======================================================================
+FAIL: test_index_view_with_two_past_questions (polls.tests.QuestionViewTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\2016-for_Vocation\gopython\django-tutor\mysite\polls\tests.py", line 103, in test_index_view_with_two_past_qu
+estions
+    ['<Question: Past question 2.>', '<Queston: Past question 1.>']
+  File "D:\ProgramData\Anaconda2\envs\rango\lib\site-packages\django\test\testcases.py", line 955, in assertQuerysetEqua
+l
+    return self.assertEqual(list(items), values, msg=msg)
+AssertionError: Lists differ: ['<Question: Past question 2.>... != ['<Question: Past question 2.>...
+
+First differing element 1:
+'<Question: Past question 1.>'
+'<Queston: Past question 1.>'
+
+- ['<Question: Past question 2.>', '<Question: Past question 1.>']
+?                                         -
+
++ ['<Question: Past question 2.>', '<Queston: Past question 1.>']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.090s
+
+FAILED (failures=3)
+Destroying test database for alias 'default'...
+"""
