@@ -103,3 +103,27 @@ Invalid HTTP_HOST header: 'testserver'. You may need to add u'testserver' to ALL
 >>> response.status_code
 400
 """
+
+"""
+# ALLOWED_HOSTS = ['*'] fixed
+
+>>> from django.test import Client
+>>> client = Client()
+>>> response = client.get('/')
+Not Found: /
+>>> response.status_code
+404
+"""
+
+"""
+>>> from django.urls import reverse
+>>> response = client.get(reverse('polls:index'))
+>>> response.status_code
+200
+>>> response.content
+'\n    <ul>\n    \n        <li><a href="/polls/1/">what&#39;s new?</a>\n        </li>\n    \n    </ul>\n'
+>>> response.context['latest_question_list']
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+TypeError: 'NoneType' object has no attribute '__getitem__'
+"""
