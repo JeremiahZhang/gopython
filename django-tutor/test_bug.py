@@ -1,3 +1,5 @@
+# Identify bugs
+
 """
 >>> import datetime
 >>> from django.utils import timezone
@@ -7,6 +9,8 @@
 >>> future_question.was_published_recently()
 True
 """
+
+# Running a test
 
 """
 [rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
@@ -28,3 +32,32 @@ FAILED (failures=1)
 Destroying test database for alias 'default'...
 """
 
+# Debug 
+
+"""
+[rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
+Creating test database for alias 'default'...
+F
+======================================================================
+FAIL: test_was_published_recently_with_future_question (polls.tests.QuestionMethodTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\2016-for_Vocation\gopython\django-tutor\mysite\polls\tests.py", line 19, in test_was_published_recently_with_
+future_question
+    self.assertIs(future_question.was_published_recently(), False)
+AssertionError: True is not False
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+Destroying test database for alias 'default'...
+[rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
+Creating test database for alias 'default'...
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+Destroying test database for alias 'default'...
+"""
