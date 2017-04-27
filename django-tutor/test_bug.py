@@ -10,7 +10,7 @@
 True
 """
 
-# Running a test
+## Running a test
 
 """
 [rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
@@ -32,7 +32,7 @@ FAILED (failures=1)
 Destroying test database for alias 'default'...
 """
 
-# Debug 
+## Fix bugs 
 
 """
 [rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
@@ -60,4 +60,46 @@ Ran 1 test in 0.000s
 
 OK
 Destroying test database for alias 'default'...
+"""
+
+## More test
+
+"""
+[rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py test polls
+Creating test database for alias 'default'...
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+Destroying test database for alias 'default'...
+"""
+
+# Test a View
+
+"""
+[rango] PS E:\2016-for_Vocation\gopython\django-tutor\mysite> python manage.py shell
+Python 2.7.13 |Continuum Analytics, Inc.| (default, Dec 19 2016, 13:29:36) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from django.test.utils import setup_test_environment
+>>> from django.test import Client
+>>> # create an instance of the client for our use
+>>> client = Client()
+>>> # get a response from '/'
+>>> response = client.get('/')
+Invalid HTTP_HOST header: 'testserver'. You may need to add u'testserver' to ALLOWED_HOSTS.
+>>> # we should expect a 404 from that address
+>>> response.status_code
+400
+>>> response = client.get('/')
+Invalid HTTP_HOST header: 'testserver'. You may need to add u'testserver' to ALLOWED_HOSTS.
+>>> response.status_code
+400
+>>> # here leaver and error
+>>> from django.urls import reverse
+>>> response = client.get(reverse('polls:index'))
+Invalid HTTP_HOST header: 'testserver'. You may need to add u'testserver' to ALLOWED_HOSTS.
+>>> response.status_code
+400
 """
