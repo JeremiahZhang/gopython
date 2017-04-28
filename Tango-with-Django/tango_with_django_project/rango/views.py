@@ -4,12 +4,17 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import HttpResponse
+# Import the Category model
+from rango.models import Category
 
 def index(request): # creat one view called indext
     # 传递到 templates/index.html 中的 html 变量
-    context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+    # top five categories
+    category_list = Category.objects.order_by('-likes')[:5] 
+    context_dict = {'categories': category_list}
     # 如何传递 就要使用 render
     # 默认路径为 .../templates/
+    # render the response and send it back
     return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
