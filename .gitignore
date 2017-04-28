@@ -15,3 +15,6 @@ _site
 
 # database
 db.sqlite3
+
+# migrations
+Tango-with-Django/tango_with_django_project/rango/migrations

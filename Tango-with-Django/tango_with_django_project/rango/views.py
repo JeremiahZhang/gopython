@@ -11,8 +11,9 @@ from rango.models import Page
 def index(request): # creat one view called indext
     # 传递到 templates/index.html 中的 html 变量
     # top five categories
-    category_list = Category.objects.order_by('-likes')[:5] 
-    context_dict = {'categories': category_list}
+    category_list = Category.objects.order_by('-likes')[:5]
+    page_list = Page.objects.order_by('-views')[:5]
+    context_dict = {'categories': category_list, 'pages': page_list}
     # 如何传递 就要使用 render
     # 默认路径为 .../templates/
     # render the response and send it back
