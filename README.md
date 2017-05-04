@@ -11,6 +11,8 @@
 - [doc](https://github.com/JeremiahZhang/gopython/tree/master/doc) 存放2015年在开智学习Python时的一些文档记录等
 - [PY-The-Hard-Way](https://github.com/JeremiahZhang/gopython/tree/master/PY-The-Hard-Way) 存放2017年重启 Python 编程的脚本
 - [Tango-with-Django](https://github.com/JeremiahZhang/gopython/tree/master/Tango-with-Django)存放 Django 学习脚本及记录等文档
+- [Django Girls](https://github.com/JeremiahZhang/gopython/tree/master/djangogirls/djangogirlsite) [Django Girls Tutorial](https://tutorial.djangogirls.org/en/#django-girls-tutorial) exercise files
+- [django-tutor](https://github.com/JeremiahZhang/gopython/tree/master/django-tutor) Django 1.10 official tutorial exercise files
 
 ## 谈编程
 
