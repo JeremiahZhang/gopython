@@ -37,8 +37,6 @@ def binary_search(num_list, target_num):
             min = guess + 1
         else:
             max = guess - 1
-    else:
-        return -1
 
 def main():
     primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, \
