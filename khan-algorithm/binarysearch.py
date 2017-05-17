@@ -25,9 +25,12 @@ def binary_search(num_list, target_num):
     min = 0
     max = len(num_list) - 1
 
-    while min < max:
-        guess = int(round((min + max)/2))
-        
+    while True:
+        if max < min:
+            return -1
+
+        guess = (min + max)/2
+
         if num_list[guess] == target_num:
             return guess
         elif num_list[guess] < target_num:
@@ -39,8 +42,8 @@ def binary_search(num_list, target_num):
 
 def main():
     primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, \
-                59, 61, 67, 71, 73, 79, 83, 89, 97];
-    result = binary_search(primes, 71)
+             59, 61, 67, 71, 73, 79, 83, 89, 97];
+    result = binary_search(primes, 73)
     print "Found prime at index %d" % result
 
 if __name__ == '__main__':
