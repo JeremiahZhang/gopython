@@ -20,13 +20,14 @@ Contents
 1) @font-face definitions
 ===================================================================================================*/
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,400italic,700italic);
-
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url(//fonts.googleapis.com/earlyaccess/notosanssc.css);
 /*===================================================================================================
 2) Styles
 ===================================================================================================*/
 
 #logo h1, #logoDetailView h1 {
-	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: 'Pacifico', cursive;
 	font-weight: 600;
 	font-style: normal;
 	font-size: 40px;
@@ -38,7 +39,7 @@ Contents
 }
 
 #logo h2, #logoDetailView h2 {
-	font-family: "Source Sans Pro", Arial, sans-serif;
+	font-family: 'Noto Sans SC', sans-serif;
 	font-weight: 300;
     font-style: normal;
 	font-size: 16px;
