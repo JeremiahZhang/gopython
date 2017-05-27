@@ -20,4 +20,7 @@ db.sqlite3
 Tango-with-Django/tango_with_django_project/rango/migrations
 
 # cslewis
-cslewis
+# cslewis
+
+# 
+*.DS_Store
