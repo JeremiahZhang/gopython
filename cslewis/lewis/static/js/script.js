@@ -74,6 +74,22 @@ $(document).ready(function()
 		{
 			if(!isHomeCurrentPage)
 			{
+				if(isBioCurrentPage){
+					$("#bio").fadeOut(500, function(){
+						$("#home").fadeIn(500);
+					});
+				}
+				else if(isWorkCurrentPage){
+					$("#work").fadeOut(500, function(){
+						$("#home").fadeIn(500);
+					});
+				}
+				else {
+					$("#about").fadeOut(500, function(){
+						$("#home").fadeIn(500);
+					});
+				}
+				
 				isHomeCurrentPage = true;
 				isBioCurrentPage = false;
 				isWorkCurrentPage = false;
@@ -82,13 +98,6 @@ $(document).ready(function()
 				$("#bioPage").removeClass("currentPage");
 				$("#workPage").removeClass("currentPage");
 				$("#aboutPage").removeClass("currentPage");
-				
-				$("#home").fadeIn(500, function()
-				{
-					$("#bio").fadeOut(500);
-					$("#work").fadeOut(500);
-					$("#about").fadeOut(500);
-				});
 			}
 		});
 	
@@ -96,6 +105,22 @@ $(document).ready(function()
 		{
 			if(!isBioCurrentPage)
 			{
+				if(isHomeCurrentPage){
+					$("#home").fadeOut(500, function(){
+						$("#bio").fadeIn(500);
+					});
+				}
+				else if(isWorkCurrentPage){
+					$("#work").fadeOut(500, function(){
+						$("#bio").fadeIn(500);
+					});
+				}
+				else {
+					$("#about").fadeOut(500, function(){
+						$("#bio").fadeIn(500);
+					});
+				}
+				
 				isBioCurrentPage = true;
 				isHomeCurrentPage = false;
 				isWorkCurrentPage = false;
@@ -104,13 +129,6 @@ $(document).ready(function()
 				$("#homePage").removeClass("currentPage");
 				$("#workPage").removeClass("currentPage");
 				$("#aboutPage").removeClass("currentPage");
-				
-				$("#bio").fadeIn(500, function()
-				{
-					$("#home").fadeOut(500);
-					$("#work").fadeOut(500);
-					$("#about").fadeOut(500);
-				});
 			}
 		});
 	
@@ -118,6 +136,22 @@ $(document).ready(function()
 		{
 			if(!isWorkCurrentPage)
 			{
+				if(isHomeCurrentPage){
+					$("#home").fadeOut(500, function(){
+						$("#work").fadeIn(500);
+					});
+				}
+				else if(isBioCurrentPage){
+					$("#bio").fadeOut(500, function(){
+						$("#work").fadeIn(500);
+					});
+				}
+				else {
+					$("#about").fadeOut(500, function(){
+						$("#work").fadeIn(500);
+					});
+				}
+				
 				isWorkCurrentPage = true;
 				isHomeCurrentPage = false;
 				isBioCurrentPage = false;
@@ -126,13 +160,6 @@ $(document).ready(function()
 				$("#homePage").removeClass("currentPage");
 				$("#bioPage").removeClass("currentPage");
 				$("#aboutPage").removeClass("currentPage");
-				
-				$("#work").fadeIn(500, function()
-				{
-					$("#home").fadeOut(500);
-					$("#bio").fadeOut(500);
-					$("#about").fadeOut(500);
-				});
 			}
 		});
 	
@@ -140,6 +167,22 @@ $(document).ready(function()
 		{
 			if(!isAboutCurrentPage)
 			{
+				if(isHomeCurrentPage){
+					$("#home").fadeOut(500, function(){
+						$("#about").fadeIn(500);
+					});
+				}
+				else if(isWorkCurrentPage){
+					$("#work").fadeOut(500, function(){
+						$("#about").fadeIn(500);
+					});
+				}
+				else {
+					$("#bio").fadeOut(500, function(){
+						$("#about").fadeIn(500);
+					});
+				}
+				
 				isAboutCurrentPage = true;
 				isHomeCurrentPage = false;
 				isBioCurrentPage = false;
@@ -149,13 +192,6 @@ $(document).ready(function()
 				$("#homePage").removeClass("currentPage");
 				$("#bioPage").removeClass("currentPage");
 				$("#workPage").removeClass("currentPage");
-				
-				$("#about").fadeIn(500, function()
-				{
-					$("#home").fadeOut(500);
-					$("#bio").fadeOut(500);
-					$("#work").fadeOut(500);
-				});
 			}
 		});
 	
