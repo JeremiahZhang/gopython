@@ -60,7 +60,9 @@ $(document).ready(function()
 	}
 	
 	// Page navigation
-	var isWorkCurrentPage = true;
+	var isHomeCurrentPage = true;
+	var isBioCurrentPage = false;
+	var isWorkCurrentPage = false;
 	var isAboutCurrentPage = false;
 	
 	$("#logoDetailView").click(function()
@@ -68,18 +70,68 @@ $(document).ready(function()
 		window.location = "../../index.html";
 	});
 	
-	$("#workPage, #logo").click(function()
+	$("#homePage, #logo").click(function()
+		{
+			if(!isHomeCurrentPage)
+			{
+				isHomeCurrentPage = true;
+				isBioCurrentPage = false;
+				isWorkCurrentPage = false;
+				isAboutCurrentPage = false;
+				$("#homePage").attr("class", "currentPage");
+				$("#bioPage").removeClass("currentPage");
+				$("#workPage").removeClass("currentPage");
+				$("#aboutPage").removeClass("currentPage");
+				
+				$("#home").fadeIn(500, function()
+				{
+					$("#bio").fadeOut(500);
+					$("#work").fadeOut(500);
+					$("#about").fadeOut(500);
+				});
+			}
+		});
+	
+	$("#bioPage").click(function()
+		{
+			if(!isBioCurrentPage)
+			{
+				isBioCurrentPage = true;
+				isHomeCurrentPage = false;
+				isWorkCurrentPage = false;
+				isAboutCurrentPage = false;
+				$("#bioPage").attr("class", "currentPage");
+				$("#homePage").removeClass("currentPage");
+				$("#workPage").removeClass("currentPage");
+				$("#aboutPage").removeClass("currentPage");
+				
+				$("#bio").fadeIn(500, function()
+				{
+					$("#home").fadeOut(500);
+					$("#work").fadeOut(500);
+					$("#about").fadeOut(500);
+				});
+			}
+		});
+	
+	$("#workPage").click(function()
 		{
 			if(!isWorkCurrentPage)
 			{
 				isWorkCurrentPage = true;
+				isHomeCurrentPage = false;
+				isBioCurrentPage = false;
 				isAboutCurrentPage = false;
 				$("#workPage").attr("class", "currentPage");
+				$("#homePage").removeClass("currentPage");
+				$("#bioPage").removeClass("currentPage");
 				$("#aboutPage").removeClass("currentPage");
 				
-				$("#about").fadeOut(500, function()
+				$("#work").fadeIn(500, function()
 				{
-					$("#work").fadeIn(500);
+					$("#home").fadeOut(500);
+					$("#bio").fadeOut(500);
+					$("#about").fadeOut(500);
 				});
 			}
 		});
@@ -89,22 +141,34 @@ $(document).ready(function()
 			if(!isAboutCurrentPage)
 			{
 				isAboutCurrentPage = true;
+				isHomeCurrentPage = false;
+				isBioCurrentPage = false;
 				isWorkCurrentPage = false;
+
 				$("#aboutPage").attr("class", "currentPage");
+				$("#homePage").removeClass("currentPage");
+				$("#bioPage").removeClass("currentPage");
 				$("#workPage").removeClass("currentPage");
 				
-				$("#work").fadeOut(500, function()
+				$("#about").fadeIn(500, function()
 				{
-					$("#about").fadeIn(500);
+					$("#home").fadeOut(500);
+					$("#bio").fadeOut(500);
+					$("#work").fadeOut(500);
 				});
 			}
 		});
 	
 	// Make Work page current page
-	$("#workPage").attr("class", "currentPage");
+	// $("#workPage").attr("class", "currentPage");
 	
-	// Hide About page
+	// Make Home page current page
+	$("#homePage").attr("class", "currentPage");
+	
+	// Hide Bio Work About page
 	//$("#about").css("display", "none");
+	$("#bio").fadeOut(0);
+	$("#work").fadeOut(0);
 	$("#about").fadeOut(0);
 	
 	// For site fade site in
