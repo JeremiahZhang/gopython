@@ -38,7 +38,7 @@ Contents
 /*===================================================================================================
 1) Reset & basics
 ===================================================================================================*/
-	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -48,7 +48,7 @@ Contents
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block; }
 	body {
-		line-height: 1; }
+		line-height: 1.5; }
 	ol, ul {
 		list-style: none; }
 	blockquote, q {
@@ -60,7 +60,6 @@ Contents
 	table {
 		border-collapse: collapse;
 		border-spacing: 0; }
-
 /*===================================================================================================
 2) Basic styles
 ===================================================================================================*/
@@ -93,9 +92,9 @@ Contents
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
 
-	p { margin: 0 0 20px 0; }
+	p { margin: 0 0 20px 0;}
 	p img { margin: 0; }
-	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+	p.lead { font-size: 21px; line-height: 30px; color: #777;  }
 
 	em { font-style: italic; }
 	strong { font-weight: bold; color: #333; }
@@ -108,6 +107,12 @@ Contents
 	/*blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }*/
 
 	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+    dd, dt, p {
+        line-height: 30px;
+    }
+    dt {
+        font-weight: bold;
+    }
 
 /*===================================================================================================
 4) Links
@@ -119,7 +124,7 @@ Contents
 /*===================================================================================================
 5) Lists
 ===================================================================================================*/
-	ul, ol { margin-bottom: 20px; }
+	ul, ol{ margin-bottom: 20px; }
 	ul { list-style: none outside; }
 	ol { list-style: decimal; }
 	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
@@ -132,7 +137,7 @@ Contents
 	ol ol li, ol ul li { margin-bottom: 6px; }
 	li { line-height: 18px; margin-bottom: 12px; }
 	ul.large li { line-height: 21px; }
-	li p { line-height: 21px; }
+	li p { line-height: 30px; }
 
 /*===================================================================================================
 6) Images
@@ -897,6 +902,11 @@ header {
 #logo img, #logoDetailView img {
 	margin-top: 28px;
 }
+
+/*#home img {
+    display: block;
+    margin: 0 auto;
+}*/
 
 #logo h1, #logoDetailView h1 {
 	font-family: Georgia, Arial, sans-serif;
