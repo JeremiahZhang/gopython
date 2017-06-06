@@ -102,6 +102,42 @@
 
 注：2wd1阅读，2wd2笔记。
 
+## 性能度量
+
+### Precise and Recall
+
+- `Precise` 查准率
+- `Recall` 查全率
+
+这两个概念以及 `confusion matrix` make me confused. 还是看一下[Precision and recall - Wikipedia](https://en.wikipedia.org/wiki/Precision_and_recall)的图片吧。
+
+![Precisionrecall](https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/440px-Precisionrecall.svg.png)
+
+再结合 confusion matrix 在二分类问题中理解这些概念。
+
+| 总样本  | 预测：+     | 预测：-|
+| :------   | :-----     | :----|
+| +         | ++ True Positive(TP) | +- False Negative(FN) Type II error|
+| -         | -+ False Positive(FP) Type I error | -- True Negative(TN) |
+
+总样本数就那么多，只有两类+or-，实际预测中结果就有四类，2*2=4.
+
+- 一个样本实际的类标签为 +，预测结果为 +，就表示为 ++（实际为+预测为+），True Positive(TP)；（正确预测）
+- 一个样本实际的类标签为 -，预测结果为 +，就表示为 -+（实际为-预测为+），False Positive(FP)；（错误预测）
+- 一个样本实际的类标签为 +，预测结果为 -，就表示为 +-（实际为+预测为-），False Negitive(FN)；（错误预测）
+- 一个样本实际的类标签为 -，预测结果为 -，就表示为 --（实际为-预测为-），True Negative(TN)；（正确预测）
+
+那么：
+
+$$ P = Precision = \frac{正确预测为+的数目}{预测为+的数目} = \frac{TP}{TP+FP} $$  
+$$ R = Recall = \frac{对于+类，正确预测（预测为+）的数目}{+类样本总数} = \frac{TP}{TP+FN}$$  
+
+How：
+
+P-R 曲线图.
+
+注：2wd2 笔记
+
 ---
 
 [1]:  http://research.cs.tamu.edu/prism/lectures/iss/iss_l13.pdf
