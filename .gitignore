@@ -24,3 +24,6 @@ Tango-with-Django/tango_with_django_project/rango/migrations
 
 # 
 *.DS_Store
+
+# ipython notebook 
+*.ipynb_checkpoints
