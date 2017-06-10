@@ -175,7 +175,49 @@ Roc 曲线：
 
 [ROC curves and Area Under the Curve explained (video)](http://www.dataschool.io/roc-curves-and-auc-explained/) 解释挺不错的。 暂时学会如何去让。
 
+---
 
+## 习题
+
+> 2.1
+
+1. 分层采样:
+  - 训练集: 350个正例(正例如何取的?500个正例中前350个,第二个开始的350个,第三个开始的350个,好多好多啊),350个反例(类似).
+  - 测试集: 150个正例,150个反例.
+
+> 2.2
+
+- K-Fold:
+  - 尽可能保持数据分布一致性,从样本集100个中分层采样.
+  - 每次: 训练集90个(45+,45-),测试集10个(5+,5-)
+  - 2个类别的训练样本数相同,随机猜测
+  - 1次10-fold:错误率 50%
+- Leave one out
+  - 情况 1:
+    - 训练集(99个): 50 +,49 -
+    - 测试集(1个): 1 -
+    - 错误率 100%
+  - 情况 2:
+    - 训练集(99个): 50 -,49 +
+    - 测试集(1个): 1 +
+    - 错误率 100%
+
+> 2.3
+
+假设学习器A的F1值比学习器B的高, 即: $$ F1^{A} > F1^{B}$$, 而 $$\frac{1}{F1} = 0.5(\frac{1}{P} + \frac{1}{R})$$, 代入之前的不等式中可得到:
+
+- $$\frac{1}{P_A} + \frac{1}{R_A} < \frac{1}{P_B} + \frac{1}{R_B}$$,
+- 对于BEP值, P=R, 所以 $$P_A = R_A, P_B = R_B$$,
+- $$\frac{1}{P_A} + \frac{1}{R_A} < \frac{1}{P_B} + \frac{1}{R_B} \rightarrow \frac{1}{P_A} < \frac{P_B}$$
+- $$ \rightarrow P_A > P_B \rightarrow BEP_A > BEP_B$$
+
+即 A 的BEP值比 B 的高.
+
+> 2.4
+
+TPR(True Positive Rate 真正例率) = Recall(查全率), 查全率 Recall 和 查准率Precision 是一对矛盾的度量.
+
+FPR(False Positive Rate 假正例率),  FPR大了, P就小了.
 
 
 ---
