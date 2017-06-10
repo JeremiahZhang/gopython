@@ -208,7 +208,7 @@ Roc 曲线：
 
 - $$\frac{1}{P_A} + \frac{1}{R_A} < \frac{1}{P_B} + \frac{1}{R_B}$$,
 - 对于BEP值, P=R, 所以 $$P_A = R_A, P_B = R_B$$,
-- $$\frac{1}{P_A} + \frac{1}{R_A} < \frac{1}{P_B} + \frac{1}{R_B} \rightarrow \frac{1}{P_A} < \frac{P_B}$$
+- $$\frac{1}{P_A} + \frac{1}{R_A} < \frac{1}{P_B} + \frac{1}{R_B} \rightarrow \frac{1}{P_A} < \frac{1}{P_B}$$
 - $$ \rightarrow P_A > P_B \rightarrow BEP_A > BEP_B$$
 
 即 A 的BEP值比 B 的高.
