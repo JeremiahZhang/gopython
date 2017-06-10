@@ -132,11 +132,51 @@
 $$ P = Precision = \frac{正确预测为+的数目}{预测为+的数目} = \frac{TP}{TP+FP} $$  
 $$ R = Recall = \frac{对于+类，正确预测（预测为+）的数目}{+类样本总数} = \frac{TP}{TP+FN}$$  
 
-How：
-
-P-R 曲线图.
-
 注：2wd2 笔记
+
+> 查准率和查全率是一对矛盾的度量。
+
+如何使用 P-R 评价性能。
+
+1. P-R 曲线图看包围
+2. P-R 曲线图 看“平衡点” Break Event Point
+3. $$F_1$$ 度量
+  - $$\frac{1}{F_1} = \frac{1}{2}(\frac{1}{P} + \frac{1}{R})$$
+  - $$F_1 = \frac{2*P*R}{P+R}$$
+4. $$ F_\beta = \frac{(1+\beta^{2})·P·R}{(\beta^{2}·P)+R} $$: 依照对查准率和查全率的重视程度不同而定。
+  - $$\beta > 0$$ 度量查全率对查准率的相对重要性
+  - $$\beta = 1$$ 退化为 标准的 $$F_1$$度量
+  - $$\beta > 1$$ 查全率影响更大
+  - $$\beta < 1$$ 查准率影响更大
+
+对于一个二分类问题对应一个混淆矩阵，那么多分类问题呢，可以转化为多个(n)二分类问题，对应n个 confusion matrix，在此基础上综合考察查准率和查全率。($$(P_1, R_1), (P_2, R_2), \cdots, (P_n, R_n)$$).
+
+直接平均法：
+
+- macro-P: $$P_{macro} = \frac{1}{n} \sum_{i=1}^{n}P_i $$
+- macro-R: $$R_{macro} = \frac{1}{n} \sum_{i=1}^{n}R_i $$
+- macro-$$F_1：\frac{2·P_{macro}·R_{macro}}{P_{macro} + R_{macro}}$$
+
+还有就是预先平均法：得到 $$\bar{TP}, \bar{FP}, \bar{FN}, \bar{TN}$$, 再计算：
+
+- micro-P: $$P_{micro} = \frac{\bar{TP}}{\bar{TP}+\bar{FP}} $$
+- micro-R: $$P_{micro} = \frac{\bar{TP}}{\bar{TP}+\bar{FN}} $$
+- micro-$$F_1$$: $$F1_{micro} = \frac{2·P_{micro}·R_{micro}}{P_{micro} + R_{micro}} $$.
+
+### ROC and AUC
+
+> ROC: Receiver Operating Characteristic
+> AUC: Area under the curve
+
+Roc 曲线：
+
+- 纵坐标：True Positive Rate(TPR)
+- 横坐标：False Positive Rate(FPR)
+
+[ROC curves and Area Under the Curve explained (video)](http://www.dataschool.io/roc-curves-and-auc-explained/) 解释挺不错的。 暂时学会如何去让。
+
+
+
 
 ---
 
