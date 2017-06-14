@@ -4,9 +4,11 @@
 
 ## 线性回归
 
-note: [线性回归(Linear Regression) · Anifacc](https://anifacc.github.io/machine%20learning/2017/06/12/linear-regression/)
+- [线性回归(Linear Regression) · Anifacc](https://anifacc.github.io/machine%20learning/2017/06/12/linear-regression/)
 
 ## 对数几率回归
+
+- [线性分类(Logistic Regression) · Anifacc](https://anifacc.github.io/machine%20learning/2017/06/14/classification-logistic-regression/)
 
 ## 线性判别分析
 
