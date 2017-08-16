@@ -25,11 +25,13 @@
         - 从中学习，或距离，或其他，来rating一部电影
 - 信用卡申请发放
 
-## 机器学习本质
+## 学习本质
 
 - 问题存在一定模式
 - 这种模式我们无法以数学形式或公式确定（can not pin it down mathematically）
 - 但是我们有的是**数据**（没有数据，就别想机器学习，没门儿）
+
+**从课程题目来看，学习一定是需要数据的，没有数据就无法学习。因此，学习至少需要数据。**
 
 ## 学习的组成部分
 
@@ -51,6 +53,8 @@
 
 - The Hypothesis Set 假设集或假设空间 $$H={h}, g \in H$$
 - The Learning Algorithm 机器学习算法
+
+> The hypothesis set and learning algorithm are refrred to infrmally as the learing model.
 
 从上面的图中，我们可以看出，解决机器学习问题的本质就是：
 
@@ -103,8 +107,9 @@
 ## Ref
 
 1. [slides01.pdf](http://work.caltech.edu/slides/slides01.pdf)
+2. [Learning From Data - A Short Course](http://amlbook.com/)
 
 ```
 @anifacc
-2017-08-12 10:28:16 Wangxiang
+2017-08-12 10:28:16 beta 1.0 WX
 ```
