@@ -220,6 +220,17 @@ $$P[|E_{in}(g) - E_{out}(g)| > \epsilon] \leq 2Me^{-2 \epsilon ^2 N}$$
 
 只要我们确定 霍夫丁不等式的边界, 我们学习的成败就在于我们从训练样本中的训练情况.
 
+## Sum
+
+以上, 从概率角度来分析学习可行性, 关键是霍夫丁不等式, 以及训练样本.
+
+---
+
+## Ref
+
+1. [slides02.pdf](http://work.caltech.edu/slides/slides01.pdf)
+2. [Learning From Data - A Short Course](http://amlbook.com/)
+
 ```
 @anifacc
 2017-08-17 17:38:08
