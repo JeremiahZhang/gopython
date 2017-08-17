@@ -96,6 +96,8 @@
 
 ## 最后的PUZZLE
 
+![puzzle](https://dn-learnml.qbox.me/image/ai/lfd-puzzle.JPG)
+
 课程最后的Puzzle有意识。其实是没有标准答案的，我想怎么解释就怎么解释。能解释得通，就OK。
 
 的确，在非完全精确的领域，为何要追求精确呢？
