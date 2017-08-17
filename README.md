@@ -13,6 +13,11 @@
 - [Tango-with-Django](https://github.com/JeremiahZhang/gopython/tree/master/Tango-with-Django)存放 Django 学习脚本及记录等文档
 - [Django Girls](https://github.com/JeremiahZhang/gopython/tree/master/djangogirls/djangogirlsite) [Django Girls Tutorial](https://tutorial.djangogirls.org/en/#django-girls-tutorial) exercise files
 - [django-tutor](https://github.com/JeremiahZhang/gopython/tree/master/django-tutor) Django 1.10 official tutorial exercise files
+- [django-cslewis-website fold](https://github.com/JeremiahZhang/gopython/tree/master/cslewis/lewis)
+- [khan-algorithm](https://github.com/JeremiahZhang/gopython/tree/master/khan-algorithm) 参考 [Algorithms | Computer science | Computing | Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms)的学习内容
+- [gopython/khan-intro2html-css-making-webpages](https://github.com/JeremiahZhang/gopython/tree/master/khan-intro2html-css-making-webpages) 参考: [Intro to HTML/CSS: Making webpages | Computer programming | Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css)的学习内容
+- [khan-intro2sql-querying-managing-data](https://github.com/JeremiahZhang/gopython/tree/master/khan-intro2sql-querying-managing-data) 参考: [Intro to SQL: Querying and managing data | Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)的学习内容
+- [gopython/mdn-web](https://github.com/JeremiahZhang/gopython/tree/master/mdn-web) 参考 [HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML) 学习内容
 
 ## 谈编程
 
