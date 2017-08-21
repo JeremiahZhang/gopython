@@ -141,3 +141,26 @@ c. 综合来看, c答案可能是一个比较好的选项.(未知数据的不确
 但是, 可不可以有这样的答案呢?
 
 > d. With high probability: you will either say you failed or you will produce a good g.
+
+## P31 EX1.13
+
+已知: h & target f, and $$P(h(x) \neq f(x)) = \mu, P(h(x)=f(x)) = 1 - \mu$$, we use the same h to a pproximate a noisy version of f given by
+
+$$P(y|x) = \begin{cases}
+\lambda & y=f(x)\\
+1 - \lambda & y \neq f(x)\end{cases}$$
+
+> a) what is the probability of error that h makes in approximating y if we use a noisy version of f.
+
+要求: $$P(h(x) \neq y)$$
+
+- 第一种情况: $$h(x) = f(x), y \neq f(x)$$, 其概率: $$P_1 = (1-\mu)(1-\lambda)$$;
+- 第二种情况: $$h(x) \neq f(x), y = f(x)$$, 其概率: $$P_2 = \mu \lambda$$
+
+所以  $$P(h(x) \neq y) = P_1 + P_2 = \mu(2\lambda -1) - \lambda + 1$$
+
+> b) At what value of A will the perfrmance of h be independent of µ?
+
+也就是h的性能与u无关, 那么就是$$P(h(x) \neq y)$$的值与u无关, 即u的系数为0, 则$$2\lambda -1 = 0 \rightarrow \lambda = 0.5$$.
+
+## 
