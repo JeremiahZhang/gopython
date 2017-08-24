@@ -162,5 +162,3 @@ $$P(y|x) = \begin{cases}
 > b) At what value of A will the perfrmance of h be independent of µ?
 
 也就是h的性能与u无关, 那么就是$$P(h(x) \neq y)$$的值与u无关, 即u的系数为0, 则$$2\lambda -1 = 0 \rightarrow \lambda = 0.5$$.
-
-## 
