@@ -1,4 +1,4 @@
-# Chapter 02 Training VS Testing-Theory of Generalization
+# 泛化误差边界
 
 书中将机器学习中的训练和测试与校园学习中的做练习与考试类比, 非常好的类比. 如果高考中,一个学生平常练习中成绩非常好, 在最后的高考, 成绩不咋样的话, 按一般结论而言, 这个学生不可能考上清华或北大. 类似, 在机器学习中, 学习得到的 Hypothesis 在训练样本上的效果$$E_{in}$$很好, 但在非训练样本或来自整个输入空间X的其他样本上的效果$$E_{out}$$非常差, 那么这个 Hypothesis 能很好解决未来的问题么? 自己思考.
 
@@ -27,9 +27,9 @@ $$\Bbb P [\lvert E_{in}(g) - E_{out}(g)\rvert > \epsilon] \leq 2M e^{-2 \epsilon
 
 其中$$M$$为假设集 hypothesis set H 中所有假设 h 的数目, $$N$$ 为训练集 D 中训练样本数目.
 
-如果我们选择一个 tolerance level $$\delta = 2M e^{-2 \epsilon^2 N}(\Rightarrow \epsilon = \sqrt{\frac{1}{2N} \ln{\frac{2M}{\delta}}})$$, 那么
+如果我们选择一个 tolerance level $$\delta = 2M e^{-2 \epsilon^2 N}\Rightarrow \epsilon = \sqrt{\frac{1}{2N} \ln{\frac{2M}{\delta}}}$$, 那么
 
-$$E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{1}{2N} \ln{\frac{2M}{\delta}}}) \tag{2.1}$$
+$$E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{1}{2N} \ln{\frac{2M}{\delta}}} \tag{2.1}$$
 
 出现在概率至少为$$1 - \delta$$, 因为只考虑单边嘛.
 
@@ -236,13 +236,135 @@ N =3, m_{\cal H}(3) = 7 < 2^3 = 8$$
 
 **2D 感知器**: break point k = 4.(上文已经讨论过)
 
-到现在, 知道假设集的 break point k, 那么我们就可以找到假设集增长函数的边界.即为$$m_{\cal H}(k)$$. (要知道, 如果k是一个假设集的break point, 那么 k+1, k+2, ..., 也是这个假设集的 break point).
+到现在, 知道假设集的 break point k, 那么我们就可以找到假设集增长函数的边界.即为$$m_{\cal H}(k) < 2^k$$. (要知道, 如果k是一个假设集的break point, 那么 k+1, k+2, ..., 也是这个假设集的 break point).
 
 
 ---
 
+## 4.增长函数边界
+
+从上面我们已经知道, 如果假设集存在 break point, 那么其增长函数不是以2的幂次增长$$m_{\cal H}(N) = 2^N$$. 对于(2.1)不等式中的泛化误差边界$$\sqrt{\frac{1}{n} \ln \frac{2M}{\delta}}$$, 我们先前的想法是让增长函数(假设集有效数$$m_{\cal H}(N)$$)来替代, 但是这个又是2的幂次, 就比较困难, 然后我们引入 break point k, 将增长函数的范围缩小点, 如果增长函数$$m_{\cal H}(N)$$可以写成 N的二项式形式, 那么泛化误差边界在$$N\rightarrow \infty$$ 时, 其值也趋近于0(这个是怎么得到的, 对边界去极限可得到, 暂时为详细计算, 大概如此猜想).
+
+那么下面的目标就是将增长函数限定到一定的边界中.
+
+首先我们要引入一个基于 break point 的定义.
+
+### 定义2.4 B(N, k) combinatorial quantity
+
+> B(N, k) is the maximum number of dichotomies on N points such that no subset of size k of the N points can be shattered by these dichotomies.
+
+定义的内容是什么呢?
+
+B(N, k) 是 N点下的二分进制(dichotomies)的最大数目, 如此 N 个点中 k个 子点不能被这些二分进制(dichotomies) shatter.
+
+白话一点, 如果没有 break point k, 那么对于一个假设集, 其训练样本数目有N个, 那么其有效数为$$2^N$$, 但是存在 break point k, 我们先不管这个 k 是多少, 对于任意一个假设集$${\cal H}$$, 我们都用 B(N, k)来表示其有效数的最大值, 在这种情况下的 最大的数目的 dichotomies 不能shatter N个数据样本集中的任意子集(样本数目为k).
+
+$$m_{\cal H}(N) \leq B(N, k); \text{if k is a break point for} \ {\cal H}$$
+
+B 取自 "binomial".
+
+现在我们的目标又转化为 B(N, k). 看看B(N, k)能否变为N的多项式形式$$B(N, k) \leq poly(N)$$.
+
+为评估其值, 我们可以首先可以确定:
+
+$$B(N, 1) = 1  \\
+B(1, k) = 2, \ for \ k>1 $$
+
+- 对于第一个等式, 容易理解, break point 为1, 数据集N中任意一个点, 假设都不能shatter, 其值$$B(N, 1) < 2^1$$, 那么就只能等于1了.
+- 对于第二个等式, 可以这么理解.
+  - k=1, 则是第一个等式的情形;
+  - k>1, 则只有一个点的数据集中的任意子集(k个点)不能被shatter. 我们发现一个矛盾, 数据集只有一个点, 怎么会出现k>1个点呢, 这只能说明, 在这种情况下, 只有1个点能被shatter. 即有$$B(1, k) = 2$$.
+
+下面我们要考察的是$$N \geq 2$$和$$k \geq 2$$的情况.
+
+![](https://dn-learnml.qbox.me/image/ai/lfd_def_2_4_k_shatter.JPG)
+
+如上表, 我们可以列出关于N个数据点$$x_1, x_2, ..., x_N$$的假设集的 dichotomies. 如果分开观察前N-1个点$$x_1, x_2, ..., x_{N-1}$$, 与第N个点$$x_N$$, 我们可以划分出如上表的情形.
+
+- $$S_1$$中, 前N个点的dichotomies和$$S_2$$中的dichotomies各部相同, 其$$x_N$$的标签要么是{+1}, 那么是{-1}.
+- $$S_2$$中, 又可划分出$$S_2^+, S_2^-$$.
+  - $$S_2^+$$中的第N个点的标签却为{+1}, 即$$h(x_N) = +1$$
+  - $$S_2^-$$中的第N个点的标签却为{-1}, 即$$h(x_N) = -1$$
+
+如果这样还不好理解, 我们可以看看4个点的例子, 如下图所示.
+
+![](https://dn-learnml.qbox.me/image/ai/lfd_def_2_4_bi_shatter.JPG)
+
+上图紫色区域内正好对应上表中的$$S_1$$区域, 而非紫色区域对应上表中的$$S_2$$区域. 因为在上图$$S_2$$区域中, 前3个点dichotomies成双成对出现(因为$$x_4$$标签有2种情况嘛, 所以就成双成对出现).
+
+继续N个点的dichotomies的讨论. 按上表划分出所有的dichotomies, 总数量为
+
+$$B(N, k) = \alpha + 2\beta \tag{2.4} = (\alpha + \beta) + \beta$$
+
+接下来, 考察前N-1个点的dichotomies, 如上表中的$$S_1 + S_2^+$$区域, 重复的 dichotomies $$S_2^-$$就不再放入讨论.
+
+根据B(N,k)的定义, N个数据集中的任意k个点的子集都不能被假设集"shatter", 那么前N-1个数据集中的任意k个点的子集也不能被假设集"shatter". 这就得到
+
+$$\alpha + \beta \leq B(N-1, k) \tag{2.5}$$
+
+这下就只剩下一个$$\beta$$啦, 那么我们来考虑一下它, 如$$S_2^-$$区域中的dichotomies. 如果前N-1个点中存在k-1个点被假设集"shatter"的话, 再加上第N个点$$x_N$$, 这样就有k个点被"shatter", 与题设(不能被k个点"shatter")矛盾啦.[这里为什么会这样, 因为$$S_2^-$$中的$$x_N$$只有一个标签, 加到前N-1个点中, 肯定会出现k个点被"shatter".] 如此, 我们就可以得到
+
+$$\beta \leq B(N-1, k-1) \tag{2.6}$$.
+
+(2.4)在(2.5)和(2.6)的情形下就可以得出:
+
+$$B(N,k) \leq B(N-1, k) + B(N-1, k-1) \tag{2.7}$$
+
+这样利用式(2.7)和前面已知的两个值, 就可以得到所有的B(N,k), 如下表所示.
+
+![](https://dn-learnml.qbox.me/image/ai/lfd_def_2_4_table_b.JPG)
+
+下面就要利用归纳法求得B(N, k)的边界.
+
+**Lemma2.3**(Sauer's Lemma)
+
+$$B(N, k) \leq \sum_{i=0}^{k-1} \binom N i$$
+
+证明, 利用归纳法.
+
+(1) k=1, N=1时, 不等式成立;  
+(2) 假设对于所有$$N \leq N_o, k$$, 不等式也成立, 那么我们只要证(3)成立即可  
+(3) $$B(N_o + 1, k) \leq B(N_o, k) + B(N_o, k-1)$$  
+(4) 因为
+
+$$\begin{align}
+B(N_o + 1, k) &\leq \sum_{i=0}^{k-1} \binom {N_o} i +\sum_{i=0}^{k-2} \binom {N_o} i  \\
+  &= 1 + \sum_{i=1}^{k-1} \binom {N_o} i  + \sum_{i=1}^{k-1} \binom {N_o} {i-1} \\
+  &= 1 + \sum_{i=1}^{k-1} \left[ \binom {N_o} i + \binom {N_o} {i-1} \right] \\
+  &= 1 + \sum_{i=1}^{k-1} \binom {N_o +1} {i}, \text{extend to prove it}\\
+  &= \sum_{i=0}^{k-1} \binom {N_o +1} {i}
+\end{align}$$
+
+得证.
+
+注: $$\begin{align}
+\binom {N} i + \binom {N} {i-1} & = \frac{N!}{i!(N-i)!} + \frac{N!}{(i-1)!(N-i+1)!} \\
+  &= \frac{N \cdot (N-1) \cdots (N-i+1)}{i!} + \frac{i \cdot N \cdot (N-1) \cdots (N-i+2)}{i(i-1)!} \\
+  &= \frac{N \cdot (N-1) \cdots (N-i+2) \cdot (N-i+1) + i \cdot N \cdot (N-1) \cdots (N-i+2)}{i!} \\
+  &= \frac{N \cdot (N-1) \cdots (N-i+2) \cdot (N+1)}{i!} \\
+  &= \frac{(N+1)!}{i!(N+1-i)} \\
+  &= \binom {N+1} {i}
+  \end{align}$$
+
+因此根据 **Lemma2.3** 我们就找到B(N,k)的边界$$B(N,k) \leq \sum_{i=0}^{k-1} \binom N i$$, 它是关于N的多项式.
+
+又因为B(N,k)是假设集有效数的边界, 所以我们可以得到有效数的边界, 而且这个边界是关于N的多项式.
+
+$$m_{\cal H}(N) \leq B(N, k) \leq \sum_{i=0}^{k-1} \binom N i$$
+
+## 5.千山万水总是情
+
+经历千山万水, 我们终于得到假设集有效数的边界.
+
+**Theorem 2.4**
+
+> If $$m_{\cal H}(k) < 2^k$$ for some value k, then $$m_{\cal H}(k) \leq \sum_{i=0}^{k-1} \binom N i$$
+
+不等式右边是关于N的多项式. 这样误差边界就容易确定.
+
 ## 参考
 
 1. [Learning From Data - A Short Course](http://www.amlbook.com/support.html#_echapters) Chapter 2 Training VS Testing
-2. 台大[机器学习基石 L5 slider](http://www.csie.ntu.edu.tw/~htlin/mooc/doc/05_handout.pdf)
+2. 台大[机器学习基石 L5 slider.pdf](http://www.csie.ntu.edu.tw/~htlin/mooc/doc/05_handout.pdf)
 3. [凸集](https://baike.baidu.com/item/%E5%87%B8%E9%9B%86)
+4. 台大 [机器学习基石 L6 slider.pdf](http://www.csie.ntu.edu.tw/~htlin/mooc/doc/06_handout.pdf)
