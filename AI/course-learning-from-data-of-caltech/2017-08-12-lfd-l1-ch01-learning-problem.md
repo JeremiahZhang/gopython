@@ -1,3 +1,11 @@
+---
+layout: post
+title: LFD第一章笔记:机器学习问题
+categories:
+- MachineLearning
+- LearningFromData
+---
+
 # L1 The learning problem
 
 讲师首先讲了课程大纲，所按逻辑为以下。
