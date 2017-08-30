@@ -62,15 +62,74 @@ $$\lim_{x \rightarrow \infty} \frac{\ln x}{x} =0$$
 
 还有一些相关的容易理解的结论, 不过也比较混, 让我们一起来理清.
 
-1. 如果假设集 $$\cal H$$ 能 "shatter"
+> (1) There is a set of N points that can be shattered by $$\cal H$$. In this case, we can conclude that $$d_{vc} \geq N$$
+
+如果数据集中存在一个 N 个点的子集, 假设集 $$\cal H$$ 能 "shatter" 这个子集中的 N 个点, 那么我们可以得出的结论是 $$d_{vc} \geq N$$. (这个容易理解, 假设集能"shatter" N 个点, 那么 break point $$k >= N+1$$, 就可得出结论)
+
+> (2) Any set of N points can be shattered by $$\cal H$$. In this case, we have more than enough information to conclude that $$d_{vc} \geq  N$$
+
+这个容易理解, 假设集"shatter" 任意一个包含N个点的子集, 我们有足够理由得出上面的结论.
+
+> (3) There is a set of N points that cannot be shattered by $$\cal H$$. Based only on this information, we cannot conclude anything about the value of $$d_{vc}$$
+
+数据集中存在一个包含 N 个点的子集, 而假设集不能"shatter"这子集中的 N 个点, 这种情况下, 我们不能得出任何关于 VC维 的信息. 从上面 (1) 的说明中, 我们可以理解这种情况.
+
+> (4) No set of N points can be shattered by $$\cal H$$. In this case, we can conclude that $$d_{vc} < N$$
+
+从数据集中任意取出N个点, 假设集都不能"shatter"它们, 这就说明 $$d_{vc} \leq N-1$$. 因为 break point k = N.
+
+书中练习 2.4 就利用上面的结论证明感知器的 VC维. 对于 d 维的输入空间, 感知器的 VC维数为 $$d_{vc} = d + 1$$.
+
+2-D 感知器, 其 VC维数为 d+1 = 2+1 = 3 = k-1 = 4-1.
+
+其中 d+1 为感知器权重(参数)数目, 我们可以将 VC维看作是该模型参数的有效数目. 因此模型参数越多, 假设集则更多样化(可观察假设集的有效数 $$m_{\cal H}(N)$$ 得到).
+
+>  The eﬀective parameters may be less obvious or implicit. The VC dimension measures these eﬀective parameters or 'degrees of freedom' that enable the model to express a diverse set of hypotheses.
+
+假设集的多样性未必是件好事, 这个还是可以从假设集有效数即 VC维得出. 如果一个假设集很多样化, 其$$m_{\cal H}(N) = 2^N \Rightarrow d_{vc}({\cal H}) = \infty$$, 如此从下面讨论的 VC泛化误差边界得出模型没有泛化能力.
 
 ---
 
 ## 2.VC 泛化误差边界
 
+引出 VC维有什么用处呢? 因为上面提到我们不能直接将假设集有效数 $$m_{\cal H}(N)$$ 替代 M.
+
+我们还不确定不等式(2.11)是否成立.
+
+$$E_{out}(g) \leq^{?} E_{in}(g) + \sqrt{\frac{1}{2N} \ln{\frac{2m_{\cal H}(N)}{\delta}}} \tag{2.11}$$
+
+书中接下来讨论用 VC generalization bound 替代上面的泛化误差边界. 如下所示.
+
+**Theorem 2.5 VC generalization bound**
+
+> $$E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln{\frac{4 m_{\cal H}(2N)}{\delta}}} \tag{2.12}, \forall \delta > 0$$ 该事件发生的概率$$P \geq 1 - \delta$$
+
+从不等式中可以看出 $$m_{\cal H}(2N)$$ 替代进泛化误差上界中. 该数仍然是关于 N 的多项式, 最大阶数为 VC维数 $$d_{vc}$$.
+
+上面的不等式表明: 无限大却具有有限 VC维数的假设集, 其中的每一个假设都拥有好的泛化能力, $$E_{in} \rightarrow E_{out}$$. 因为假设集的有效数(用有限的增长函数)替代假设集实际无穷大的数目.
+
+使用 VC bound 和 Union bouund的直观差异如下图所示.
+
+![](https://dn-learnml.qbox.me/image/ai/lfd-ch02-vc-bound.JPG)
+
+VC bound 将边界范围缩小.
+
+该理论的证明, 可参考书中的附录A, 一层层推导下来, 特有意思.
+
+主要证明: $$\Bbb P \lbrack \sup_{h \in {\cal H}} \lvert E_{in}(h) - E_{out}(h)\rvert > \epsilon \rbrack \leq 4 m_{\cal H}(2N) e^{- \frac{1}{8} \epsilon^2 N}$$
+
+出发点: 两个数据集上 $${\cal D, D'}$$ 上的$$E_{in}, E_{in}'$$.
+
+## 3.SUM
+
+这一小节, 我们了解 VC维数的定义, 已经将泛化误差边界用 VC维数泛化边界表示.
+
 ---
 
 ## 参考
+
+1. [Learning From Data - A Short Course](http://www.amlbook.com/support.html#_echapters) Chapter 2 Training VS Testing
+2. [L6 slider Hsuan-Tien Lin > MOOCs](http://www.csie.ntu.edu.tw/~htlin/mooc/)
 
 ---
 
@@ -78,4 +137,5 @@ $$\lim_{x \rightarrow \infty} \frac{\ln x}{x} =0$$
 
 ```
 @Anifacc
+2017-08-30 beta 1.0 WX
 ```
