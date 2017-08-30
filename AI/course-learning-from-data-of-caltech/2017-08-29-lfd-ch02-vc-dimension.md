@@ -78,7 +78,7 @@ $$\lim_{x \rightarrow \infty} \frac{\ln x}{x} =0$$
 
 从数据集中任意取出N个点, 假设集都不能"shatter"它们, 这就说明 $$d_{vc} \leq N-1$$. 因为 break point k = N.
 
-书中练习 2.4 就利用上面的结论证明感知器的 VC维. 对于 d 维的输入空间, 感知器的 VC维数为 $$d_{vc} = d + 1$$.
+书中练习 2.4 就是利用上面的结论证明感知器的 VC维, 可参见俺的[简要证明](https://github.com/JeremiahZhang/gopython/blob/master/AI/course-learning-from-data-of-caltech/exercise_problems_solu/ch02-training_vs_testing_exercise_problems.ipynb). 对于 d 维的输入空间, 感知器的 VC维数为 $$d_{vc} = d + 1$$.
 
 2-D 感知器, 其 VC维数为 d+1 = 2+1 = 3 = k-1 = 4-1.
 
