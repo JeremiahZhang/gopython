@@ -2,7 +2,9 @@
 
 积累, 规范代码风格
 
-# string
+---
+
+## String 字符串
 
 (1) 全程使用 `format` or `%` 来 formatting strings.
 
@@ -28,7 +30,28 @@ No:
     Gollum("Always the great lint. Watching. Watching.")
 ```
 
+---
 
-# 参考
+## Name 命名
+
+(1) 不要以下面的关键字命名
+
+```
+False   class       finally     is          return
+None    continue    for         lambda      try
+True    def         from        nonlocal    while
+and     del         global      not         with    
+as      elif        if          or          yield
+assert  else        import      pass
+break   except      in          raise
+```
+
+(2) 记住
+
+- 除了计数和迭代的变量, 其他不以单个字符(字母)命名
+- 不用 `-` 来对 package or module 命名
+- 不用 `__double_leading_and_trailing_underscore__` names (reserved by Python)
+
+## 参考
 
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#Strings)
