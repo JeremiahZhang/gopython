@@ -102,6 +102,8 @@
 
 - Genie: Python interpreter 所以 Python 相对于 C(使用 Compiler) 速度相对慢.
 
+> Technically, Python uses a hybird compiling/interpreting process.
+
 ---
 
 ```
