@@ -13,4 +13,16 @@ def main():
         fahrenheit = 9.00 / 5.00  * celsius + 32.00
         print("The temperature is {0:.2f} degrees Fahrenheit.".format(fahrenheit))
 
-main()
+def main2():
+
+    celsius = [x for x in range(0, 101, 10)]
+    fahrenheit = []
+
+    for cel_temp in celsius:
+        fah_temp = 9.00 / 5.00 * cel_temp + 32.00
+        fahrenheit.append(fah_temp)
+
+    print(celsius)
+    print(fahrenheit)
+
+main2()
