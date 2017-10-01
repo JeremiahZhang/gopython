@@ -38,7 +38,14 @@
 - Assignment statements
     - <varibable> = <expr>
     - **simultaneous assignment** <var>, <var>, ..., <var> = <expr>, <expr>, ..., <expr>
+- Loop  
+    - Definite loop: counted loop
+        - control structure
 
+```
+for <var> in <sequence>:
+    <body>
+```
 - Remeber
     - 不同数据存储方式不一样.
     - A variable must always be assigned a value before it can be used in an expression.(变量在使用前, 赋值先)
