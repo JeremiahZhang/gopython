@@ -59,3 +59,65 @@ for <var> in <sequence>:
 Python:
 
 ![](https://dn-learnml.qbox.me/image/programming/ppai2cs_02_02_variable_python.png)
+
+---
+
+## 总结
+
+- 软件开发流程(解决问题流程, 编程流程)
+    - 分析问题, 只有在充分理解问题的基础上, 才能开始编程解决问题.
+    - 程序定义: 确定我们的程序到底要做什么.
+    - 设计程序: 先写个程序的伪代码,
+    - 代码编程: 将伪代码实现为程序代码
+    - 调试: 编织好代码, 调试下, 有没有bug, 反馈改进.
+    - 维护: 不断更新迭代.
+    - (非常重要, 和解题一样, 有趣)
+- 大多程序遵循: input - process - output
+- 程序组成: statements:(identifiers + expressions)
+    - Identifiers: names
+    - expressions: the fragments of a program that produce data.(程序碎片, 构成程序)
+        - literals:(文字) a representation of a specific value
+        - variables: an identifier that stores a value
+        - operators: `+ - * / **`
+- Definite loop(有限循环)
+
+---
+
+## exercise
+
+### Review Questions
+
+> True or False
+
+1. F
+2. T
+3. F
+4. T
+5. F
+6. T
+7. T
+8. F
+9. T
+10. F
+
+> Multiple Choice
+
+1. c
+2. a  
+3. d
+4. c
+5. b  
+6. a, b, d  
+7. b  
+8. a, d  
+9. a  
+10. d  
+
+---
+
+## Change log
+
+```
+@anifacc
+2017.10.01
+```
