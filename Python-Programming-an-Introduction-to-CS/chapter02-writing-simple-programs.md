@@ -23,3 +23,32 @@
 - 6.Maintenance: **Maintenance**: Keeping the program up to date with evolving needs.
 
 ---
+
+## 2.Elements of programs
+
+> Programs manipulate data.
+
+> All data has to be stored on the computer in some digital format, and different types of data are stored in different ways.
+
+- Elements
+    - identifiers: names
+    - expressions
+- Output statements
+    - print 输出
+- Assignment statements
+    - <varibable> = <expr>
+    - **simultaneous assignment** <var>, <var>, ..., <var> = <expr>, <expr>, ..., <expr>
+
+- Remeber
+    - 不同数据存储方式不一样.
+    - A variable must always be assigned a value before it can be used in an expression.(变量在使用前, 赋值先)
+    - The values of variables can be change; that's why they're called variables
+    - Python 赋值, 内部的作用机制不同. **garbage collection**
+
+一般语言:
+
+![](https://dn-learnml.qbox.me/image/programming/ppai2cs_02_01_variable_box.png)
+
+Python:
+
+![](https://dn-learnml.qbox.me/image/programming/ppai2cs_02_02_variable_python.png)
