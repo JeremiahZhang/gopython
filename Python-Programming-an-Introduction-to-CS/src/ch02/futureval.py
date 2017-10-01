@@ -42,6 +42,24 @@ def main3():
     total_accumulation = annual_principal * (1 + apr) * ((1 + apr)**num_year -1) / apr
     print("The total_accumulation of the investment: {}".format(total_accumulation))
 
+# exercise 7
+def main4():
+    print("This program calculates the invest value in ten years.")
+    print("Enter year rate, and the number of times that the interest")
+    print("is compounded each year(periods).")
+
+    # rate
+    print("Please input the principal, year rate, periods, ")
+    principal, rate, periods = eval(input("Seperated by comma: "))
+
+    period_rate = rate / periods
+
+    for i in range(10 * periods):
+        principal = principal * (1 + period_rate)
+
+    print("The value in the years is: {}".format(principal))
+
 # main()
 # main2()
-main3()
+# main3()
+main4()
