@@ -53,3 +53,11 @@
     - `exp(x)`: e^x
     - `ceil(x)`: the smallest whole number >= x 大于等于 x 的最小整数.(天花板)
     - `floor(x)`: <= x 的最大整数.(地板)
+
+## 3.阶乘
+
+> n!
+
+程序编织, 初始化变量. fact = 1.
+
+> Whenever you use the accumulator pattern, make sure you include the proper initialization.
