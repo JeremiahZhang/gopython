@@ -22,6 +22,9 @@
         - exponentiation: `**`
         - absolute value: `abs(x)`
     - python `math` library: `import math`
+    - bits 和 数值 overflow, python 的解决方案.
+    - Python 的混合数值类型中 , 是将 整数型数据 int 转化为 float 型数据.
+    - `int(), float(), round()`
 
 ---
 
@@ -108,4 +111,34 @@ Python 的方案: (并未完全明白)
 
 > These operations will not be as efficient (they require more steps), but they allow our Python ints to grow to arbitrary size. And that's what allows our simple factorial program to compute some whopping large results. This is a very cool feature of Python.
 
-  
+---
+
+## 5.Type of conversions and rounding.
+
+> 类型转换, 和 圆整.
+
+`x = 5.0 * 2`
+
+将 float 浮点数 int, 比较危险, 因为将小数部分去掉.
+而 将 int 转化为 float 则不会出现这样的问题.  
+
+rounding:
+
+```
+>>> import math
+>>> math.pi
+3.141592653589793
+>>> a = math.pi
+>>> round(a, 2)
+3.14
+>>> round(a, 3)
+3.142
+>>> print(round(a, 2))
+3.14
+>>> print(round(a, 3))
+3.142
+```
+
+Remember:
+
+> Floats are always approximations; we get something that's very close to what we requested.
