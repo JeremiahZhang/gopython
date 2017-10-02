@@ -142,3 +142,42 @@ rounding:
 Remember:
 
 > Floats are always approximations; we get something that's very close to what we requested.
+
+可参考 [15. Floating Point Arithmetic: Issues and Limitations — Python 3.6.3rc1 documentation](https://docs.python.org/3.6/tutorial/floatingpoint.html)
+
+---
+
+## Exercises
+
+> True or False
+
+1. T
+2. F
+3. F
+4. T  
+5. F
+6. T
+7. T
+8. F
+9. F
+10. T(in Python3) and F(in Python2)
+
+> Multiple Choice
+
+1. c
+2. d  
+3. d
+4. b
+5. b
+6. c
+7. d
+8. d
+9. a  
+10. d  
+
+---
+
+```
+@anifacc
+2017.10.02
+```
