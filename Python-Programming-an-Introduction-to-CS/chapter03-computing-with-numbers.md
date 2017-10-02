@@ -36,3 +36,20 @@
         - if a, b 都是 int 类型数值, 那么 结果返回 int 值.  对应 Python3 的整除运算 `//`.
         - if a, b 中, 有一个是 float 类型, 那么 返回 float 类型值. 对因 Python3 中的 除法运算 '/'.
     - Python3 中的除法 '/' 总是返回 float 类型数值.
+
+## 2.Math library
+
+- `import math`
+    - `pi`: 圆周率
+    - `e`: 自然数, 2.71828....
+    - `sin(x)`: 三角函数 正弦 sin
+    - `cos(x)`: 三角函数 余弦 cos
+    - `tan(x)`: 三角函数 正切 tan
+    - `asin(x)`: 反函数
+    - `acos(x)`: 反函数
+    - `atan(x)`: 反函数
+    - `log(x)`: lnx
+    - `log10(x)`: log_{10}(x)
+    - `exp(x)`: e^x
+    - `ceil(x)`: the smallest whole number >= x 大于等于 x 的最小整数.(天花板)
+    - `floor(x)`: <= x 的最大整数.(地板)
