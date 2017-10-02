@@ -25,4 +25,16 @@ def main2():
     print(celsius)
     print(fahrenheit)
 
-main2()
+def main3():
+    print("This is a program to convert ")
+    print("Fahrenheit temperature to Celsius.")
+
+    # input
+    fahrenheit = eval(input("What is the Fahrenheit temperature? Enter a number:_>"))
+    # process
+    celsius = (fahrenheit - 32) * 5.00 / 9.00
+    # output
+    print("The temperature is {0:.5f} degrees Celsius.".format(celsius))
+# main()
+# main2()
+main3()
