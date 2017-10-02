@@ -28,3 +28,11 @@
 ## 1.Numeric data types
 
 > The information that is stored and manipulated by computer programs is generically referred to as **data**. Different kinds of data will be stored and manipulated in different ways.
+
+- 能用整数 int 的就用它.
+- Python 中 `/` 总是返回浮点数 float.
+- 除法:
+    - python2: `a / b`
+        - if a, b 都是 int 类型数值, 那么 结果返回 int 值.  对应 Python3 的整除运算 `//`.
+        - if a, b 中, 有一个是 float 类型, 那么 返回 float 类型值. 对因 Python3 中的 除法运算 '/'.
+    - Python3 中的除法 '/' 总是返回 float 类型数值.
