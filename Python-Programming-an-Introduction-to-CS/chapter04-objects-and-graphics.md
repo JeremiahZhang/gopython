@@ -66,3 +66,106 @@ Line(Point(20.0, 30.0), Point(180.0, 199.0))
 >>> oval.draw(win)
 Oval(Point(20.0, 150.0), Point(180.0, 199.0))
 ```
+
+## 3.Using graphical objects
+
+> Objects combine data with operations.
+
+> Every object is an instance of some class, and the class describes the properties the instance will have.
+
+- 类比:
+    - 狗
+        - Fido(狗的名字)
+            - 属性:
+                - four legs
+                - a tail
+                - a cold, wet nose
+                - barks.
+                - ...
+        - Rex(狗的名字)
+            - 属性(同上)
+    - Class
+        - instance
+            - attribute(-- function)
+
+> 建立: To create a new instance of a class, we use a special operation called a **constructor**.
+
+```
+<ClassName>(<param1>, <param2>, ...)
+```
+
+- **instance variables**
+
+![1](https://dn-learnml.qbox.me/image/programming/ppai2cs_ch04_04_class_instance.png)
+
+- **methods**
+
+```
+<object>.<method_name>(<param1>, <param2>, ...)
+```
+
+> Methods that change the state of an object are sometimes called **mutators**(变异).
+
+```
+from graphics import *
+
+circ = Circle(Point(100, 100), 30)
+win = GraphWin()
+cric.draw(win)
+```
+
+流程:
+
+![2](https://dn-learnml.qbox.me/image/programming/ppai2cs_ch04_05_object_interaction_example.png)
+
+> 小心同名. It is possible for two different variables to refer to exactly the same object; changes made to the objext throught on variable will also visible to the other.
+
+案例:
+
+```
+## Incorrect way to create two circles.
+leftEye = Circle(Point(80, 50), 5)
+leftEye.setFill('yellow')
+leftEye.setOutline('red')
+
+rightEye = leftEye
+rightEye.move(20, 0)
+```
+
+**最后一行代码, 将两个 instance 都移动, 因为两个 instances refer to exactly the same object 'Circle'**. 看下图说明
+
+![3](https://dn-learnml.qbox.me/image/programming/ppai2cs_ch04_06_aliases.png)
+
+`leftEye, rightEye` 同名(object).
+
+> The situation where two variables refer to the same object is called **aliasing**, and it can sometimes produce rather unexpected results.
+
+`rightEye` 不要直接用 赋值 `=` 去 copy `leftEye`. 而是要按如下的方法:
+
+```
+## A correct way to create two circle.
+leftEye = Circle(Point(80, 50), 5)
+leftEye.setFill('yellow')
+leftEye.setOutline('red')
+
+rightEye = Circle(Point(80, 50), 5)
+rightEye.setFill('yellow')
+rightEye.setOutline('red')
+```
+
+上面的方法是不是有点冗余, 还有一种优雅的方法:(all graphical objects support a `clone` method that makes a copy of the object.)
+
+```
+## Correct way to create two circles, using clone
+leftEye = Circle(Point(80, 50), 5)
+leftEye.setFill('yellow')
+leftEye.setOutline('red')
+
+# rightEye is an exact copy of the left
+rightEye = leftEye.clone()
+rightEye.move(20, 0)
+```
+
+---
+
+## 4.Graphing future value
