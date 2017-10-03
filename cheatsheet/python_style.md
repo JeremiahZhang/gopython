@@ -105,6 +105,25 @@ from Foob import ar
 
 ---
 
+## 4.main()
+
+[google main](https://google.github.io/styleguide/pyguide.html?showone=Main#Main)
+
+> In Python, `pydoc` as well as unit tests require modules to be importable. Your code should always check if `__name__ == '__main__'` before executing your main program so that the main program is not executed when the module is imported.
+
+```
+def main():
+      ...
+
+if __name__ == '__main__':
+    main()
+
+```
+
+> All code at the top level will be executed when the module is imported. Be careful not to call functions, create objects, or perform other operations that should not be executed when the file is being `pydoc`ed.
+
+---
+
 ## 参考
 
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#Strings)
