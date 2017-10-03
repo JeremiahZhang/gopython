@@ -169,3 +169,41 @@ rightEye.move(20, 0)
 ---
 
 ## 4.Graphing future value
+
+投资的复利 图形化.
+
+**Specification**:
+
+```
+Print an introduction
+Get value of principal and apr from usr
+Create a GraphWin
+Draw scale labels on left side of window  
+Draw bar at position 0 with height corresponding to principal  
+for successive years 1 throught 10
+    Calculate principal = principal * (1 + apr)
+    Draw a bar for this year having a height corresponding to principal
+Wait for usr to press Enter.
+```
+
+推进  
+
+```
+Print an introduction
+Get value of principal and apr from user
+Create a 320x240 GraphWin titled ‘‘Investment Growth Chart’’
+Draw label " 0.0K" at (20, 230)
+Draw label " 2.5K" at (20, 180)
+Draw label " 5.0K" at (20, 130)
+Draw label " 7.5K" at (20, 80)
+Draw label "10.0K" at (20, 30)
+Draw a rectangle from (40, 230) to (65, 230 - principal * 0.02)
+for year running from a value of 1 up through 10:
+    Calculate principal = principal * (1 + apr)
+    Calculate xll = 25 * year + 40
+    Draw a rectangle from (xll, 230) to (xll+25, 230 - principal * 0.02)
+
+Wait for user to press Enter
+```
+
+![4](https://dn-learnml.qbox.me/image/programming/ppai2cs_ch04_coding_results.png)
