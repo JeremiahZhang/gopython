@@ -26,3 +26,43 @@
 ---
 
 ## 2.Simple graphics programming
+
+```
+>>> from graphics import *
+>>> win = GraphWin()
+>>> p = Point(50, 60)
+>>> p.getX()
+50.0
+>>> p.getY()
+60.0
+>>> p.draw(win)
+Point(50.0, 60.0)
+>>> p2 = Point(140, 100)
+>>> p2.draw(win)
+Point(140.0, 100.0)
+>>> win.close()
+>>> win = GraphWin("Shapes")
+>>> win
+GraphWin('Shapes', 200, 200)
+>>> center = Point(100, 100)
+>>> circ = Circle(center, 30)
+>>> circ.setFill("red")
+>>> circ.draw(win)
+Circle(Point(100.0, 100.0), 30)
+>>> label = Text(center, "Red Circle")
+>>> lable.draw(win)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'lable' is not defined
+>>> label.draw(win)
+Text(Point(100.0, 100.0), 'Red Circle')
+>>> rect = Rectangle(Point(30, 30), Point(70, 70))
+>>> rect.draw(win)
+Rectangle(Point(30.0, 30.0), Point(70.0, 70.0))
+>>> line = Line(Point(20, 30), Point(180, 199))
+>>> line.draw(win)
+Line(Point(20.0, 30.0), Point(180.0, 199.0))
+>>> oval = Oval(Point(20, 150), Point(180, 199))
+>>> oval.draw(win)
+Oval(Point(20.0, 150.0), Point(180.0, 199.0))
+```
