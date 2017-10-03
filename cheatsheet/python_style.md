@@ -2,9 +2,13 @@
 
 积累, 规范代码风格
 
+- string 字符串
+- naming 命名
+- imports formatting: import 格式
+
 ---
 
-## String 字符串
+## 1.String 字符串
 
 (1) 全程使用 `format` or `%` 来 formatting strings.
 
@@ -32,7 +36,7 @@ No:
 
 ---
 
-## Name 命名
+## 2.Naming 命名
 
 (1) 不要以下面的关键字命名
 
@@ -70,6 +74,34 @@ local_var_name
 
 > Prepending a single underscore (_) has some support for protecting module variables and functions (not included with `import * from`). Prepending a double underscore (__) to an instance variable or method effectively serves to make the variable or method private to its class (using name mangling).
 
+## 3.Importing Formatting
+
+> (1) 每一行单独 import 库
+
+```
+Yes: import os
+     import sys
+
+No:  import os, sys
+```
+
+> (2) 在脚本顶端起始 import, 顺序
+
+- 标准库 import
+- 第三方库 import
+- application-specific imports (特定应用程序的 import)
+
+> (3) 每一组 import, 按字典顺序排列(字母顺序, 不计大小写, according to each module's full package path.), 比如
+
+```
+import foo
+from foo import bar
+from foo.bar import baz
+from foo.bar import Quux
+from Foob import ar
+```
+
+---
 
 ## 参考
 
