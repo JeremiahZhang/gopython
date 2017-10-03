@@ -101,6 +101,8 @@ from foo.bar import Quux
 from Foob import ar
 ```
 
+> (4) 莫要使用 ~~from foo import *~~
+
 ---
 
 ## 参考
