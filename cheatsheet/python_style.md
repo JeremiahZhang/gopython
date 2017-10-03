@@ -52,6 +52,25 @@ break   except      in          raise
 - 不用 `-` 来对 package or module 命名
 - 不用 `__double_leading_and_trailing_underscore__` names (reserved by Python)
 
+(3) 命名
+
+```
+module_name.py
+package_name.py
+ClassName
+method_name
+ExceptionName
+function_name
+GLOBAL_CONSTANT_NAME
+global_var_name
+instance_var_name
+function_parameter_name
+local_var_name
+```
+
+> Prepending a single underscore (_) has some support for protecting module variables and functions (not included with `import * from`). Prepending a double underscore (__) to an instance variable or method effectively serves to make the variable or method private to its class (using name mangling).
+
+
 ## 参考
 
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#Strings)
