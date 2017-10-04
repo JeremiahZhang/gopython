@@ -221,6 +221,7 @@ Wait for user to press Enter
 **Event driven programming.**
 
 - Getting mouse click.
+- Handling textual input.
 
 ---
 
