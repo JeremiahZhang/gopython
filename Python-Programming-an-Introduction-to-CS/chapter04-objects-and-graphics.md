@@ -214,7 +214,14 @@ Wait for user to press Enter
 
 人为计算坐标, 再编程比较麻烦. 让程序自动转换, 则方便许多.
 
+---
 
+## 6.GUI 交互编程
 
+**Event driven programming.**
+
+- Getting mouse click.
+
+---
 
 ## Summary
