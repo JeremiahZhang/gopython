@@ -223,6 +223,13 @@ Wait for user to press Enter
 - Getting mouse click.
 - Handling textual input.
 
+## 7.Graphics module reference
+
+具体可参考书本88-92页.
+
 ---
 
 ## Summary
+
+- 了解对象
+- GUI编程了解对象.
