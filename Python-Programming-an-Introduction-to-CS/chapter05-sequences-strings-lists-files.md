@@ -368,6 +368,28 @@ AttributeError: 'str' object has no attribute 'captitalize'
 
 ---
 
+## 6.List Methods
+
+`list.append()`
+
+and so on, 详细查看 python document
+
+---
+
+## 7.From Encoding to Encryption
+
+> The process of Encoding information for the purpose of keeping it secret or transmitting it privately is called *Encryption*.
+
+- Encryption
+    - `plaintext` 明码
+    - `cipher alphabet` 编码表
+    - `ciphertext` 密码
+- private key
+- public key
+
+---
+
+
 ---
 
 ## Sum
