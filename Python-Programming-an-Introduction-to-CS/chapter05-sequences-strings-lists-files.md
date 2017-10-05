@@ -175,6 +175,31 @@ List 的厉害之处就是可以存放 任意类型的数据, 对象.
 [1, 'Spam', 4, 'U']
 ```
 
+> Lists are mutable. Strings are not.
+
+```
+05 $ python3
+Python 3.5.2 (default, Sep 14 2017, 22:51:06)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_list = [1, 3, 5, 7]
+>>> my_list[2]
+5
+>>> my_list[2] = 9
+>>> my_list
+[1, 3, 9, 7]
+>>>
+>>> my_string = 'Hello World'
+>>> my_string[2]
+'l'
+>>> my_string[2] = 'Z'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object does not support item assignment
+```
+
+
+
 ---
 
 ## Sum
