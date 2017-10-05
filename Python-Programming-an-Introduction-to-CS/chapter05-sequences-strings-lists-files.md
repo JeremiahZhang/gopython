@@ -486,7 +486,213 @@ TypeError: eval() arg 1 must be a string, bytes or code object
 
 对计算机不是那么精确的处理方法:
 
+`change2.py`
 
+---
+
+## 9.File Processing
+
+- Multi-Line strings: `\n`
+- File Processing
+    - 1.`opening` file. We need some way to associate a file on disk with an object in a program
+    - 2.Manipulate the file object. `reading, writing,...`
+    - 3.Finished. `close`
+
+```
+1. <variable> = open(<name>, <mode>)
+    + mode: "r", "w"
+    + example:
+        infile = open("numbers.dat", "r")
+2. Operations:
+    + reading:
+        - <file>.read() : all
+        - <file>.readline() : returns the next line of the file
+        - <file>.readlines() : returns a list of the remaining lines in the file.
+```
+
+Example:
+
+```
+anifacc@mint ~/Documents/gopython/Python-Programming-an-Introduction-to-CS/src/ch05 $ python3 printfile.py
+Enter filename: change2.py
+# change2.py
+#   A program to calculate the value of some change in dollars.
+#   This version represents the total cash in cents.
+
+def main():
+    print("Change Counter\n")
+
+    print("Please enter the count of each coin type.")
+
+    quarters = eval(input("Quarters: "))
+    dimes = eval(input("Dimes: "))
+    nickels = eval(input("Nickels: "))
+    pennies = eval(input("Pennies: "))
+
+    total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+
+    print("The tatal value of your change is ${0}.{1:0>2}"
+          .format(total//100, total%100))
+
+if __name__ == '__main__':
+    main()
+
+anifacc@mint ~/Documents/gopython/Python-Programming-an-Introduction-to-CS/src/ch05 $
+```
+
+readline example:
+
+```
+$ python3
+Python 3.5.2 (default, Sep 14 2017, 22:51:06)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> infile = open("change2.py", "r")
+>>> for i in range(5):
+...     line = infile.readline()
+...     print(line[:-1])
+...
+# change2.py
+#   A program to calculate the value of some change in dollars.
+#   This version represents the total cash in cents.
+
+def main():
+```
+
+one way to loop through the entire contents of a file is to read in all of the file using `readlines` and then loop through the resulting list.
+
+```
+>>> infile = open("change2.py", "r")
+>>> i = 0
+>>> for line in infile.readlines():
+...     i += 1
+...     print("{}: {}".format(i, line)
+...
+... )
+...
+1: # change2.py
+
+2: #   A program to calculate the value of some change in dollars.
+
+3: #   This version represents the total cash in cents.
+
+4:
+
+5: def main():
+
+6:     print("Change Counter\n")
+
+7:
+
+8:     print("Please enter the count of each coin type.")
+
+9:
+
+10:     quarters = eval(input("Quarters: "))
+
+11:     dimes = eval(input("Dimes: "))
+
+12:     nickels = eval(input("Nickels: "))
+
+13:     pennies = eval(input("Pennies: "))
+
+14:
+
+15:     total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+
+16:
+
+17:     print("The tatal value of your change is ${0}.{1:0>2}"
+
+18:           .format(total//100, total%100))
+
+19:
+
+20: if __name__ == '__main__':
+
+21:     main()
+
+```
+
+看到, 每一次 print 都会换行. 我们可以改为:
+
+```
+>>> infile.close()
+>>> infile = open("change2.py", "r")
+>>> i = 0
+>>> for line in infile.readlines():
+...     i += 1
+...     print("{}: {}".format(i, line), end="")
+...
+1: # change2.py
+2: #   A program to calculate the value of some change in dollars.
+3: #   This version represents the total cash in cents.
+4:
+5: def main():
+6:     print("Change Counter\n")
+7:
+8:     print("Please enter the count of each coin type.")
+9:
+10:     quarters = eval(input("Quarters: "))
+11:     dimes = eval(input("Dimes: "))
+12:     nickels = eval(input("Nickels: "))
+13:     pennies = eval(input("Pennies: "))
+14:
+15:     total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+16:
+17:     print("The tatal value of your change is ${0}.{1:0>2}"
+18:           .format(total//100, total%100))
+19:
+20: if __name__ == '__main__':
+21:     main()
+```
+
+或者:
+
+```
+infile = open(some_file, "r")
+for line in infile:
+    # process the line here
+
+infile.close() # 一定要close file.
+```
+
+Example:
+
+```
+>>> infile.close()
+>>> infile = open("change2.py", "r")
+>>> for line in infile:
+...     print(line, end="")
+...
+# change2.py
+#   A program to calculate the value of some change in dollars.
+#   This version represents the total cash in cents.
+
+def main():
+    print("Change Counter\n")
+
+    print("Please enter the count of each coin type.")
+
+    quarters = eval(input("Quarters: "))
+    dimes = eval(input("Dimes: "))
+    nickels = eval(input("Nickels: "))
+    pennies = eval(input("Pennies: "))
+
+    total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+
+    print("The tatal value of your change is ${0}.{1:0>2}"
+          .format(total//100, total%100))
+
+if __name__ == '__main__':
+    main()
+>>> infile.close()
+```
+
+### 9.1 Programming Example.
+
+
+`userfile.py`
 
 ---
 
