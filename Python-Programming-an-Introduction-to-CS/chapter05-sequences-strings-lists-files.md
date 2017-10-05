@@ -138,3 +138,43 @@ Example:
 
 - `Elmer Thudpucker -- > ethudpuc`
 - `John Smith --> jsmith`
+
+---
+
+## 3.Lists as Sequences
+
+> Python lists are also a kind of Sequences.
+
+因此, String 中 的 operation , 同样适用于 List.
+
+```
+S/src/ch05 $ python3
+Python 3.5.2 (default, Sep 14 2017, 22:51:06)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> [1, 2] + [3, 4]
+[1, 2, 3, 4]
+>>> [1, 2] * 3
+[1, 2, 1, 2, 1, 2]
+>>> grades = ['a', 'b', 'c', 'd', 'e']
+>>> grades[0]
+'a'
+>>> grades[2: 4]
+['c', 'd']
+>>> len(grades)
+5
+```
+
+> Lists can be sequences of arbitrary objects.
+
+List 的厉害之处就是可以存放 任意类型的数据, 对象.
+
+```
+>>> my_list = [1, 'Spam', 4, 'U']
+>>> my_list
+[1, 'Spam', 4, 'U']
+```
+
+---
+
+## Sum
