@@ -307,6 +307,66 @@ SyntaxError: Missing parentheses in call to 'print'
 3.14
 ```
 
+### 5.2 More String methods
+
+```
+>>> s = 'hello, I came here for an argument'
+>>> s.captitalize()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'str' object has no attribute 'captitalize'
+>>> s.capitalize()
+'Hello, i came here for an argument'
+>>> s.title()
+'Hello, I Came Here For An Argument'
+>>> s.lower()
+'hello, i came here for an argument'
+>>> s.upper()
+'HELLO, I CAME HERE FOR AN ARGUMENT'
+>>> s
+'hello, I came here for an argument'
+>>> s.replace('I', 'you')
+'hello, you came here for an argument'
+>>> s.center(30)
+'hello, I came here for an argument'
+>>> s.center(50)
+'        hello, I came here for an argument        '
+>>> s.count('e')
+5
+>>> s.find(',')
+5
+>>> " ".join(['Number', 'one,', 'the', 'Larch'])
+'Number one, the Larch'
+>>> 'spam '.join(['Number', 'one,', 'the', 'Larch'])
+'Numberspam one,spam thespam Larch'
+>>>
+
+>>> ss = " hello "
+>>> ss.lstrip()
+'hello '
+>>> ss.rstrip()
+' hello'
+>>>
+
+```
+
+- `s.capitalize()`: Copy of s with only the 1st character capitalized
+- `s.center(width)`: Copy of s Centered s in a filed of given width
+- `s.count(sub)`: Find the number of occurrence of sub in `s`
+- `s.find(sub)`: Find the 1st position where `sub` occurs in `s`
+- `s.join(list)`: Concatenate `list` into a string, using `s` as separator
+- `s.ljust(width)`: Like `center`, but s is left-justified.
+- `s.lower()`
+- `s.lstrip()`: Copy of `s` with leading white space removed.
+- `s.replace(old_sub, new_sub)`
+- `s.rfind(sub)`: Like `find`, but returns the rightmost position
+- `s.rjust(width)`: Like `center`, but `s` is right-justified.
+- `s.rstrip()`: Copy of `s` with trailing white space removed.
+- `s.split()`: Split `s` into a list  of substrings
+- `s.title()`: Copy of `s` with first character of each word capitalized
+- `s.upper()`: Copy of `s` with all characters converted to upper case.
+
+---
 
 ---
 
