@@ -389,6 +389,34 @@ and so on, 详细查看 python document
 
 ---
 
+## 8.Input/Output as String Manipulation
+
+### 8.1 Data coversion
+
+```
+>>> int("008")
+8
+>>> int("05")
+5
+>>> int("009")
+9
+>>> int(009)
+  File "<stdin>", line 1
+    int(009)
+          ^
+SyntaxError: invalid token
+>>> eval("05")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<string>", line 1
+    05
+     ^
+SyntaxError: invalid token
+>>> eval("5")
+5
+```
+
+
 
 ---
 
