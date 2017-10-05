@@ -11,6 +11,27 @@
     - **Basic concepts of cryptography**(密码学).
     - Understand and write programs that **process textual information**.
 - Sum
+    - Strings
+    - String methods
+    - One way of converting numeric information into string information is to use a string or a list as a lookup table
+    - List are more general than strings
+        - Strings are always sequences of characters, whereas lists can contain values of any type.
+        - Lists are mutable, which means that items in a list can be modified by assigning new values.
+    - Strings are represented in the computer as numeric codes.
+        - ASCII
+        - Unicode
+        - UTF-8
+    - Python Built-in methods for string and list processing
+    - The process of encoding data to keep it private is called encryption. There are two different kinds of encryption systems: private key, and public key.
+    - Program input and output often involve string processing. Python provides numerous operators for converting back and forth between numbers and string. The string formatting method (`format`) is particularly useful for producing nicely formatted output.
+    - Text files are Multi-Line strings stored in secondary memory.
+        - open
+        - write
+        - reading: read(), `readline()`, `readlines()`  
+        - close  
+        - ...
+        - It is also possible to iterate through the lines of a file with a for loop.
+        - Remember to close the file.
 
 ---
 
@@ -697,3 +718,27 @@ if __name__ == '__main__':
 ---
 
 ## Sum
+
+- Strings
+- String methods
+- One way of converting numeric information into string information is to use a string or a list as a lookup table
+- List are more general than strings
+    - Strings are always sequences of characters, whereas lists can contain values of any type.
+    - Lists are mutable, which means that items in a list can be modified by assigning new values.
+- Strings are represented in the computer as numeric codes.
+    - ASCII
+    - Unicode
+    - UTF-8
+- Python Built-in methods for string and list processing
+- The process of encoding data to keep it private is called encryption. There are two different kinds of encryption systems: private key, and public key.
+- Program input and output often involve string processing. Python provides numerous operators for converting back and forth between numbers and string. The string formatting method (`format`) is particularly useful for producing nicely formatted output.
+- Text files are Multi-Line strings stored in secondary memory.
+    - open
+    - write
+    - reading: read(), `readline()`, `readlines()`  
+    - close  
+    - ...
+    - It is also possible to iterate through the lines of a file with a for loop.
+    - Remember to close the file.
+
+    ---
