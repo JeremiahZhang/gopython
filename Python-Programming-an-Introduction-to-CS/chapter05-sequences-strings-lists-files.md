@@ -254,6 +254,58 @@ String 表达, 计算机的执行 与 数值执行 没有任何差异. 只不过
 
 ### 4.2 Programming an Encoder
 
+`text2numbers.py`
+
+---
+
+## 5.String Methods
+
+### 5.1 Programming a Decoder.
+
+`分割string: string.split(<params>)`
+
+```
+>>> my_string = 'hello, string methods!'
+>>> my_string.split()
+['hello,', 'string', 'methods!']
+>>> "32,24,25,57".split(",")
+['32', '24', '25', '57']
+>>> "1, 3, 5, 57".split(", ")
+['1', '3', '5', '57']
+>>> "1, 3, 5, 57".split(",")
+['1', ' 3', ' 5', ' 57']
+>>>
+```
+
+`.split()` 中的参数不同, 结果也不同. 输出的结果是 `list`, a list of strings.
+
+```
+>>> num_str = '500'
+>>> a = eval(num_str)
+>>> a
+500
+>>> type(a)
+<class 'int'>
+>>> eval('345.67')
+345.67
+>>> x = 3.5
+>>> y = 4.7
+>>> eval(x * y)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: eval() arg 1 must be a string, bytes or code object
+>>> eval('x * y')
+16.45
+>>> x = eval(input('Enter a number: '))
+Enter a number: 3.14
+>>> print x
+  File "<stdin>", line 1
+    print x
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> print(x)
+3.14
+```
 
 
 ---
