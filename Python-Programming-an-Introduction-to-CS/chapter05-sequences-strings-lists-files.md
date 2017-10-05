@@ -444,6 +444,45 @@ TypeError: eval() arg 1 must be a string, bytes or code object
 
 ```
 
+### 8.2 String Formatting  
+
+- 格式: `<template_string>.format(<value>)`
+- slot {} : `{<index>:<format-specifier>}`
+- 0.2f : `<width>.<precision><type>`
+    - 0: use as much as space as you need
+- Examples:
+
+```
+>>> "Hello {0} {1}".format("Mr.", "Anifacc")
+'Hello Mr. Anifacc'
+>>> "This int, {0:5}, was placed in a field of width 5".format(7)
+'This int,     7, was placed in a field of width 5'
+>>> "This int, {0:10}, was placed in a field of width 10".format(7)
+'This int,          7, was placed in a field of width 10'
+>>> "This float, {0:10.5}, has width 10 and precision 5".format(3.1415926)
+'This float,     3.1416, has width 10 and precision 5'
+>>> "This float, {0:10.5f}, has width 10 and is fixed at 5 decimal places".format(3.1415926)
+'This float,    3.14159, has width 10 and is fixed at 5 decimal places'
+>>> "This float, {0:0.5}, has width0  and precision 5".format(3.1415926)'This float, 3.1416, has width0  and precision 5'
+>>> "Compare {0} and {0:0.20f}".format(3.14)
+'Compare 3.14 and 3.14000000000000012434'
+>>>
+
+```
+
+左中右对齐: `<`, `^`,  `>`
+
+```
+>>> "left justification: {0:<5}".format("Hi!")
+'left justification: Hi!  '
+>>> "right justification: {0:>5}".format("Hi!")
+'right justification:   Hi!'
+>>> "centered: {0:^5}".format("Hi!")
+'centered:  Hi! '
+>>>
+```
+
+
 ---
 
 ## Sum
