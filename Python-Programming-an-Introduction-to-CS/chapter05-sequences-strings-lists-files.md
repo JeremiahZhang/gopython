@@ -416,7 +416,33 @@ SyntaxError: invalid token
 5
 ```
 
+- type conversion functions
+    - `float(<expr>)`
+    - `int(<expr>)`
+    - `str(<expr>)`
+    - `eval(<expr>)`
 
+```
+Python 3.5.2 (default, Sep 14 2017, 22:51:06)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> float("003.5")
+3.5
+>>> float(3.5)
+3.5
+>>> str(3.5)
+'3.5'
+>>> str(003.5)
+'3.5'
+>>> eval(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: eval() arg 1 must be a string, bytes or code object
+>>> eval("1.0")
+1.0
+>>>
+
+```
 
 ---
 
