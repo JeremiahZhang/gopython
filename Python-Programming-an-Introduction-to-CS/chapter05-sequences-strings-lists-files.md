@@ -198,6 +198,62 @@ Traceback (most recent call last):
 TypeError: 'str' object does not support item assignment
 ```
 
+---
+
+## 4.String Representation and Message Encoding
+
+### 4.1 String Representation
+
+String 表达, 计算机的执行 与 数值执行 没有任何差异. 只不过是 String 而已.
+
+类比:
+
+- 编码: 课堂传纸条, 使用密码:
+    - `a-z: 1-26`
+    - `18, 14, 20, 17, 15, 20, 18, 18` represents a word.
+    - 这类似 计算机表示 strings 的方法.
+
+> Each character is translated into a number, and the entire string is stored as a sequence of (binary) numbers in computer memory. It doesn't really matter what number is used to represent any given character as long as the computer is consistent about the encoding/decoding process.
+
+> In the early days of computing, different designers and manufacturers used different encodings. You can imagine what a headache this was for people transferring data between different systems.
+
+现在有标准啦: industry standard encodings.
+
+- **ASCII**(American Standard Code for Information Interchange) 0-127 to represent the characters typically found on an (American) computer keyboard, as well as certain special values known as *control codes* that are used to coordinate the sending and receiving of Information.
+    - 大写 `A-Z : 65-90`
+    - 小写 `a-z : 97-122`
+    - problem: it is American-centric. It doesnot have symbols that are needed in many other languages.
+    - Extended ASCII encodings. Unicode.
+- `Unicode`: a much larger standard that includes support for the characters of nearly all written languages.
+    - *Python strings support the Unicode standard*, so you can wrangle characters from just about any language, provided your os has appropriate fonts for displaying the characters.
+    - *Built-in funcitions*:
+        - `ord`: returns the numeric("ordinal") code of a single-character string.
+        - `chr`: gees the other direction.
+
+```
+>>> ord('a')
+97
+>>> ord('A')
+65
+>>> chr(97)
+'a'
+>>> chr(90)
+'Z'
+```
+
+上面的编码是按 ASCII 标准执行的诺.
+
+- The addressable piece is typically 8 bits = 1 byte of memory.
+- 1 byte = 2 ^ 8 = 256 bits, 可存 256种 different values
+
+这样看, ASCII 编码 使用 7bits = 2^7 = 128. 而在 Unicode 总, 1 byte 不能满足存储 100,000+ 可能的 Unicode 编码 字符 characters. 怎么办呢?  **UTF-8**.
+
+- `UTF-8` encoding:
+    - A variable-length encoding that uses a single byte to store characters that are in the ASCII subset, but may need up to 4 bytes in order to represent some of the more esoteric characters.
+    - That means that a string of length 10 characters will end up getting stored in memory as a sequence between 10 and 40 bytes, depending on the actual characters used in the string.
+
+### 4.2 Programming an Encoder
+
 
 
 ---
