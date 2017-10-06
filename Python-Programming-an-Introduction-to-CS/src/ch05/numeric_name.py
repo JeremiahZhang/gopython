@@ -1,5 +1,5 @@
 # numeric_name.py
-#   A program to calculates the numeric value of a single name
+#   A program to calculate the numeric value of a single name
 #   provided as input.
 #   Example: Zelle: 26+5+12+12+5 = 60
 #            a is 1, b is 2, ..., z is 26.
@@ -11,7 +11,7 @@ The numeric value of the name Zelle is 60.
 """
 
 def main():
-    print("This program is to calculates the numeric value")
+    print("This program is to calculate the numeric value")
     print("single name.")
 
     # Input
