@@ -87,4 +87,40 @@ if __name__ == '__main__':
 
 ## 3.Example
 
-  
+`futval_graph3.py`
+
+---
+
+## 4.Functions and Parameters: The Exciting Details
+
+`function` 内使用的变量 都是 `local`型 局部变量.
+
+函数定义形式:
+
+```
+def <name>(<formal_parameters>):
+    <body>
+```
+
+形式参数: 形参 `forml_parameters` 只能在 function 内部使用.
+
+函数调用形式:
+
+```
+<name>(<actual_parameters>)
+```
+
+`actual_parameters` or `arguments` 参数.
+
+Python 函数调用步骤:
+
+- The calling program suspends execution at the point of the call
+- The formal parameters of the function get assigned the values supplied by the actual_parameters in the call
+- The body of the function is executed.
+- Control return to the point just after where the function was called.
+
+有编程基础很容易理解.
+
+---
+
+## 5.Getting Results from a Function  
