@@ -11,6 +11,7 @@
         - 方便协作
         - 高效率
         - 可迁移性更强
+        - 模块化, 可读性强.
     - 自己定义函数:
         - call
         - 传递参数
@@ -178,3 +179,11 @@ $ python3 add_interest3.py
 因为 `amounts` 为 `list`, 可修改. 传递到 function 操作后, 内部值改变.
 
 > In Python parameters are always passed by value. However, if the value of the variable is a mutable object(like a list or graphics object), then changes to the state of the object will be visible to the calling program.
+
+---
+
+## 6.Functions and Program Structure.
+
+模块化.
+
+`futval_graph4.py`
