@@ -187,3 +187,21 @@ $ python3 add_interest3.py
 模块化.
 
 `futval_graph4.py`
+
+---
+
+## Sum  
+
+- Function 本质就是一个子程序.
+    - 其使用参数
+    - 其调用方法
+    - 其返回值
+    - ...
+- Function 好处:
+    - 减少重复
+    - 模块化结构化程序
+- Function 调用时 Python的进行的4个步骤
+- 形式参数与 主参数 区分
+- Python passes parameters by value. If the value being passed is a mutable object, then changes made to the object may be visible to the caller.
+
+---
