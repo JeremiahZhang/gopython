@@ -124,3 +124,5 @@ Python 函数调用步骤:
 ---
 
 ## 5.Getting Results from a Function  
+
+`triangle2.py`
