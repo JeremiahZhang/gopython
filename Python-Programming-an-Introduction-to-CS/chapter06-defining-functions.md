@@ -125,4 +125,56 @@ Python 函数调用步骤:
 
 ## 5.Getting Results from a Function  
 
+#### 5.1 Functions That Return values
+
 `triangle2.py`
+
+### 5.2 Functions That Modify Parameters  
+
+> Python does not allow passing parameters by reference. (C++ & Ada ..., do allow variables themselves to be sent as parameters to function).
+
+Python 函数中的变量 无法影响 Argument. 只有返回值 赋予 Argument 变量 才起作用.
+
+```
+# add_interest.py
+
+def add_interest(balance, rate):
+    new_balance = balance * (1 + rate)
+    return new_balance
+
+def test():
+    amount = 1000
+    rate = 0.05
+    amount = add_interest(amount, rate)
+    print(amount)
+
+if __name__ == '__main__':
+    test()
+```
+
+但 `list` 在其中, 就可以改变.
+
+```
+# add_interest3.py
+
+def add_interest(balances, rate):
+    for i in range(len(balances)):
+        balances[i] = balances[i] * (1 + rate)
+
+def main():
+    amounts = [1000, 2200, 800, 360]
+    rate = 0.05
+    add_interest(amounts, rate)
+    print(amounts)
+
+if __name__ == '__main__':
+    main()
+
+---
+$ python3 add_interest3.py
+[1050.0, 2310.0, 840.0, 378.0]
+```
+
+因为 `amounts` 为 `list`, 可修改. 传递到 function 操作后, 内部值改变.
+
+> In Python parameters are always passed by value. However, if the value of the variable is a mutable object(like a list or graphics object), then changes to the state of the object will be visible to the calling program.
