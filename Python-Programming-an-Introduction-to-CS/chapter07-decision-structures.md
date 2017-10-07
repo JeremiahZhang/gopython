@@ -59,9 +59,28 @@ if __name__ == "__main__":
 
 ## 2.Two-way Decisions
 
+```
+if <condition>:
+    <statements>
+else:
+    <statements>
+```
+
 ---
 
 ## 3.Multi-way Decisions  
+
+```
+if <condition1>:
+    <case1 statements>
+elif <condition2>:
+    <case2 statements>
+elif <condition3>:
+    <case3 statements>
+...
+else
+    <default statements>
+```
 
 ---
 
