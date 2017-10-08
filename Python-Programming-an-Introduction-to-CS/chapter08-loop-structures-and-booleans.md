@@ -25,6 +25,15 @@ for <var> in <sequence>:
 
 ## 2.Indefinite Loops
 
+`conditional loop`
+
+```
+while <condition>:
+    <body>
+```
+
+
+
 ---
 
 ## 3.Common Loop Patterns
