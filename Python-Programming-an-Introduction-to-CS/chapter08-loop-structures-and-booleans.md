@@ -57,6 +57,11 @@ while item is not the sentinel
     get the next data item
 ```
 
+- File loops  
+    - `for line in infile`
+    - `readline()` end-of-file loop
+
+
 ---
 
 ## 4.Computing with Booleans
