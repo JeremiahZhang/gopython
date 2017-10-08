@@ -109,4 +109,45 @@ while scoreA != 15 and scoreB != 15:
 
 ## 5.Other Common Structures
 
+- Post-Test Loop  
+
+`input validation`
+
+```
+repeat
+    get a number from the user
+
+until number is >= 0
+```
+
+in Python
+
+```
+number = -1 # Start with an illegal value to get into the loop
+while number < 0:
+    number = eval(input("Enter a positive number: "))
+```
+
+or + `whlie ture + break`
+
+```
+while True:
+    x = eval(input("Enter a positive number: "))
+    if x >= 0:
+        break
+    else:
+        print("The number you enter was note positive.")
+```
+
+- Loop and a Half.
+
+```
+while True:
+    x = eval(input("Please enter a positive number: "))
+    if x >= 0: break # Loop exit in the middle of the loop body: a loop and a half
+    print("The number you entered was not positive.")
+```
+
+> Should be avoided is peppering the body of a loop with multiple **break** statements. The logic of a loop is easily lost when there are multiple exits. However, there are times when even this rule should be broken to provide the most elegant solutuion to a problem.
+
 ---
