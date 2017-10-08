@@ -38,7 +38,24 @@ Avoid writing indefinite loops in the first place.
 
 ## 3.Common Loop Patterns
 
-- interactive loops
+- Interactive loops
+
+```
+set moredata to "yes"
+while moredata is "yes":
+    get the next data item
+    process the item
+    ask user if there is moredata
+```
+
+- Sentinel loops
+
+```
+get the first data item
+while item is not the sentinel
+    process the item
+    get the next data item
+```
 
 ---
 
