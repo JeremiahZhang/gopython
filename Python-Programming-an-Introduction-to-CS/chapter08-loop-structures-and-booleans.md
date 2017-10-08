@@ -32,11 +32,13 @@ while <condition>:
     <body>
 ```
 
-
+Avoid writing indefinite loops in the first place.
 
 ---
 
 ## 3.Common Loop Patterns
+
+- interactive loops
 
 ---
 
