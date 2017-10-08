@@ -120,5 +120,13 @@ except <ErrorType>:
 
 ## Sum
 
+- Basic control structures for making decision.
+    - if
+    - if-else
+    - if-elif-else
+- Boolean expressions:
+    - `<, <=, !=, ==, >, >=`
+- Exception handling: `try-except`
+- Careful thought should be given to produce a correct, efficient, and understandable program.
 
 ---
