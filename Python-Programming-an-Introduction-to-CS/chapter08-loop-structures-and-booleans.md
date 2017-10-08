@@ -60,6 +60,8 @@ while item is not the sentinel
 - File loops  
     - `for line in infile`
     - `readline()` end-of-file loop
+- Nested loops
+
 
 
 ---
