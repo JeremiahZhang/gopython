@@ -198,3 +198,17 @@ ans = input("What flavor do you want [vanilla]: ") or "vanilla"
 ```
 
 ---
+
+## sum
+
+- `for` loop  
+- `while` statements
+- `interactive loop`: `average1.py`
+- `sentinel loop`: `average2.py`
+- `file loop`: `average5.py`
+- `nested loop`: `average7.py`
+- Complex Boolean expressions.
+- `loop and a half`: `break` in the middle of the while <body>  
+- Python Boolean opearators `and` `or` employ short-circut evaluation.
+
+---
