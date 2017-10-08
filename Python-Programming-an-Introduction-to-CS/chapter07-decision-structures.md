@@ -101,6 +101,20 @@ except <ErrorType>:
 
 ## 5.Study in Design: Max of three
 
+> Whenever you write a decision, you should ask yourself two crucial question. 1, when the condition is true, are you absolutely certain that executing the body of the decision is the right action to take? (2) The converse of the first: are wu certain that this condition is true in all cases where x1 is the max?
+
+书中列举寻找最大数的方法, 一些总结.
+
+- 解决问题的方法不止一种, 当我们想出一种方法的时候, 我们要问问自己:"有没有其他更好的办法?"
+    - strive for clarity
+    - simplicity
+    - efficiency
+    - scalability(可扩展性)
+    - elegance
+    - **Good algorithms and programs are like poems of logic. They are a pleasure to read and maintain.**
+- Be the computer.
+- Generality is good. **It is not unusual that consideration of a more general problem can lead to a better solution for some special case.**
+- Don't reinvent the wheel. 不要重复造轮子.
 
 ---
 
