@@ -86,6 +86,17 @@ else
 
 ## 4.Exception Handling  
 
+`quadratic5.py`
+
+```
+try:
+    <body>
+except <ErrorType>:
+    <handler>
+```
+
+`quadratic5.py`
+
 ---
 
 ## 5.Study in Design: Max of three
