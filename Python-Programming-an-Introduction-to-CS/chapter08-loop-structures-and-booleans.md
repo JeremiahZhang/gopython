@@ -62,11 +62,48 @@ while item is not the sentinel
     - `readline()` end-of-file loop
 - Nested loops
 
-
-
 ---
 
 ## 4.Computing with Booleans
+
+- Boolean operators
+
+```
+<expr> and <expr>
+
+<expr> or <expr>
+```
+
+顺序: 高-->低 `not, and, or`
+
+`a or not b and c` == `(a or ((not b) and c))`
+
+- Boolean algebra
+
+| Algebra | Boolean Algebra     |
+| :------------- | :------------- |
+| a * 0 = 0      | a and false == false |
+| a * 1 = a      | a and true == a      |
+| a + 0 = a      | a or false == a      |
+
+`a or true == true`  
+`a or (b and c) == (a or b) and (a or c)`  
+`a and (b or c) == (a and b) or (a and c)`
+
+`not (not a) == a`
+
+**DeMorgan's Law**  
+
+`not (a or b) == (not a) and (not b)`
+`not (a and b) == (not a) or (not b)`
+
+```
+while (not scoreA = 15) and (not scoreB = 15):
+    # continue playing
+
+while scoreA != 15 and scoreB != 15:
+    # continue playing
+```
 
 ---
 
