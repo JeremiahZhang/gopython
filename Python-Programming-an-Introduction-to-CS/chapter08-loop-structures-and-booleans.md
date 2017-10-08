@@ -150,4 +150,51 @@ while True:
 
 > Should be avoided is peppering the body of a loop with multiple **break** statements. The logic of a loop is easily lost when there are multiple exits. However, there are times when even this rule should be broken to provide the most elegant solutuion to a problem.
 
+- Boolean expressions as Decisions
+
+`x and y: If x is false, return x. Otherwise, return y.`  
+`x or y:  If x is true, return x. Otherwise, return y.`  
+`not x:   If x is false, return True. Otherwise, False`
+
+```
+while responese[0] = "y" or responese[0] = "Y"
+
+while responese[0] = "y" or "Y"
+
+两者是不同的.
+```
+
+看看下面代码:
+
+```
+ans = input("What flavor do you want [vanilla]: ")
+if ans != "":
+    flavor = ans
+else:
+    flavor = "vanilla"
+```
+
+or
+
+```
+ans = input("What flavor do you want [vanilla]: ")
+if ans:
+    flavor = ans
+else:
+    flavor = "vanilla"
+```
+
+or
+
+```
+ans = input("What flavor do you want [vanilla]: ")
+flavor = ans or "vanilla"
+```
+
+or
+
+```
+ans = input("What flavor do you want [vanilla]: ") or "vanilla"
+```
+
 ---
