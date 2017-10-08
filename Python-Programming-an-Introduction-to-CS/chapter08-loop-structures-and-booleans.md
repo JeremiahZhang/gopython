@@ -14,6 +14,13 @@
 
 ## 1.For loops
 
+```
+for <var> in <sequence>:
+    <body>
+```
+
+`average1.py` simple for loop. 容易理解.
+
 ---
 
 ## 2.Indefinite Loops
