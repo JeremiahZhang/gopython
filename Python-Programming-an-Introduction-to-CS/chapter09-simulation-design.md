@@ -86,11 +86,49 @@ if random() < prob:
 
 - Top-level Design
 
-
 ```
 Print an Introduction
 
 Get the inputs: probA, porbB, n
-Simulate n games of racquetball using probA, probB 
+Simulate n games of racquetball using probA, probB
 Print a report on the wins for playA and playB
+```
+
+搭建框架: 先把基本的流程写出来, 就是将上面的直接写出代码, 有些函数就当作我们是知道的.
+
+如下: 搭建起整体骨架
+
+```
+def main():
+    print_intro()
+    prob_a, prob_b, n = get_inputs()
+    wins_a, wins_b = sim_games(n, probA, probB)
+    print_summary(wins_a, wins_b)
+```
+
+- Separation of Concerns
+
+上面四个函数, 我们是不知道的. 我们需要完成这些函数.  
+
+> Futher, we have specified the name, parameters and expected return values of the functions that perform these tasks. This information is called the interface or signature of a function.
+
+- Second-level Design
+
+设计上面的子函数啦.  
+
+```
+def print_intro():
+    print("This program simulates a game of racquetball between two")
+    print('players called "A" and "B". The abilities of each players is')
+    print("indicated by a probability (a number between 0 and 1) that")
+    print("the player wins the point when serving. Player A always")
+    print("has the first serve.")
+
+def get_inputs():
+    # Returns the 3 simulation parameters prob_a, prob_b, and n
+    a = eval(input("What is the prob. player A wins a serve? "))
+    b = eval(input("What is the prob. player B wins a serve? "))
+    n = eval(input("How many games to simulate? "))
+
+    return a, b, n
 ```
