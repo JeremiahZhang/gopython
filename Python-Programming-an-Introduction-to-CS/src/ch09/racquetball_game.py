@@ -13,8 +13,23 @@ def get_inputs():
 
     return a, b, n
 
+def sim_n_games(n, prob_a, prob_b):
+    # simulate n games and return wins_a and wins_b
+    wins_a = 0
+    wins_b = 0
+
+    for i in range(n):
+        score_a, score_b = sim_one_game(prob_a, prob_b)
+
+        if score_a > score_b:
+            wins_a += 1
+        else:
+            wins_b += 1
+
+    return wins_a, wins_b
+
 def main():
     print_intro()
     prob_a, prob_b, n = get_inputs()
-    wins_a, wins_b = sim_games(n, probA, probB)
+    wins_a, wins_b = sim_n_games(n, probA, probB)
     print_summary(wins_a, wins_b)
