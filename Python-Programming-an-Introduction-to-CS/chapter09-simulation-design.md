@@ -229,3 +229,25 @@ def print_summary(wins_a, wins_b):
         - game_over()
         - sim_one_game()
         - ...
+
+## 5.Other Design techniques
+
+- Prototyping and spiral development.
+    - 设计最小原型
+    - 实现它
+    - 测试他
+    - 增添新设计
+    - 再实现
+    - 再测试
+    - 再添加新设计
+    - ...
+    - 直到完成所有功能
+- object-oriented design
+
+> The Art of Design
+
+There is no "one true way" of design.
+
+In design, as in almost anything, the key to success is practice.
+
+---
