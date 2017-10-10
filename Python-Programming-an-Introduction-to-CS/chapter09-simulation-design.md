@@ -178,3 +178,42 @@ Loop while game is not over:
     update the status of the game
 return scores    
 ```
+
+code:
+
+```
+def sim_one_game(prob_a, prob_b):
+    score_a = 0
+    score_b = 0
+    serving = "a"
+    while not game_over(score_a, score_b):
+        if serving = "a":
+            if random() < prob_a:
+                score_a += 1
+            else:
+                serving = "b"
+        else:
+            if random() < prob_b:
+                score_b += 1
+            else:
+                serving = "a"
+
+    return score_a, score_b
+```
+
+- Finished
+
+需要最后 code game_over() function 和 print_summary() function:
+
+```
+def game_over(a, b):
+    return a==15 or b==15
+
+def print_summary(wins_a, wins_b):
+    n = wins_a + wins_b
+    print("\nGames simulated: {}".format(n))
+    print("Wins for A: {0} ({1:0.1%})".format(wins_a, wins_a/n))
+    print("Wins for B: {0} ({1:0.1%})".format(wins_b, wins_b/n))
+```
+
+哪个 player 先得到 15分, 就结束.
