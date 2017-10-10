@@ -251,3 +251,24 @@ There is no "one true way" of design.
 In design, as in almost anything, the key to success is practice.
 
 ---
+
+## Sum
+
+- Computer simulation
+    - Computer use pseudo random numbers to perform Monte Carlo simulations
+- Top-down design
+    - Express an algorithm in terms of smaller problems.
+    - Develop an interface for each of the smaller problems.
+    - Express the algorithm in terms of its interfaces with the smaller problems
+    - Repeat the process for each of the smaller problems
+- Unit Testing
+- Spiral development
+- Design is a combination of art and science.
+- Practice is the best way to become a better designer.
+
+---
+
+```
+@Jeremy_Anifacc
+2017-10-10
+```
