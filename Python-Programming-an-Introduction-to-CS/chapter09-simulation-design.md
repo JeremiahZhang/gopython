@@ -217,3 +217,15 @@ def print_summary(wins_a, wins_b):
 ```
 
 哪个 player 先得到 15分, 就结束.
+
+## 4.Bottom-Up implementation
+
+写完程序, 还没有结束, 我们要调试下, 有没有bug出现, 不断修正.
+
+> Testing each function independently makes it easier to spot errors.
+
+- Unit Testing  
+    - 从底层开始不断调试一个个子函数
+        - game_over()
+        - sim_one_game()
+        - ...

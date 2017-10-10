@@ -1,4 +1,4 @@
-import random
+from random import random
 
 def print_intro():
     print("This program simulates a game of racquetball between two")
