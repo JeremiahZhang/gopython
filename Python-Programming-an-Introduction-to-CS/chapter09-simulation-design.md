@@ -164,3 +164,17 @@ def sim_n_games(n, prob_a, prob_b):
 
     return wins_a, wins_b
 ```
+
+- Third-Level Design  
+
+接下来就需要完成: sim_one_game():
+
+```
+Initialize scores to 0
+set serving to "A"
+
+Loop while game is not over:
+    simulate one serve of whichever player is serving
+    update the status of the game
+return scores    
+```

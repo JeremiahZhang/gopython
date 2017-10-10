@@ -13,6 +13,24 @@ def get_inputs():
 
     return a, b, n
 
+def sim_one_game(prob_a, prob_b):
+    score_a = 0
+    score_b = 0
+    serving = "a"
+    while not game_over(score_a, score_b):
+        if serving = "a":
+            if random() < prob_a:
+                score_a += 1
+            else:
+                serving = "b"
+        else:
+            if random() < prob_b:
+                score_b += 1
+            else:
+                serving = "a"
+
+    return score_a, score_b
+
 def sim_n_games(n, prob_a, prob_b):
     # simulate n games and return wins_a and wins_b
     wins_a = 0
