@@ -1,10 +1,30 @@
+# cball2.py
+
+"""cball2.py
+Provides a simple class for modeling the
+flight of projectiles.
+"""
+
 from math import radians
 from math import sin
 from math import cos
 
 class Projectile:
 
+    """Simulates the flight of simple projectiles near the earth's
+    surface, ignoring wind resistance. Tracking is done in two
+    dimensions, height (y) and distance (x).
+
+    Attributes:
+        angle: A number representing lanuch angle.
+        velocity: A number representing initial velocity.
+        height: A number representing initial height.
+    """
+
     def __init__(self, angle, velocity, height):
+        """Create a projectile with given lanuch angle, initial
+        velocity and height.
+        """
         self.xpos = 0.0
         self.ypos = height
         theta = radians(angle)
@@ -12,12 +32,19 @@ class Projectile:
         self.yvel = velocity * sin(theta)
 
     def get_x(self):
+        """Returns the x position (distance) of this projectile.
+        """
         return self.xpos
 
     def get_y(self):
+        """Returns the y position (height) of this projectile.
+        """
         return self.ypos
 
     def update(self, time):
+        """Update the state of this projectile to move it time seconds
+        farther into its flight.
+        """
         self.xpos = self.xpos + time * self.xvel
         yvel_after = self.yvel - 9.8 * time
         self.ypos = self.ypos + self.yvel * time - 0.5 * 9.8 * time ** 2
