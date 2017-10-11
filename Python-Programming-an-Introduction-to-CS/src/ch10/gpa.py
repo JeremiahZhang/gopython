@@ -44,21 +44,27 @@ def main():
     # set best to the record for the first student in the file
     best = make_student(infile.readline())
 
+    st_list = []
+    st_list.append(best)
+
     # process subsequent lines of the file
     for line in infile:
         # turn the line into a student record
         print(line)
         s = make_student(line)
+        st_list.append(s)
         # if this student is best so far, remember it.
         if s.gpa() > best.gpa():
             best = s
 
     infile.close()
 
-    # print information about the best student
-    print("The best student is: {}".format(best.get_name()))
-    print("hours: {}".format(best.get_hours()))
-    print("GPA: {}".format(best.gpa()))
+    for st in st_list:
+        if st.gpa() == best.gpa():
+            # print information about the best student
+            print("The best student is: {}".format(st.get_name()))
+            print("hours: {}".format(st.get_hours()))
+            print("GPA: {}".format(st.gpa()))
 
 if __name__ == '__main__':
     main()
