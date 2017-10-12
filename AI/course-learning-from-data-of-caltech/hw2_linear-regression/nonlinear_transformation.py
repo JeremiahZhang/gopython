@@ -103,7 +103,7 @@ def q9():
 
         final_weights = linear_reg(training_set, noise)
         err_in = error(training_set, final_weights)
-        err_out = error(training_set, final_weights)
+        err_out = error(testing_set, final_weights)
 
         avg_weights += final_weights
         avg_err_in += err_in
@@ -123,8 +123,8 @@ def q9():
     #  [  1.56168009e+00]
     #  [  1.55367727e+00]]
     # (-0.99, -0.00085, -0.00184, -0.00135, 1.56, 1.55) closet to choice (a)
-    # Q9: average in sample error: 0.03119
-    # Q10: average out sample error: 0.03119
+    # Q9: average in sample error: 0.031329
+    # Q10: average out sample error: 0.033067
     # the same
 
 if __name__ == '__main__':
