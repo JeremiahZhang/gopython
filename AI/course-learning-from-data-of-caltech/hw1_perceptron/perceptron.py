@@ -13,10 +13,10 @@ class Perceptron:
         else:
             self.weights = weights
 
-    def generate_dataset(self):
-        self.data_set = [[1., random.uniform(-1, 1), random.uniform(-1, 1)]
-                     for i in range(self.data_size)]
-        return self.data_set
+    def generate_dataset(self, data_size):
+        data_set = [[1., random.uniform(-1, 1), random.uniform(-1, 1)]
+                     for i in range(data_size)]
+        return data_set
 
     def target(self, feature):
         x, y = feature[1], feature[2]
@@ -34,7 +34,7 @@ class Perceptron:
         mis_classified = []
         iterations = 0
 
-        training_set = self.generate_dataset()
+        training_set = self.generate_dataset(self.data_size)
 
         while True:
             for feature in training_set:
@@ -56,7 +56,7 @@ class Perceptron:
 
     def testing(self):
         mis_matches = 0
-        testing_set = self.generate_dataset()
+        testing_set = self.generate_dataset(self.data_size)
 
         for feature in testing_set:
             if self.hypothesis(feature) != self.target(feature):
