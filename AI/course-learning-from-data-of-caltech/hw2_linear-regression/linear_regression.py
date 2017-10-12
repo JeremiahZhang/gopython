@@ -54,7 +54,18 @@ class LinearRegression():
             if self.hypothesis(feature) != self.target(feature):
                 mis_matches += 1
 
-        mis_matches /= float(self.data_size)
+        mis_matches /= float(len(self.testing_set))
+
+        return mis_matches
+
+    def err_in(self):
+        mis_matches = 0
+
+        for feature in self.training_set:
+            if self.hypothesis(feature) != self.target(feature):
+                mis_matches += 1
+
+        mis_matches /= float(len(self.training_set))
 
         return mis_matches
 
@@ -65,10 +76,27 @@ def one_experiment(data_size):
 
     err_test = lr.testing()
 
-    return final_weights, err_test
+    err_in = lr.err_in()
+
+    return final_weights, err_in, err_test
+
+def n_exp(n, data_size):
+    avg_err_in = 0
+    avg_err_test = 0
+
+    for i in range(n):
+        final_weights, err_in, err_test = one_experiment(100)
+        avg_err_test += err_test
+        avg_err_in += err_in
+
+    avg_err_in /= float(n)
+    avg_err_test /= float(n)
+
+    return avg_err_in, avg_err_test
+
 
 if __name__ == '__main__':
-    final_weights, err_test = one_experiment(100)
+    avg_err_in, avg_err_test = n_exp(1000, 100)
 
-    print("Final weights: {}".format(final_weights))
-    print("Test error: {}".format(err_test))
+    print("In sample error: {}".format(avg_err_in))
+    print("Test error: {}".format(avg_err_test))
