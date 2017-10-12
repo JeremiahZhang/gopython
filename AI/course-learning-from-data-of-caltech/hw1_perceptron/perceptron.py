@@ -66,20 +66,52 @@ class Perceptron:
 
         return mis_matches
 
-def main():
-    pp = Perceptron(10)
-    data_set = pp.generate_dataset()
-    for data in data_set:
-        true_label = pp.target(data)
-        print("True label: {}".format(true_label))
-        predict = pp.hypothesis(data)
-        print("Predice: {}".format(predict[0]))
+def one_experiment(data_size):
+    pp = Perceptron(data_size)
+    # data_set = pp.generate_dataset()
+    # for data in data_set:
+    #     true_label = pp.target(data)
+    #     print("True label: {}".format(true_label))
+    #     predict = pp.hypothesis(data)
+    #     print("Predice: {}".format(predict[0]))
 
     iterations = pp.training()
-    print("Iterations: {}".format(iterations))
+    # print("Iterations: {}".format(iterations))
 
     err_test = pp.testing()
-    print("Test error: {}%".format(err_test * 100))
+    # print("Test error: {}%".format(err_test * 100))
+    return iterations, err_test
+
+def n_experiments(n, data_size):
+    avg_iter = 0
+    avg_err_test = 0
+
+    for i in range(n):
+        iterations, err_test = one_experiment(data_size)
+        avg_iter += iterations
+        avg_err_test += err_test
+
+    avg_iter /= float(n)
+    avg_err_test /= float(n)
+
+    return avg_iter, avg_err_test
 
 if __name__ == '__main__':
-    main()
+    num_experiments = 1000
+    data_size = 10
+
+    avg_iter, avg_err_test = n_experiments(num_experiments, data_size)
+
+    print("Dataset(N={0}), avgrage iterations in {1}: {2:0.2f}".format(
+        data_size, num_experiments, avg_iter))
+    print("Average test error: {0:0.2f}%".format(avg_err_test * 100))
+
+"""
+$ python .\perceptron.py
+Dataset(N=100), avgrage iterations in 1000: 106
+Average test error: 1.35%
+
+$ python .\perceptron.py
+Dataset(N=10), avgrage iterations in 1000: 9.34
+Average test error: 11.23%
+"""
