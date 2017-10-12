@@ -3,20 +3,15 @@ import random
 
 class Perceptron:
 
-    def __init__(self, training_size, test_size=None, p1, p2, weights=None):
-        self.training_size = training_size
-        self.p1 = p1
-        self.p2 = p2
-
-        if not test_size:
-            self.test_size = training_size
-        else:
-            self.test_size = test_size
+    def __init__(self, data_size, weights=None):
+        self.data_size = data_size
+        self.p1 = (random.uniform(-1, 1), random.uniform(-1, 1))
+        self.p2 = (random.uniform(-1, 1), random.uniform(-1, 1))
 
         if not weights:
-            self.weights = weights
-        else:
             self.weights = np.array([[0., 0., 0.]]).T
+        else:
+            self.weights = weights
 
     def generate_dataset(self):
         self.data_set = [[1., random.uniform(-1, 1), random.uniform(-1, 1)]
@@ -39,13 +34,13 @@ class Perceptron:
         mis_classified = []
         iterations = 0
 
-        training_set = generate_dataset(self.training_size)
+        training_set = self.generate_dataset()
 
         while True:
             for feature in training_set:
-                true_label = target(feature)
+                true_label = self.target(feature)
 
-                if hypothesis(feature) != true_label:
+                if self.hypothesis(feature) != true_label:
                     mis_classified.append((feature, true_label))
 
             if not mis_classified:
@@ -61,12 +56,30 @@ class Perceptron:
 
     def testing(self):
         mis_matches = 0
-        testing_set = generate_dataset(self.test_size)
+        testing_set = self.generate_dataset()
 
         for feature in testing_set:
-            if hypothesis(feature) != target(feature):
+            if self.hypothesis(feature) != self.target(feature):
                 mis_matches += 1
 
-        mis_matches /= float(self.test_size)
+        mis_matches /= float(len(testing_set))
 
         return mis_matches
+
+def main():
+    pp = Perceptron(10)
+    data_set = pp.generate_dataset()
+    for data in data_set:
+        true_label = pp.target(data)
+        print("True label: {}".format(true_label))
+        predict = pp.hypothesis(data)
+        print("Predice: {}".format(predict[0]))
+
+    iterations = pp.training()
+    print("Iterations: {}".format(iterations))
+
+    err_test = pp.testing()
+    print("Test error: {}%".format(err_test * 100))
+
+if __name__ == '__main__':
+    main()
