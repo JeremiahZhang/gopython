@@ -12,4 +12,29 @@
 - Lists support a number of convenient and frequently used methods.
 - List will grow and shrink as needed.
 
-## 
+## Dictionary
+
+## trick
+
+In Python interpret:
+
+`help("")` to search the help document of the str.
+
+`help([])` to serach the help document of the list.
+
+`help({})` to search the help document of the dictionary.
+
+So helpful.
+
+## Sum
+
+- List: a mutable sequence of arbitrary objects.
+    - indexing
+    - slicing
+- List operation 
+- dictionary
+    - operation
+    - mutable
+    - mapping
+
+--- 
