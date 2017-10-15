@@ -54,8 +54,14 @@ class DieView:
     def set_value(self, value):
         """Set this die to display value."""
 
+        self.value = value
+
         for pip in self.pips:
             pip.setFill(self.background)
 
         for i in self.ontable[value]:
             self.pips[i].setFill(self.foreground)
+
+    def set_color(self, color):
+        self.foreground = color
+        self.set_value(self.value)
