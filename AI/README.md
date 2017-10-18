@@ -9,6 +9,9 @@
 - [x] [Master machine learning with python](https://github.com/JeremiahZhang/gopython/tree/master/AI/master-machine-learning-with-python) 参考: [Machine Learning Mastery With Python](https://machinelearningmastery.com/machine-learning-with-python/)
 - [ ] [Data mining with python](https://github.com/JeremiahZhang/gopython/tree/master/AI/data-mining-with-python) 参考: [Learning Data Mining with Python | PACKT Books](https://www.packtpub.com/big-data-and-business-intelligence/learning-data-mining-python)
 - [ ] [Deep Learning With Python](https://github.com/JeremiahZhang/gopython/tree/master/AI/deep-learning-with-python) 参考: [Deep Learning With Python](https://machinelearningmastery.com/deep-learning-with-python/)
+    - [x] NN
+    - [x] CNN
+    - [] Recursive NN
 
 ## book and course
 
