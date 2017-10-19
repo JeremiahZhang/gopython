@@ -16,6 +16,7 @@
     - [django-tutor](https://github.com/JeremiahZhang/gopython/tree/master/django-tutor) Django 1.10 official tutorial exercise files
     - [django-cslewis-website fold](https://github.com/JeremiahZhang/gopython/tree/master/cslewis/lewis)
         - 成果: [C.S.Lewis — 惊喜之旅](http://jeremyanifaccc.pythonanywhere.com/)
+    - [Python Programming: an Introduction to Computer Science](https://github.com/JeremiahZhang/gopython/tree/master/Python-Programming-an-Introduction-to-CS), Book learning note of [PPAI2CS](https://www.goodreads.com/book/show/9358452-python-programming)
 - CS
     - [khan-algorithm](https://github.com/JeremiahZhang/gopython/tree/master/khan-algorithm) 参考 [Algorithms | Computer science | Computing | Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms)的学习内容
     - [gopython/khan-intro2html-css-making-webpages](https://github.com/JeremiahZhang/gopython/tree/master/khan-intro2html-css-making-webpages) 参考: [Intro to HTML/CSS: Making webpages | Computer programming | Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css)的学习内容
