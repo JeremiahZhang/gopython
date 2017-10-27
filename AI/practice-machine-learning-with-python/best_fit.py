@@ -9,6 +9,16 @@ def best_fit_slope(xs, ys):
     b = np.mean(ys) - m * np.mean(xs)
     return m, b
 
+def squared_error(origin_ys, predicted_ys):
+    return np.sum((origin_ys - predicted_ys) ** 2)
+
+def r_square(origin_ys, predicted_ys):
+    ys_mean_line = [np.mean(origin_ys) for y in origin_ys]
+    squared_error_y_mean = squared_error(origin_ys, ys_mean_line)
+    squared_error_y_predict = squared_error(origin_ys, predicted_ys)
+    r2 = 1 - squared_error_y_predict/squared_error_y_mean
+    return r2
+
 def main():
     xs = np.array([1, 2, 3, 4, 5], dtype=np.float64)
     ys = np.array([5, 4, 6, 5, 6], dtype=np.float64)
@@ -36,6 +46,16 @@ def main():
     plt.legend(loc=4)
     plt.show()
 
+    predicted_ys = [m*x+b for x in xs]
+    predicted_ys = np.array(predicted_ys, dtype=np.float64)
+
+    r2 = r_square(ys, predicted_ys)
+    print("R square(coefficient of determination): {}".format(r2))
 
 if __name__ == '__main__':
     main()
+
+    """
+    That's where "r squared" comes in, also
+    called the "coefficient of determination."
+    """
