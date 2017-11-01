@@ -361,3 +361,129 @@ In [78]: print(u'\xe4\xf6\xfc')
 ---
 
 ## [lists](https://docs.python.org/2.7/tutorial/introduction.html#lists)
+
+lists:  
+
+- indexed
+- sliced
+- mutable type
+
+```
+In [1]: square = [1, 4, 9, 16, 25]
+
+In [2]: square
+Out[2]: [1, 4, 9, 16, 25]
+
+In [3]: square[0]
+Out[3]: 1
+
+In [4]: square[-1]
+Out[4]: 25
+
+In [5]: square[1:3
+   ...: ]
+Out[5]: [4, 9]
+
+In [6]: square + [26, 49, 64, 81, 100]
+Out[6]: [1, 4, 9, 16, 25, 26, 49, 64, 81, 100]
+```
+
+mutable:
+
+```
+In [7]: cubes = [1, 8, 27, 65, 125]
+
+In [8]: cubes[3] = 64
+
+In [9]: cubes
+Out[9]: [1, 8, 27, 64, 125]
+```
+
+list 增加 items:
+
+```
+In [10]: cubes.append(6**3)
+
+In [11]: cubes
+Out[11]: [1, 8, 27, 64, 125, 216]
+
+In [12]: cubes.append(7 ** 3)
+
+In [13]: cubes
+Out[13]: [1, 8, 27, 64, 125, 216, 343]
+```
+
+Assignment to slices:  
+
+```
+In [14]: letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+In [15]: letters
+Out[15]: ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+In [16]: letters[2:5] = ['C', 'D', 'E']
+
+In [17]: letters
+Out[17]: ['a', 'b', 'C', 'D', 'E', 'f', 'g']
+
+In [18]: letters[2:5] = []
+
+In [19]: letters
+Out[19]: ['a', 'b', 'f', 'g']
+
+In [20]: letters[:] = []
+
+In [21]: letters
+Out[21]: []
+```
+
+`len()` of lists:
+
+```
+In [22]: letters = ['a', 'b', 'c']
+
+In [23]: len(letters)
+Out[23]: 3
+```
+
+lists 内嵌:
+
+```
+In [24]: a = [1, 2, 3]
+
+In [25]: b = [3, 4, 5]
+
+In [26]: x = [a, b]
+
+In [27]: x
+Out[27]: [[1, 2, 3], [3, 4, 5]]
+
+In [28]: x[0][1]
+Out[28]: 2
+```
+
+# First Steps towards programming
+
+```
+# Fibonacci series
+In [29]: a, b = 0, 1
+
+In [30]: while b < 10:
+    ...:     print b
+    ...:     a, b = b, a+b
+    ...:     
+1
+1
+2
+3
+5
+8
+
+```
+
+- 多重赋值
+- while 循环: `<, >, ==, <=, >=, !=`
+
+---
+
+2017-11-01
