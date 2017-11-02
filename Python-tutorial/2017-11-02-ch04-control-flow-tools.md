@@ -149,6 +149,40 @@ def enumerate(sequence, start=0):
 
 关于 `yield` 参考
 
+```
+In [1]: def simple_generator():
+   ...:     yield 1
+   ...:     yield 2
+   ...:     yield 3
+   ...:
+
+In [2]: for value in simple_generator():
+   ...:     print value
+   ...:
+1
+2
+3
+
+In [3]: our_generator = simple_generator()
+
+In [4]: next(our_generator)
+Out[4]: 1
+
+In [5]: next(our_generator)
+Out[5]: 2
+
+In [6]: next(our_generator)
+Out[6]: 3
+
+In [7]: next(our_generator)
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-7-7e48a609051a> in <module>()
+----> 1 next(our_generator)
+
+StopIteration:
+```
+
 - [5.2.10. Yield expressions](https://docs.python.org/2.7/reference/expressions.html#yield-expressions)
 - [python - What does the "yield" keyword do? - Stack Overflow](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
 - [Improve Your Python: 'yield' and Generators Explained](https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/)
