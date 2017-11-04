@@ -407,7 +407,7 @@ Out[11]: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 ## More on Defining functions
 
-- 默认形式参数
+### 1 默认形式参数
 
 ```
 In [12]: def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
@@ -528,3 +528,119 @@ In [25]: print f(1)
 [1, 2, 3, 1]
 
 ```
+
+---
+
+### 2 Keyword Argument 关键字参数
+
+```
+In [29]: def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue')
+    ...: :
+    ...:     print "-- This parrot wouldn't", action,
+    ...:     print "if you put", voltage, "volts through it."
+    ...:     print "-- Lovely plumage, the", type
+    ...:     print "-- It's", state, "!"
+    ...:     
+
+In [30]: parrot(1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+
+In [31]: parrot(voltage=1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+
+In [32]: parrot(voltage=10000000, action="V00000M")
+-- This parrot wouldn't V00000M if you put 10000000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+
+In [33]: parrot(action='vooooooooom', voltage=100000)
+-- This parrot wouldn't vooooooooom if you put 100000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+
+In [34]: parrot('a million', 'bereft of life', 'jump')
+-- This parrot wouldn't jump if you put a million volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's bereft of life !
+
+In [35]: parrot('a thousand', state='pushing up the daisies')
+-- This parrot wouldn't voom if you put a thousand volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's pushing up the daisies !
+```
+
+上面的形式参数方式正确, 下面案例显示显示错误:
+
+```
+In [36]: parrot()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-36-563b49e6b32c> in <module>()
+----> 1 parrot()
+
+TypeError: parrot() takes at least 1 argument (0 given)
+
+In [37]: parrot(voltage=5.0, 'dead')
+  File "<ipython-input-37-01dca0be3920>", line 1
+    parrot(voltage=5.0, 'dead')
+SyntaxError: non-keyword arg after keyword arg
+
+
+In [38]: parrot(110, voltage=220)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-38-9bcd7eaed44e> in <module>()
+----> 1 parrot(110, voltage=220)
+
+TypeError: parrot() got multiple values for keyword argument 'voltage'
+
+In [39]: parrot(actor='John Cleese')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-39-8d2ac8bc1850> in <module>()
+----> 1 parrot(actor='John Cleese')
+
+TypeError: parrot() got an unexpected keyword argument 'actor'
+```
+
+任何程序, 出现报错, 先将显示的错误信息看清楚, 看自己能不能解决. **常识**.
+
+- **新知**:
+    - `*name` : receives a tuple containing the positional arguments beyond the formal parameter list.
+    - `**name`: receives a dictionary containing all keyword arguments except fo those corresponding to a formal parameter.
+
+
+```
+In [41]: def cheeseshop(kind, *arguments, **keywords):
+    ...:     print "-- Do you have any", kind, "?"
+    ...:     print "-- I'm sorry, we're all out of", kind
+    ...:     for arg in arguments:
+    ...:         print arg
+    ...:
+    ...:     print "-" * 40
+    ...:
+    ...:     keys = sorted(keywords.keys())
+    ...:     for kw in keys:
+    ...:         print kw, ":", keywords[kw]
+    ...:         
+
+In [42]:     cheeseshop("Limburge", "It's very runny, sir",
+    ...:                "It's really very, VERY runny, sir.",
+    ...:                shopkeeper="Michael Palin",
+    ...:                client="John Cleese",
+    ...:                sketch="Cheese Shop Sketch")
+-- Do you have any Limburge ?
+-- I'm sorry, we're all out of Limburge
+It's very runny, sir
+It's really very, VERY runny, sir.
+----------------------------------------
+client : John Cleese
+shopkeeper : Michael Palin
+sketch : Cheese Shop Sketch
+```
+
+看出上面例子有什么特别之处么? 如果我们要用很多形式参数时, 在定义函数式, 就可以使用 `*name`, `**name`, 但要注意格式.
