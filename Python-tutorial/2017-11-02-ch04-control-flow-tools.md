@@ -720,3 +720,41 @@ In [53]: parrot(**d)
 if you put four million volts through it.
 E's bleedin' demised !
 ```
+
+### 5 lambda expression lambda 表达式
+
+**新知**:简洁 pythonic 用 `lambda` keyword.
+
+`lambda a, b: a+b`
+
+- using a lambda expression to return a function.
+
+```
+In [56]: def make_incrementor(n):
+    ...:     return lambda x: x + n
+    ...:
+
+In [57]: f = make_incrementor(42)
+
+In [58]: f(3)
+Out[58]: 45
+
+In [59]: f(1)
+Out[59]: 43
+
+In [60]: f(0)
+Out[60]: 42
+```
+
+- pass a small function as an argument:
+
+```
+In [61]: pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+
+In [62]: pairs.sort(key=lambda pair: pair[1])
+
+In [63]: pairs
+Out[63]: [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
+```
+
+Pythonic, 简洁, 精简. **新知**.
