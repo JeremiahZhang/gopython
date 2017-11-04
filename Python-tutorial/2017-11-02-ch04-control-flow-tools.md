@@ -789,3 +789,17 @@ Documentation 注意: **新知** or 代码风格
     - describing the object’s calling conventions, its side effects, etc.
 
 ---
+
+## Codeing Style
+
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html#Lambda_Functions)
+- [PEP 8 -- Style Guide for Python Code | Python.org](https://www.python.org/dev/peps/pep-0008/)
+
+两个有空多读几次, 对照并修改自己的代码, 形成优雅代码风格.
+
+---
+
+```
+@Jeremy_Anifacc
+2017-11-04
+```
