@@ -406,3 +406,125 @@ Out[11]: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 ---
 
 ## More on Defining functions
+
+- 默认形式参数
+
+```
+In [12]: def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
+    ...:     while True:
+    ...:         ok = raw_input(prompt)
+    ...:         if ok in ('y', 'ye', 'yes'):
+    ...:             return True
+    ...:         if ok in ('n', 'no', 'nop', 'nope'):
+    ...:             return False
+    ...:         retries = retries - 1
+    ...:         if retries < 0:
+    ...:             raise IOError('refusenik user')
+    ...:         print complaint
+    ...:         
+
+In [13]: ask_ok('no')
+no
+Yes or no, please!
+no
+Yes or no, please!
+no
+Yes or no, please!
+no
+Yes or no, please!
+no
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+<ipython-input-13-25b3fd463f14> in <module>()
+----> 1 ask_ok('no')
+
+<ipython-input-12-024ae5230278> in ask_ok(prompt, retries, complaint)
+      8         retries = retries - 1
+      9         if retries < 0:
+---> 10             raise IOError('refusenik user')
+     11         print complaint
+     12
+
+IOError: refusenik user
+
+In [14]: ask_ok('Do you really want to quit?')
+Do you really want to quit?no
+Out[14]: False
+
+In [15]: ask_ok('Ok to overwrite the file?', 2)
+Ok to overwrite the file?yes
+Out[15]: True
+
+In [16]: ask_ok('Ok to overwrite the file?', 2, 'Come on, only yes or no')
+Ok to overwrite the file?slsl
+Come on, only yes or no
+Ok to overwrite the file?no
+Out[16]: False
+
+```
+
+- `in` keyword
+
+```
+In [17]: i = 5
+
+In [18]: def f(arg=i):  # at the point of function definition
+    ...:     print arg  # default value i = 5
+    ...:     
+
+In [19]: i = 6     # new value
+
+In [20]: f()        # 不再改变
+5
+
+```
+
+上面的例子, 再次提醒我们, **ython is said to pass all parameters by value**. 从上面的例子, 我们可以这么理解:
+
+在定义 `f(arg=i)` 函数的时候, Python 将 `arg` 参数 指向 `5`(i 所指向的值).
+
+以后, 如果 `f(arg=i)`函数无参数调用, 如`f()`, 那么默认的形式参数`arg=5`.
+
+- **警告**: 形式参数使用 mutable object 时(list, dictionary, instances of most classes) 需要特别注意, mutable object是否改变. 比如下面的例子. **新知**
+
+```
+In [21]: def f(a, L=[]):
+    ...:     L.append(a)
+    ...:     return L
+    ...:
+
+In [22]: print f(1)
+[1]
+
+In [23]: print f(2)
+[1, 2]
+
+In [24]: print f(3)
+[1, 2, 3]
+
+In [25]: print f(1)
+[1, 2, 3, 1]
+
+```
+
+如上面 local 参数 `L` 改变的例子, 我们可以通过下面的方法, 不至于引起 `L` list 的改变.
+
+```
+In [21]: def f(a, L=[]):
+    ...:     L.append(a)
+    ...:     return L
+    ...:
+
+In [22]: print f(1)
+[1]
+
+In [23]: print f(2)
+[1, 2]
+
+In [24]: print f(3)
+[1, 2, 3]
+
+In [25]: print f(1)
+[1, 2, 3, 1]
+
+```
