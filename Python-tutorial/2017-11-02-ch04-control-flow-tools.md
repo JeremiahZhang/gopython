@@ -758,3 +758,34 @@ Out[63]: [(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
 ```
 
 Pythonic, 简洁, 精简. **新知**.
+
+### 6 Documentation Strings
+
+```
+In [4]: def my_function():
+   ...:     """Do nothing, but document it.
+   ...:     
+   ...:     No, really, it doesnot do anything.
+   ...: Let us see this line.
+   ...:     How it will be.
+   ...:     """
+   ...:     pass
+   ...:
+
+In [5]: print my_function.__doc__
+Do nothing, but document it.
+
+    No, really, it doesnot do anything.
+Let us see this line.
+    How it will be.
+```
+
+Documentation 注意: **新知** or 代码风格
+
+- 第一行: 精简的摘要总结
+    - For brevity, it should not explicitly state the object’s name or type, since these are available by other means 不要出现 对象 的名字或类型
+- 第二行 空行
+- 下面的行: 描述对象的调用约定, 缺点
+    - describing the object’s calling conventions, its side effects, etc.
+
+---
