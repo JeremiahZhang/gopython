@@ -281,3 +281,40 @@ Find a number 9
 - (5) 循环回到第(2)步, 直到循环结束, 停止.
 
 ---
+
+## pass
+
+> The `pass` statement does nothing. It can be used when a statement is required syntactically(句法上正确) but the program requires no action. For example:
+
+```
+In [8]: while True:
+   ...:     pass
+   ...:
+^C---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+<ipython-input-8-cccdd40a5a4c> in <module>()
+----> 1 while True:
+      2     pass
+
+KeyboardInterrupt:
+```
+
+(1) 从上面的例子看出, `while True: pass` 一直循环, 直到 `ctrl+C` 结束.
+
+(2) 也可以使用用来建立最小的 classes:
+
+```
+In [9]: class MyEmptyClass:
+   ...:     pass
+   ...:
+```
+
+(3) 可以用做`占位符`, 未来再做填补. 先聚焦在更抽象级别, 后面再填补具体细节.
+
+```
+In [10]: def initlog(*args):
+    ...:     pass    # Remember to implement this!
+    ...:
+```
+
+---
