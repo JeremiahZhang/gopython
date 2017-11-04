@@ -193,3 +193,91 @@ StopIteration:
 - [5.6. Looping Techniques](https://docs.python.org/2.7/tutorial/datastructures.html#looping-techniques)
 
 ---
+
+## break
+
+`break` statement 用来跳出`for` 或 `while` 循环.
+
+```
+In [1]: for n in range(2, 10):
+   ...:     for x in range(2, n):
+   ...:         if n % x == 0:
+   ...:             print("{} = {} * {}".format(n, x, n/x))
+   ...:             break
+   ...:     else:
+   ...:         print("{} is a prime number".format(n))
+   ...:         
+2 is a prime number
+3 is a prime number
+4 = 2 * 2
+5 is a prime number
+6 = 2 * 3
+7 is a prime number
+8 = 2 * 4
+9 = 3 * 3
+```
+
+如上面的例子, 如果 `n = 4`, for 循环下去, 找到 n = 2 * 2, break, 就跳出循环. 开始下一阶段 `n = 5`.
+
+上面 `else` clause(语句)是在`for x in range(2, n)` 循环结束的时候, 才会执行的语句.
+
+**在这里, 我们可以一直有这样一个观点: 就是 else 肯定是跟在 if 语句后面的.** 看看上面的例子, 就知道. `else` 语句还可以跟在 `for` 或者 `while` 语句后面. 比如下面的例子.
+
+```
+In [2]: t = 0
+
+In [3]: while t < 3:
+   ...:     print(t)
+   ...:     t += 1
+   ...: else:
+   ...:     print("The while loop is ended")
+   ...:     
+0
+1
+2
+The while loop is ended
+```
+
+这可以用来调试, 看看 `while` 是否会停止.
+
+初学者刚入门, 以为 `else` 常与 `if` 语句联合在一起. Tutorial 提到 `else` 和 `try` 语句更常见. 这就是可能就是所练习和经验问题.
+
+关于 `try` statement 详见:  [8.3. Handling Exceptions](https://docs.python.org/2.7/tutorial/errors.html#handling-exceptions)
+
+---
+
+## continue
+
+`continue` statement continues with the next iteration of the loop. 即开始下一步的迭代. 比如
+
+```
+In [7]: for num in range(2, 10):
+   ...:     if num % 2 == 0:
+   ...:         print("Hallo world")
+   ...:         print("Find an even number {}".format(num))
+   ...:         continue
+   ...:     print("Find a number {}".format(num))
+   ...:     
+Hallo world
+Find an even number 2
+Find a number 3
+Hallo world
+Find an even number 4
+Find a number 5
+Hallo world
+Find an even number 6
+Find a number 7
+Hallo world
+Find an even number 8
+Find a number 9
+```
+
+我们会发现,
+
+- (1) 如果 `num = 2`, 执行`continue`,
+- (2) 则是直接回到 `for num in range(2, 10):`
+- (3) 此时 `num = 3`, `if` 条件语句判断 行不通,
+- (4) 则执行 `prin("Find a numer {}".format(num))`, 即得出上面的一系列结果.
+- (5) 循环回到第(2)步, 直到循环结束, 停止.
+
+---
