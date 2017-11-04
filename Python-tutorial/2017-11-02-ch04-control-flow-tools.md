@@ -644,3 +644,29 @@ sketch : Cheese Shop Sketch
 ```
 
 看出上面例子有什么特别之处么? 如果我们要用很多形式参数时, 在定义函数式, 就可以使用 `*name`, `**name`, 但要注意格式.
+
+### 3 Arbitrary Argument Lists
+
+**新知**: 还不明白.
+
+> Finally, the least frequently used option is to specify that a function can be called with an arbitrary number of arguments. These arguments will be wrapped up in a tuple (see Tuples and Sequences). Before the variable number of arguments, zero or more normal arguments may occur.
+
+```
+def write_multiple_items(file, separator, *args):
+    file.write(separator.join(args))
+```
+
+尝试:
+
+```
+In [44]: def test(kind, who, *args):
+    ...:     print "what's this:", kind
+    ...:     print "Who are you? ", who
+    ...:     print args
+    ...:     
+
+In [45]: test('hallo world', 'Jeremy', 2, 1)
+what's this: hallo world
+Who are you?  Jeremy
+(2, 1)
+```
