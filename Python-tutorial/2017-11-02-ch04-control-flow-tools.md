@@ -319,4 +319,90 @@ In [10]: def initlog(*args):
 
 ---
 
-# 
+## def function
+
+```
+def fib(n):     # write Fibonacci series up to n
+    """Print a Fibonacci series up to n."""
+    a, b = 0, 1
+    while a < n:
+        print a
+        a, b = b, a+b
+
+def main():
+    n = int(raw_input("Please enter the number to write"
+                        " Fibonacci series: "))
+    fib(n)
+
+if __name__ == '__main__':
+    main()
+```
+
+上面的script, 我们可以保存为 `fib.py`, 然后我们可以查长 `docstring`:
+
+
+```
+>>> import fib
+>>> fib.fib.__doc__
+'Print a Fibonacci series up to n.'
+```
+
+Docstring 可参考 [4.7.6. Documentation Strings](https://docs.python.org/2.7/tutorial/controlflow.html#tut-docstrings)
+
+> it’s good practice to include docstrings in code that you write, so make a habit of it.
+
+function 也可以看作为一个对象.
+
+```
+In [1]: def fib(n):
+   ...:     a, b = 0, 1
+   ...:     while a < n:
+   ...:         print a,
+   ...:         a, b = b, a+b
+   ...:         
+
+In [2]: fib
+Out[2]: <function __main__.fib>
+
+In [3]: f = fib
+
+In [4]: f(100)
+0 1 1 2 3 5 8 13 21 34 55 89
+```
+
+`def fib(<形式参数>)`  
+`fib(<实际参数>)`  
+
+Python中函数中<形式参数>不能改变<实际参数>值.
+
+> In programming language parlance, Python is said to pass all parameters by **value**.
+
+没有`return` statment 的函数也返回一个特殊的值 `None`(a build-in name). 一起看看使用 `return` statement.
+
+```
+In [9]: def fib2(n):    # return Fibonacci series up to n
+   ...:     """Return a list containing the Fibonacci series up to n."""
+   ...:     result = []
+   ...:     a, b = 0, 1
+   ...:     while a < n:
+   ...:         result.append(a)
+   ...:         a, b = b, a+b
+   ...:
+   ...:     return result
+   ...:
+
+In [10]: f100 = fib2(100) # call it
+
+In [11]: f100             # write the result
+Out[11]: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+```
+
+涉及内容:
+
+- `return`
+- `obj.methodname`
+    - `result.append(a)` calls a method of the list object `result`.
+
+---
+
+## More on Defining functions
