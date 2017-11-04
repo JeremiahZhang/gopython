@@ -669,4 +669,54 @@ In [45]: test('hallo world', 'Jeremy', 2, 1)
 what's this: hallo world
 Who are you?  Jeremy
 (2, 1)
+
+In [55]: test('hallo world', 'Jeremy', 2, 1, name='jeremy_anifcc', age=18)
+what's this: hallo world
+Who are you?  Jeremy
+(2, 1)
+{'age': 18, 'name': 'jeremy_anifcc'}
+
+```
+
+### 4 unpacking argument lists
+
+> The reverse situation occurs when the arguments are already in a list or tuple but need to be unpacked for a function call requiring separate positional arguments.
+
+**新知**: `*` operator unpack the arguments out of a list or tuple.
+
+```
+In [46]: range(3, 6)
+Out[46]: [3, 4, 5]
+
+In [47]: args1 = [3, 6]
+
+In [48]: range(*args1)
+Out[48]: [3, 4, 5]
+
+In [49]: args2 = (3, 6)
+
+In [50]: range(*args2)
+Out[50]: [3, 4, 5]
+```
+
+**新知**:
+
+- 观上例, `*args` 是形式参数, 则 pack arguments. `tuple`
+- `*args` 是实际参数, 则 unpack arguments. 针对 `tuple, list`
+- `**args` 类似. 针对 `dictionary`
+
+```
+In [51]: def parrot(voltage, state='a stiff', action='voom'):
+    ...:     print "-- This parrot wouldn't", action
+    ...:     print "if you put", voltage, "volts through it."
+    ...:     print "E's", state, "!"
+    ...:     
+
+In [52]: d = {"voltage": "four million", "state": "bleedin' demised", "action": "VO
+    ...: OM"}
+
+In [53]: parrot(**d)
+-- This parrot wouldn't VOOM
+if you put four million volts through it.
+E's bleedin' demised !
 ```
