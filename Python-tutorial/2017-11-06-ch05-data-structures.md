@@ -244,3 +244,124 @@ Out[64]: 56
 In [1]: sum(range(1, 11))
 Out[1]: 55
 ```
+
+---
+
+## List comprehensions
+
+列表式推导. 简洁. Pythonic
+
+新知: 一般用于建立 `list`. 常用场景.
+
+1. 所建立的list中元素为其他序列中元素的某种计算结果.
+2. list 中元素为 其他序列中 元素满足一定条件下的计算结果.
+
+比如
+
+```
+In [1]: squares = []
+
+In [2]: for x in range(10):
+   ...:     squares.append(x**2)
+   ...:     
+
+In [3]: squares
+Out[3]: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+In [4]: a = [x**2 for x in range(10)]
+
+In [5]: a
+Out[5]: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+In [6]: b = map(lambda x: x**2, range(10))
+
+In [7]: b
+Out[7]: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+
+其中 列表推导 `a=[x**2 for x in range(10)]` 最简洁, 读者也容易理解.
+
+新知: 我们可以看到, list comprehension 和 'for' 语句一起使用. 通常还会和`if`语句使用, 以及 `for, if` 合并使用.
+
+```
+In [8]: [(x, y) for x in [1,2,3] for y in [3, 1, 4] if x!=y]
+Out[8]: [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+
+In [9]: # It's equivalent to
+
+In [10]: combs = []
+
+In [11]: for x in [1,2,3]:
+    ...:     for y in [3,1,4]:
+    ...:         if x != y:
+    ...:             combs.append((x, y))
+    ...:             
+
+In [12]: combs
+Out[12]: [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+```
+
+上面, 请注意在`for, if`的顺序.
+
+常用场景
+
+```
+In [13]: vec = [-4, -2, 0, 2, 4]
+
+In [14]: # create a new list with the values doubled
+
+In [15]: [x**2 for x in vec]
+Out[15]: [16, 4, 0, 4, 16]
+
+In [16]: # filter the list to exclude negative numbers
+
+In [17]: [x for x in vec if x >=0]
+Out[17]: [0, 2, 4]
+
+In [18]: # apply a function to all the elements
+
+In [19]: [abs(x) for x in vec]
+Out[19]: [4, 2, 0, 2, 4]
+
+In [20]: # call a method on each element
+
+In [21]: freshfruit = ['  banana', '  loganberry', 'passion fruit  ']
+
+In [22]: [weapon.strip() for weapon in freshfruit]
+Out[22]: ['banana', 'loganberry', 'passion fruit']
+
+In [23]: help(str.strip)
+
+
+In [24]: # create a list of 2-tuple like (number, square)
+
+In [25]: [(x, x**2) for x in range(6)]
+Out[25]: [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+
+In [26]: # the tuple must be parenthesized, otherwise an error is raised
+
+In [27]: [x, x**2 for x in range(6)]
+  File "<ipython-input-27-adb9f7a8642f>", line 1
+    [x, x**2 for x in range(6)]
+               ^
+SyntaxError: invalid syntax
+
+
+In [28]: # flatten a list using listcomp with two 'for'
+
+In [29]: vec = [[1,2,3], [4,5,6], [7,8,9]]
+
+In [30]: [num for elem in vec for num in elem]
+Out[30]: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+看,还可以内嵌复杂函数
+
+```
+In [31]: from math import pi
+
+In [32]: [str(round(pi, i)) for i in range(1, 6)]
+Out[32]: ['3.1', '3.14', '3.142', '3.1416', '3.14159']
+```
+
+---
