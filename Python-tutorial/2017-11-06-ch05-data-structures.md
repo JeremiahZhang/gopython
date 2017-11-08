@@ -2,6 +2,145 @@
 
 - More on lists
 
+```
+In [3]: help(list.append)
+Help on method_descriptor:
+
+append(...)
+    L.append(object) -- append object to end
+
+
+In [4]: a = [66.25, 123, 1, 3, -5]
+
+In [5]: len(a)
+Out[5]: 5
+
+In [6]: a.append(-100)
+
+In [7]: a
+Out[7]: [66.25, 123, 1, 3, -5, -100]
+
+In [8]: a[len(a):]
+Out[8]: []
+
+In [9]: help(list.extend)
+Help on method_descriptor:
+
+extend(...)
+    L.extend(iterable) -- extend list by appending elements from the iterable
+
+
+In [10]: b = [0, -2, -1]
+
+In [11]: a.extend(b)
+
+In [12]: a
+Out[12]: [66.25, 123, 1, 3, -5, -100, 0, -2, -1]
+
+In [13]: help(list.insert)
+Help on method_descriptor:
+
+insert(...)
+    L.insert(index, object) -- insert object before index
+
+
+In [14]: b.insert(0, 1)
+
+In [15]: b
+Out[15]: [1, 0, -2, -1]
+
+In [16]: b.insert(len(b), -10)
+
+In [17]: b
+Out[17]: [1, 0, -2, -1, -10]
+
+In [18]: help(list.remove)
+Help on method_descriptor:
+
+remove(...)
+    L.remove(value) -- remove first occurrence of value.
+    Raises ValueError if the value is not present.
+
+
+In [19]: b.remove(0)
+
+In [20]: b
+Out[20]: [1, -2, -1, -10]
+
+In [21]: b.remove(1)
+
+In [22]: b
+Out[22]: [-2, -1, -10]
+
+In [23]: help(list.pop)
+Help on method_descriptor:
+
+pop(...)
+    L.pop([index]) -> item -- remove and return item at index (default last).
+    Raises IndexError if list is empty or index is out of range.
+
+
+In [24]: b
+Out[24]: [-2, -1, -10]
+
+In [25]: len(b)
+Out[25]: 3
+
+In [26]: b.pop(1) # remove -1 in list b and return the removed item
+Out[26]: -1
+
+In [27]: b
+Out[27]: [-2, -10]
+
+In [28]: b.pop() # default, remove the last item in list b, return the removed item
+Out[28]: -10
+
+In [29]: b
+Out[29]: [-2]
+
+In [30]: help(list.index)
+Help on method_descriptor:
+
+index(...)
+    L.index(value, [start, [stop]]) -> integer -- return first index of value.
+    Raises ValueError if the value is not present.
+
+
+In [31]: a
+Out[31]: [66.25, 123, 1, 3, -5, -100, 0, -2, -1]
+
+In [32]: a.pop()
+Out[32]: -1
+
+In [33]: a.index(1)
+Out[33]: 2
+
+In [34]: a.pop()
+Out[34]: -2
+
+In [35]: a
+Out[35]: [66.25, 123, 1, 3, -5, -100, 0]
+
+In [36]: a.append(123)
+
+In [37]: a
+Out[37]: [66.25, 123, 1, 3, -5, -100, 0, 123]
+
+In [38]: a.count(123)
+Out[38]: 2
+
+In [39]: a.count(66.25)
+Out[39]: 1
+
+In [40]: help(list.sort)
+Help on method_descriptor:
+
+sort(...)
+    L.sort(cmp=None, key=None, reverse=False) -- stable sort *IN PLACE*;
+    cmp(x, y) -> -1, 0, 1
+
+```
+
 ## more on lists
 
 我们在Python 编译器中 使用`help(list)` 查看关于 `list` 的 help 文档.
