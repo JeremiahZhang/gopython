@@ -628,3 +628,28 @@ TypeError: 'tuple' object doesn't support item deletion
 In [30]: # tuple unmutable
 ```
 
+## tuple
+
+```
+In [1]: t = 12345, 54321, 'Hello world!'
+
+In [2]: t[0]
+Out[2]: 12345
+
+In [3]: t
+Out[3]: (12345, 54321, 'Hello world!')
+
+In [4]: u = t, (1, 2, 3, 4, 5)
+
+In [5]: u
+Out[5]: ((12345, 54321, 'Hello world!'), (1, 2, 3, 4, 5))
+
+In [6]: # Tuples are immutable
+
+In [7]: # but they can contain mutable objects:
+
+In [8]: v = ([1, 2, 3], [3, 2, 1])
+
+In [9]: v
+Out[9]: ([1, 2, 3], [3, 2, 1])
+```
