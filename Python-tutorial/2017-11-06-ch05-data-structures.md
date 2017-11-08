@@ -504,3 +504,127 @@ Out[32]: ['3.1', '3.14', '3.142', '3.1416', '3.14159']
 ```
 
 ---
+
+## nested 列表式推导
+
+```
+In [1]: matrix = [
+   ...:     [1, 2, 3, 4],
+   ...:     [5, 6, 7, 8],
+   ...:     [9, 10, 11, 12],
+   ...: ]
+
+In [2]: matrix
+Out[2]: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+
+In [3]: [[row[i] for row in matrix] for i in range(4)]
+Out[3]: [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+
+In [4]: for row in matrix:
+   ...:     print row,
+   ...:
+[1, 2, 3, 4] [5, 6, 7, 8] [9, 10, 11, 12]
+
+In [5]: transposed = []
+
+In [6]: for i in range(4):
+   ...:     transposed.append([row[i] for row in matrix])
+   ...:
+
+In [7]: transposed
+Out[7]: [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+
+In [8]: transposed = []
+
+In [9]: for i in range(4):
+   ...:     transposed_row = []
+   ...:     for row in matrix:
+   ...:         transposed_row.append(row[i])
+   ...:
+
+In [10]: for i in range(4):
+    ...:     transposed_row = []
+    ...:     for row in matrix:
+    ...:         transposed_row.append(row[i])
+    ...:     transposed.append(transposed_row)
+    ...:
+
+In [11]: transposed
+Out[11]: [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+
+In [12]: help(zip)
+Help on built-in function zip in module __builtin__:
+
+zip(...)
+    zip(seq1 [, seq2 [...]]) -> [(seq1[0], seq2[0] ...), (...)]
+
+    Return a list of tuples, where each tuple contains the i-th element
+    from each of the argument sequences.  The returned list is truncated
+    in length to the length of the shortest argument sequence.
+
+
+In [13]: zip(*matrix)
+Out[13]: [(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
+```
+
+## `del` statement
+
+新知： 善用
+
+```
+In [14]: a = [x for x in range(6)]
+
+In [15]: a
+Out[15]: [0, 1, 2, 3, 4, 5]
+
+In [16]: del a[0]
+
+In [17]: a
+Out[17]: [1, 2, 3, 4, 5]
+
+In [18]: len(a)
+Out[18]: 5
+
+In [19]: del a[2:4]
+
+In [20]: a
+Out[20]: [1, 2, 5]
+
+In [21]: del a[:]
+
+In [22]: a
+Out[22]: []
+
+In [23]: # del entrire variables
+
+In [24]: del a
+
+In [25]: a
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-25-60b725f10c9c> in <module>()
+----> 1 a
+
+NameError: name 'a' is not defined
+
+---
+
+In [26]: a = (1, 2)
+
+In [27]: a
+Out[27]: (1, 2)
+
+In [28]: a[0]
+Out[28]: 1
+
+In [29]: del a[0]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-29-cc06cab42bbe> in <module>()
+----> 1 del a[0]
+
+TypeError: 'tuple' object doesn't support item deletion
+
+In [30]: # tuple unmutable
+```
+
