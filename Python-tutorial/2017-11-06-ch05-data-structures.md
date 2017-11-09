@@ -653,3 +653,36 @@ In [8]: v = ([1, 2, 3], [3, 2, 1])
 In [9]: v
 Out[9]: ([1, 2, 3], [3, 2, 1])
 ```
+
+## set
+
+```
+In [14]: a = set("abbbbccccddddeeee")
+
+In [15]: b = set("eeeffffggg")
+
+In [16]: a
+Out[16]: {'a', 'b', 'c', 'd', 'e'}
+
+In [17]: b
+Out[17]: {'e', 'f', 'g'}
+
+In [18]: a - b # letter in a but not in b
+Out[18]: {'a', 'b', 'c', 'd'}
+
+In [19]: a | b
+Out[19]: {'a', 'b', 'c', 'd', 'e', 'f', 'g'}
+
+In [20]: a & b # letters in both a and b
+Out[20]: {'e'}
+
+In [21]: a ^ b # letters in a or b but not in both
+Out[21]: {'a', 'b', 'c', 'd', 'f', 'g'}
+
+In [22]: c = {x for x in 'abracadabra' if x not in 'abc'}
+
+In [23]: c
+Out[23]: {'d', 'r'}
+```
+
+## 
