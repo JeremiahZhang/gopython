@@ -685,4 +685,61 @@ In [23]: c
 Out[23]: {'d', 'r'}
 ```
 
-## 
+## dictionaries
+
+dictionaries are indexed by keys.
+
+新知: `tuples can be used as keys if they contain only strings, numbers, or tuples; 如果 tuple 中包含可改变的对象(直接或间接可改变), 该 tuple 也不能用作 key`
+
+字典:
+
+- `key: value` 对.
+- 同一个字典中, `key` 唯一,不得重复.
+- `del` - `key: value`
+- 使用已存在的`key` 来保存 `value`, 覆盖先前的`value`值.
+- 使用 不存在 字典中的`key`, 则报错.
+
+新知: 字典的 `keys()` method, 返回 list(包含字典中的key)  
+
+> The `keys()` method of a dictionary object returns a list of all the keys used in the dictionary, in arbitrary order (if you want it sorted, just apply the `sorted()` function to it). To check whether a single key is in the dictionary, use the in keyword.
+
+```
+In [1]: tel = {'jack': 4098, 'sape': 4139}
+
+In [2]: tel['guido'] = 4127
+
+In [3]: tel
+Out[3]: {'guido': 4127, 'jack': 4098, 'sape': 4139}
+
+In [4]: tel['jack']
+Out[4]: 4098
+
+In [5]: del tel['sape']
+
+In [6]: tel
+Out[6]: {'guido': 4127, 'jack': 4098}
+
+In [7]: tel['irv'] = 4127
+
+In [8]: tel
+Out[8]: {'guido': 4127, 'irv': 4127, 'jack': 4098}
+
+In [9]: 'guido' in tel
+Out[9]: True
+
+In [10]: # the `dict()` constructor builds dictionaries directly from sequences of
+    ...: key-value pairs
+
+In [11]: dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+Out[11]: {'guido': 4127, 'jack': 4098, 'sape': 4139}
+
+In [12]: # dictionaries comprehensions
+
+In [13]: {x: x**2 for x in (2, 4, 6)}
+Out[13]: {2: 4, 4: 16, 6: 36}
+
+In [14]: # When keys are simple strings
+
+In [15]: dict(sape=4139, guido=4127, jack=4098)
+Out[15]: {'guido': 4127, 'jack': 4098, 'sape': 4139}
+```
