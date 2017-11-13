@@ -743,3 +743,92 @@ In [14]: # When keys are simple strings
 In [15]: dict(sape=4139, guido=4127, jack=4098)
 Out[15]: {'guido': 4127, 'jack': 4098, 'sape': 4139}
 ```
+
+## loop techniques
+
+新知： `enumerate(), zip(), reversed()` function
+
+```
+In [2]: for i, v in enumerate(['tic', 'tac', 'toe']):
+   ...:     print i, v
+   ...:
+0 tic
+1 tac
+2 toe
+
+In [3]: # enumerate() function used to get position index and corresponding value
+
+In [4]: # loop over two or more sequences at the same time, zip() function
+
+In [5]: questions = ['name', 'quest', 'favorite color']
+
+In [6]: answers = ['lancelot', 'the holy grail', 'blue']
+
+In [7]: for q, a in zip(questions, answers):
+   ...:     print 'What is your {0}? It is {1}.'.format(q, a)
+   ...:
+What is your name? It is lancelot.
+What is your quest? It is the holy grail.
+What is your favorite color? It is blue.
+
+In [8]: # loop over a sequence in reverse, first specify the sequence in a forward direction and then call the
+
+In [9]: # reversed() function
+
+In [10]: for i in reversed(xrange(1, 10, 2)):
+    ...:     print i
+    ...:
+9
+7
+5
+3
+1
+
+In [12]: # loop over a sequence in sorted order, use the sorted() function which returns a new sorted list
+
+In [13]: # while leaving the source unaltered
+
+In [14]: basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+
+In [15]: for f in sorted(set(basket)):
+    ...:     print f
+    ...:
+apple
+banana
+orange
+pear
+
+In [16]: # when looping through dictionaries, using iteritems() method to get the key and corresponding value
+
+In [17]: knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+
+In [18]: for key, value in knights.iteritems():
+    ...:     print key, value
+    ...:
+gallahad the pure
+robin the brave
+
+In [19]: # It is sometimes tempting to change a list while you are looping over it;
+
+In [20]: # however, it is often simpler and safer to create a new list instead
+
+In [21]: import math
+
+In [22]: raw_data = [56.2, float('NaN'), 51.7, 55.3, 52.5, float('NaN'), 47.8]
+
+In [23]: filtered_data = []
+
+In [24]: for value in raw_data:
+    ...:     if not math.isnan(value):
+    ...:         filtered_data.append(value)
+    ...:
+
+In [25]: filtered_data
+Out[25]: [56.2, 51.7, 55.3, 52.5, 47.8]
+```
+
+## More on conditions
+
+- `while, if`: 条件
+- `in`, `not in`: 判断 值 是否在一个 sequence
+- `is`, `is not`
