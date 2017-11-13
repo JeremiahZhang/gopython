@@ -832,3 +832,110 @@ Out[25]: [56.2, 51.7, 55.3, 52.5, 47.8]
 - `while, if`: 条件
 - `in`, `not in`: 判断 值 是否在一个 sequence
 - `is`, `is not`
+- 新知: 连续使用 逻辑判断 `a <b == c`
+- `and, or, not` 的优先顺序
+- 逻辑判断用于赋值
+
+```
+In [1]: 1 < 2 == 2
+Out[1]: True
+
+In [2]: a < b == c
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-2-b366e34e17fb> in <module>()
+----> 1 a < b == c
+
+NameError: name 'a' is not defined
+
+In [3]: 1 and not 1 or 0
+Out[3]: 0
+
+In [4]: 1 and not 0 or 0
+Out[4]: True
+
+In [5]: 1 and (not 0) or 0
+Out[5]: True
+
+In [6]: # and, or , not have lower priorities than comparison operators
+
+In [7]: # between them, not has the highest priority and or the lowest
+
+In [8]: # and-or, short-circuit 短路操作
+
+In [9]: # 从左到右
+
+In [10]: 1 and 0 and 1==1
+Out[10]: 0
+
+In [11]: # do not evaluate expression 1==1
+
+In [12]: # 使用逻辑判断,赋值给变量
+
+In [13]: string1, string2, string3 = '', 'Jeremy', 'Sarah'
+
+In [14]: non_null = string1 or string2 or string3
+
+In [15]: non_null
+Out[15]: 'Jeremy'
+```
+
+## Comparing sequences and other types
+
+新知:
+
+- 字母顺序(ASCII表数值)比较大小.
+- 比较顺序
+    - 第一个 -- 第一个, 相同则继续 不同则中断,输出结果
+    - 第二个 -- 第二个, 相同则继续 不同则中断,输出结果
+    - ... 直到比较完成
+- `a list < a string < a tuple`
+
+```
+In [16]: (1, 2, 3) < (1, 2, 4) # 比较大小
+Out[16]: True
+
+In [17]: [1, 2, 3] < [1, 2, 4] # ASCII 码 数值大小
+Out[17]: True
+
+In [18]: 'ABC' < 'a'
+Out[18]: True
+
+In [19]: 'ABC' < 'C' < 'Pascal' < 'Python'
+Out[19]: True
+
+In [20]: # 上面的例子, 第一个字母 'A' < 'C' 成立, 那么该比较结果就是 True
+
+In [21]: (1, 2, 3, 4) < (1, 2, 4)
+Out[21]: True
+
+In [22]: (1, 2, 3, 4) < (1, 2, 0)
+Out[22]: False
+
+In [23]: (1, 2) < (1, 2, -1)
+Out[23]: True
+
+In [24]: # 1--1, 2--2 true
+
+In [25]: (1, 2, 3) == (1.0, 2.0, 3.0)
+Out[25]: True
+
+In [26]: (1, 2, ('aa', 'ab')) < (1, 2, ('abc', 'a'), 4)
+Out[26]: True
+
+In [27]: [1] < (1)
+Out[27]: False
+
+In [28]: [1] < '1'
+Out[28]: True
+
+In [29]: [1] < (1,)
+Out[29]: True
+
+In [30]: '1' < (1, )
+Out[30]: True
+
+In [31]: # a list < a string
+
+In [32]: # a string < a tuple
+```
