@@ -27,3 +27,7 @@ Tango-with-Django/tango_with_django_project/rango/migrations
 
 # ipython notebook 
 *.ipynb_checkpoints
+
+# pipenv
+Pipfile
+Pipfile.lock
