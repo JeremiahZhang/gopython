@@ -1,3 +1,0 @@
-This is a test text file.
-
-to testing the chapter 05 programming exercise 15.
