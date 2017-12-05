@@ -31,3 +31,6 @@ Tango-with-Django/tango_with_django_project/rango/migrations
 # pipenv
 Pipfile
 Pipfile.lock
+
+# xkcd
+web-crawler/xkcd
