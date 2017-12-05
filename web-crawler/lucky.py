@@ -65,6 +65,29 @@ def sogou():
             webbrowser.open(link_elems[i].get('href'))
 
 if __name__ == '__main__':
-    # googling()
+    googling()
     # baidu()
-    sogou()
+    # sogou()
+
+# warnning 
+"""
+.\web-crawler> python lucky.py python
+Using sogou searching
+D:\ProgramData\Anaconda2\envs\ten_years\lib\site-packages\bs4\__init__.py:181: 
+UserWarning: No parser was explicitly specified, so I'm using the best
+available HTML parser for this system ("lxml"). 
+This usually isn't a problem, but if you run this code on another system, 
+or in a different virtual environment, 
+it may use a different parser and behave differently.
+
+The code that caused this warning is on line 70 of the file lucky.py. 
+To get rid of this warning, change code that looks like this:
+
+ BeautifulSoup(YOUR_MARKUP})
+
+to this:
+
+ BeautifulSoup(YOUR_MARKUP, "lxml")
+
+  markup_type=markup_type))
+"""
