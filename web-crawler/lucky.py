@@ -46,8 +46,25 @@ def baidu():
         
         num_open = min(3, len(link_elems))
         for i in range(num_open):
-            webbrowser.open('https://www.baidu.com' + link_elems[i].get('href'))
+            webbrowser.open(link_elems[i].get('href'))
 
+def sogou():
+    print('Using sogou searching')
+    
+    if len(sys.argv[1:]) > 0:
+        search_item = ' '.join(sys.argv[1:])
+        url = 'https://www.sogou.com/web?query=' + search_item
+        
+        res = requests.get(url)
+        res.raise_for_status()
+        
+        soup = bs4.BeautifulSoup(res.text)
+        link_elems = soup.select('.result .pt a')
+        num_open = len(link_elems)
+        for i in range(num_open):
+            webbrowser.open(link_elems[i].get('href'))
 
 if __name__ == '__main__':
-    baidu()
+    # googling()
+    # baidu()
+    sogou()
