@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html>
+
+    <head>
+        <title>About Rango!</title>
+    </head>
+    
+    <body>
+        <h1>Rango says: What is Rango? balabala...</h1>
+        <div>
+            Hey, I am Rango, and Django practices example!<br />
+            This tutorial has been put together by Anifacc.<br />
+        </div>
+        <div>
+            <a href="/rango/">HOME</a><br />
+            <img src="{{ MEDIA_URL }}cat.jpg" alt="Cat img">
+        </div>
+    </body>
+</html>
