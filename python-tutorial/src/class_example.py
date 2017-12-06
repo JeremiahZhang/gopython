@@ -38,6 +38,30 @@ class CorrectDog():
     def add_trick(self, trick):
         self.tricks.append(trick)
 
+# Function defined outside the class
+def f1(self, x, y):
+    return min(x, x+y)
+
+class C:
+    f = f1
+
+    def g(self): # function object
+        return 'hello world'
+
+    h = g # function object
+
+# Methods may call other methods by using `self` argument
+class Bag():
+    def __init__(self):
+        self.data = []
+
+    def add(self, x):
+        self.data.append(x)
+
+    def addtwice(self, x):
+        self.add(x)
+        self.add(x)
+
 def hello_dog():
     d = Dog('Fido')
     e = Dog('Buddy')
@@ -49,7 +73,7 @@ def hello_dog():
 def wrong_dog():
     d = MistakenDog('Buddy')
     e = MistakenDog('Fido')
-    d.add_trick('roll over')
+    d.add_trick('roll over') # method obejct: d.add_trick()
     e.add_trick('play dead')
 
     print d.tricks
