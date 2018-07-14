@@ -6,6 +6,7 @@
 *.epub
 *.mobi
 *.pdf
+*.pptx
 
 # one note file
 *.onetoc2
