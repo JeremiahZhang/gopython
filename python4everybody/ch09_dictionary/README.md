@@ -90,7 +90,7 @@ Counts: {'hello': 1, 'your': 1, 'are': 1, 'my': 2, 'cat.': 2, 'My': 1, 'cat': 1,
 
 我们可以发现 
 
-- `cat.` 与 `cat` 分开计算. 在实际中, 我们需要把标点符号要去掉.
+- `cat.` 与 `cat` 分开计算. 在实际中, 我们需要把标点符号要去掉.(教材中也有讲到, 和我不一样的方法)
     - 问题: 一定要去掉标点符号么?
     - 如何去掉标点符号呢?
     - 可参考: [python - Split Strings with Multiple Delimiters? - Stack Overflow](https://stackoverflow.com/questions/1059559/split-strings-with-multiple-delimiters)
@@ -179,6 +179,37 @@ annie 42
 jan 100
 ```
 
+非常有用的案例, 相对字典的 `key` 排序, 再输出对应 `value`:
+
+```
+In [1]: counts = {'chuck': 1, 'fish': 177.5, 'moive': 38}
+
+In [2]: lst = list(counts.keys())
+
+In [3]: print(lst)
+['chuck', 'fish', 'moive']
+
+In [4]: counts['breakfast'] = 4
+
+In [5]: print(counts)
+{'chuck': 1, 'fish': 177.5, 'moive': 38, 'breakfast': 4}
+
+In [6]: lst = list(counts.keys())
+
+In [7]: print(lst)
+['chuck', 'fish', 'moive', 'breakfast']
+
+In [8]: lst.sort()
+
+In [9]: for key in lst:
+   ...:     print(key, counts[key])
+   ...:
+breakfast 4
+chuck 1
+fish 177.5
+moive 38
+```
+
 ## 4 Retrieving Lists of Keys and Values
 
 ## 5 Two Iteration Variables
@@ -196,6 +227,7 @@ jan 100
 - 字典的作用
     - Dictionary as a set of counters
     - Dictionaries and files
+    - Advanced text parsing
 
 > The in operator uses different algorithms for lists and dictionaries. For lists, it uses a linear search algorithm. As the list gets longer, the search time gets longer in direct proportion to the length of the list. For dictionaries, Python uses an algorithm called a hash table that has a remarkable property: the in operator takes about the same amount of time no matter how many items there are in a dictionary. I won't explain why hash functions are so magical, but you can read more about it at wikipedia.org/wiki/Hash_table.
 
