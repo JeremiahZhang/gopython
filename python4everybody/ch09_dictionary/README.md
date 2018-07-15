@@ -130,6 +130,55 @@ Counts: {'hello': 1, 'your': 1, 'are': 1, 'my': 3, 'cat': 3, 'is': 1, 'very': 1,
 
 ## 3 Loops of Dictionaries
 
+```
+In [9]: counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+
+In [10]: for key in counts:
+    ...:     print(key, counts[key])
+    ...:
+chuck 1
+annie 42
+jan 100
+
+In [11]: for key, val in counts:
+    ...:     print(key, val)
+    ...:
+-------------------------------------------------------------------------
+ValueError                              Traceback (most recent call last)
+<ipython-input-11-ea25e4922583> in <module>()
+----> 1 for key, val in counts:
+      2     print(key, val)
+      3
+
+ValueError: too many values to unpack (expected 2)
+
+In [12]: for (key, val) in counts:
+    ...:     print(key, val)
+    ...:
+-------------------------------------------------------------------------
+ValueError                              Traceback (most recent call last)
+<ipython-input-12-ef79d0ca5d1d> in <module>()
+----> 1 for (key, val) in counts:
+      2     print(key, val)
+      3
+
+ValueError: too many values to unpack (expected 2)
+
+In [13]: for (key, val) in counts.items():
+    ...:     print(key, val)
+    ...:
+chuck 1
+annie 42
+jan 100
+
+In [14]: for key, val in counts.items():
+    ...:     print(key, val)
+    ...:
+chuck 1
+annie 42
+jan 100
+```
+
 ## 4 Retrieving Lists of Keys and Values
 
 ## 5 Two Iteration Variables
@@ -144,6 +193,9 @@ Counts: {'hello': 1, 'your': 1, 'are': 1, 'my': 3, 'cat': 3, 'is': 1, 'very': 1,
     - 如果要使用`value`, 则先把`value`提取出来:
         - vals = list(ch2eng_dict.values())
     - list 和 dict 中 `in` 搜索方式是不一样的.
+- 字典的作用
+    - Dictionary as a set of counters
+    - Dictionaries and files
 
 > The in operator uses different algorithms for lists and dictionaries. For lists, it uses a linear search algorithm. As the list gets longer, the search time gets longer in direct proportion to the length of the list. For dictionaries, Python uses an algorithm called a hash table that has a remarkable property: the in operator takes about the same amount of time no matter how many items there are in a dictionary. I won't explain why hash functions are so magical, but you can read more about it at wikipedia.org/wiki/Hash_table.
 
@@ -181,4 +233,37 @@ False
 >>> vals = list(eng2sp.values())
 >>> 'uno' in vals
 True
+```
+
+- Dictionary as a set of counters
+
+```
+In [1]: word = 'brontosaurus'
+
+In [2]: d = dict()
+
+In [3]: for c in word:
+   ...:     if c not in d:
+   ...:         d[c] = 1
+   ...:     else:
+   ...:         d[c] += 1
+   ...:
+
+In [4]: print(d)
+{'b': 1, 'r': 2, 'o': 2, 'n': 1, 't': 1, 's': 2, 'a': 1, 'u': 2}
+```
+
+- `get` method of dictionaries
+
+```
+In [5]: counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+
+In [6]: print(counts.get('jan', 0))
+100
+
+In [7]: print(counts.get('tim', 0))
+0
+
+In [8]: print(counts)
+{'chuck': 1, 'annie': 42, 'jan': 100}
 ```
