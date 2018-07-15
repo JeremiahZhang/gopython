@@ -299,3 +299,38 @@ In [7]: print(counts.get('tim', 0))
 In [8]: print(counts)
 {'chuck': 1, 'annie': 42, 'jan': 100}
 ```
+
+## 高级文本分析, 标点及大小写
+
+```
+In [10]: import string
+
+In [11]: string.punctuation
+Out[11]: '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+```
+
+案例:
+
+```
+import string
+
+fname = input('Enter the file name: ')
+try:
+    fhand = open(fname)
+except:
+    print('File cannot be opened:', fname)
+    exit()
+
+counts = dict()
+for line in fhand:
+    line = line.rstrip()
+    line = line.translate(line.maketrans('', '', string.punctuation))
+    line = line.lower()
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+
+fhand.close()
+
+print(counts)
+```
