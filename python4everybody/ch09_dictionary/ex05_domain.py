@@ -4,17 +4,17 @@ def main():
         fname = 'C:/Users/Jeremy/Documents/vocation/gopython/python4everybody/ch07_files/mbox-short.txt'
 
     counts = dict()
-
     try:
         with open(fname) as fh:
             for line in fh:
                 line = line.rstrip()
                 if line.startswith('From '):
                     words = line.split()
-                    counts[words[1]] = counts.get(words[1], 0) + 1
+                    usr, addr = words[1].split('@')
+                    counts[addr] = counts.get(addr, 0) + 1
         print(counts)
     except:
-        print('File can not be found', fname)
+        print('File cannot be found', fname)
         exit()
 
 if __name__ == '__main__':
