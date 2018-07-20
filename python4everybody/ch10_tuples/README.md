@@ -165,6 +165,13 @@ In [35]: for last, first in directory:
 zhang jeremy 15066668888
 ```
 
+## Debugging
+
+- Reading
+- Running
+- Ruminating
+- Retreating
+
 ## Summary
 
 - Tuple syntax
