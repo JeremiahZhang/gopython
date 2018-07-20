@@ -135,6 +135,36 @@ In [31]: l
 Out[31]: [(22, 'c'), (10, 'a'), (1, 'b')]
 ```
 
+## Using tuples as keys in dictionaries
+
+```
+directory[last,first] = number
+
+for last, first in directory:
+    print(first, last, directory[last,first])
+```
+
+example:
+
+```
+In [32]: directory = dict()
+
+In [33]: directory[jeremy, zhang] = 15066668888
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-33-9b6928f355cb> in <module>()
+----> 1 directory[jeremy, zhang] = 15066668888
+
+NameError: name 'jeremy' is not defined
+
+In [34]: directory['jeremy', 'zhang'] = 15066668888
+
+In [35]: for last, first in directory:
+    ...:     print(first, last, directory[last, first])
+    ...:
+zhang jeremy 15066668888
+```
+
 ## Summary
 
 - Tuple syntax
