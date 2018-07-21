@@ -1,4 +1,4 @@
-Python Regular Expression Quick Guide
+# Python Regular Expression Quick Guide
 
 ```
 ^        Matches the beginning of a line
@@ -27,4 +27,18 @@ $        Matches the end of the line
 
 \d      Matches any decimal digit; equivalent to the set [0-9].
 \D      Matches any non-digit character; equivalent to the set [^0-9].
+```
+
+# Unix/Linux 用户的彩蛋
+
+> Support for searching files using regular expressions was built into the Unix operating system since the 1960s and it is available in nearly all programming languages in one form or another.
+
+`grep` : Generalized Regular Expression Parser
+
+```
+$ grep '^From:' mbox-short.txt
+From: stephen.marquard@uct.ac.za
+From: louis@media.berkeley.edu
+From: zqian@umich.edu
+From: rjlowe@iupui.edu
 ```
