@@ -6,6 +6,6 @@ fname = 'C:/Users/Jeremy/Documents/vocation/gopython/python4everybody/ch07_files
 with open(fname) as fh:
     for line in fh:
         line = line.rstrip()
-        x = re.findall('\S+@\S+', line)
+        x = re.findall('[a-zA-Z0-9]\S*@\S*[a-zA-Z0-9]', line)
         if len(x) > 0:
             print(x)
