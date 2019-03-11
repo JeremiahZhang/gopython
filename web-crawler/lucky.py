@@ -24,7 +24,7 @@ def googling():
         link_elems = soup.select('.r a')
         # TODO: Open a browser tab for each result
         num_open = min(5, len(link_elems))
-        for i in xrange(num_open):
+        for i in range(num_open):
             webbrowser.open('http://google.com' + link_elems[i].get('href'))
     else:
         address = 'https://www.google.com/'
