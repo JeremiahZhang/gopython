@@ -6,8 +6,10 @@ import requests, os, bs4
 url = 'https://blog.xuite.net/venusvogue99/twblog'
 os.makedirs('xuite_blog', exist_ok=True)
 end_str = ' '
+n = 0
 
 # while not url.endswith('287'):
+# while n < 3:
 while not url.endswith(end_str):
     # Todo: Download the page.
     print('Downloading articles %s ...' % url)
@@ -59,5 +61,8 @@ while not url.endswith(end_str):
 
         end_str = os.path.basename(last_url)
         print(end_str)
+
+        n += 1
+        print('Page %d has downloaded.' % (n))
 
 print('Done.')
