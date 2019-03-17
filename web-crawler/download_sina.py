@@ -22,7 +22,7 @@ url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_1.html'
 os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
 
-while n < 1:
+while n < 63:
     print('Downloading articles from %s ...' % (url))
     res = requests.get(url)
     res.raise_for_status()
@@ -51,15 +51,28 @@ while n < 1:
             atc_time = act_soup.select('.time')[0].getText()
             atc_time = ''.join(e for e in atc_time if e.isalnum())
             print(atc_time)
-            # html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
-            #                 + os.path.basename(single_atc_url)), 'wb')
-            # for chunk in res.iter_content(100000):
-            #     html_file.write(chunk)
+            html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
+                            + os.path.basename(single_atc_url)), 'wb')
+            for chunk in res.iter_content(100000):
+                html_file.write(chunk)
 
-            # html_file.close()
-    
-    # print(num_link)
-    # print(atc_link_elements)
+            html_file.close()
+
+    # Next page element
+    next_pg_elems = soup.select('.SG_pgnext a')
+    # print(next_pg_elems)
+    # Next page link
+    next_pg_link  = next_pg_elems[0].get('href')
+    url = next_pg_link
+    # print(next_pg_link)
+    # # Numbers of pages
+    # page_num_elems = soup.select('.SG_pages span')
+    # pg_num = page_num_elems[0].getText()
+    # pg_num = ''.join(e for e in pg_num if e.isalnum())
+    # print(pg_num)
+    # 乱码
 
     n += 1
+    print('Page %d has downloaded.' % (n))
 
+print('Done')
