@@ -44,7 +44,7 @@ while n < 63:
             # Get the html text
             act_soup = bs4.BeautifulSoup(res.text, features='lxml')
             # Get the article title name
-            atc_titlename = act_soup.select('.titName')[0].getText()
+            # atc_titlename = act_soup.select('.titName')[0].getText()
             # atc_titlename = atc_titlename.encode() # string-utf8
             # atc_titlename = ''.join(e for e in atc_titlename if e.isalnum())
             # print(atc_titlename)
