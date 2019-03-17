@@ -36,3 +36,4 @@ Pipfile.lock
 # xkcd
 web-crawler/xkcd
 web-crawler/xuite_blog
+web-crawler/yang_gu_sina_blog
