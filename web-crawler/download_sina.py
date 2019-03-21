@@ -18,11 +18,12 @@ import bs4
 # def encode(s):
 #     return s.decode('utf-8').encode(sys.stdout.encoding, 'ignore')
 
-url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_1.html'
+url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_47.html'
 os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
+end = 63-47
 
-while n < 63:
+while n < end:
     print('Downloading articles from %s ...' % (url))
     res = requests.get(url)
     res.raise_for_status()
