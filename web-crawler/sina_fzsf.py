@@ -13,7 +13,7 @@ import bs4
 
 
 url = 'http://blog.sina.com.cn/s/articlelist_1147298365_0_1.html' # blog history
-os.makedirs('yang_gu_sina_blog', exist_ok=True)
+os.makedirs('fzsf_sina_blog', exist_ok=True)
 n = 0
 end = 323  # all 323 页
 
