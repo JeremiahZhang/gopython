@@ -53,7 +53,7 @@ while n < end:
 
             html_file.close()
 
-    try：
+    try:
         # Next page element
         next_pg_elems = soup.select('.SG_pgnext a')
         # print(next_pg_elems)
