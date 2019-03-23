@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# Download every article from somesone's Sina Blog
+# Download every article from FZSF Sina Blog
 
 # TODO: Download the page of history
 # TODO: Get single article links,
@@ -8,20 +8,14 @@
 # TODO: Get the next button's url and repeat
 
 import os
-import sys
 import requests
 import bs4
 
-# def name_decode(s):
-#     return s.decode('utf-8')
 
-# def encode(s):
-#     return s.decode('utf-8').encode(sys.stdout.encoding, 'ignore')
-
-url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_44.html'
+url = 'http://blog.sina.com.cn/s/articlelist_1147298365_0_1.html' # blog history
 os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
-end = 63-47
+end = 323  # all 323 页
 
 while n < end:
     print('Downloading articles from %s ...' % (url))
@@ -52,26 +46,24 @@ while n < end:
             atc_time = act_soup.select('.time')[0].getText()
             atc_time = ''.join(e for e in atc_time if e.isalnum())
             print(atc_time)
-            html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
+            html_file = open(os.path.join('fzsf_sina_blog', atc_time + '-' 
                             + os.path.basename(single_atc_url)), 'wb')
             for chunk in res.iter_content(100000):
                 html_file.write(chunk)
 
             html_file.close()
 
-    # Next page element
-    next_pg_elems = soup.select('.SG_pgnext a')
-    # print(next_pg_elems)
-    # Next page link
-    next_pg_link  = next_pg_elems[0].get('href')
-    url = next_pg_link
-    # print(next_pg_link)
-    # # Numbers of pages
-    # page_num_elems = soup.select('.SG_pages span')
-    # pg_num = page_num_elems[0].getText()
-    # pg_num = ''.join(e for e in pg_num if e.isalnum())
-    # print(pg_num)
-    # 乱码
+    try：
+        # Next page element
+        next_pg_elems = soup.select('.SG_pgnext a')
+        # print(next_pg_elems)
+        # Next page link
+        next_pg_link  = next_pg_elems[0].get('href')
+        url = next_pg_link
+        # print(next_pg_link)
+    except IndexError:
+        print(url)
+        break
 
     n += 1
     print('Page %d has downloaded.' % (n))
