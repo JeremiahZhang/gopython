@@ -9,8 +9,8 @@ end_str = ' '
 n = 0
 
 # while not url.endswith('287'):
-# while n < 3:
-while not url.endswith(end_str):
+while n < 5:
+# while not url.endswith(end_str):
     # Todo: Download the page.
     print('Downloading articles %s ...' % url)
     res = requests.get(url)
