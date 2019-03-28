@@ -12,7 +12,8 @@ last_pg = 0
 # while not url.endswith('287'):
 # while n < 1:
 # while not url.endswith(end_str):
-while url_pg <= last_pg:
+while url_pg <= last_pg: 
+# Bug: url_pg won't change in the last page
     # Todo: Download the page.
     print('Downloading articles %s ...' % url)
     res = requests.get(url)
