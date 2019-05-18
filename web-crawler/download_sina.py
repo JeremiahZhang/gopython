@@ -52,6 +52,11 @@ while n < end:
             atc_time = act_soup.select('.time')[0].getText()
             atc_time = ''.join(e for e in atc_time if e.isalnum())
             print(atc_time)
+
+            # Title name decode
+            # tit_name = act_soup.select('.titName')[0].getText()
+            # print(tit_name)
+
             html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
                             + os.path.basename(single_atc_url)), 'wb')
             for chunk in res.iter_content(100000):
