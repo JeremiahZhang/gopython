@@ -18,6 +18,11 @@ os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
 end = 63-47
 
+def remove_invalid(value, invalid_chars='/:*?"<>|？'):
+    for i in invalid_chars:
+        value = value.replace(i, '')
+    return value
+
 while n < end:
     print('Downloading articles from %s ...' % (url))
     res = requests.get(url)
@@ -48,9 +53,15 @@ while n < end:
             tit_name = act_soup.select('.titName')[0].getText()
             tit_name = ftfy.fix_text(tit_name)
             print(tit_name)
+          
+            try:  
+                html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
+                            + tit_name + '.html'), 'wb')
+            except OSError:
+                tit_name = remove_invalid(tit_name)
+                html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
+                            + tit_name + '.html'), 'wb')
 
-            html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
-                            + tit_name + 'html', 'wb')
             for chunk in res.iter_content(100000):
                 html_file.write(chunk)
 
@@ -62,13 +73,13 @@ while n < end:
     # Next page link
     next_pg_link  = next_pg_elems[0].get('href')
     url = next_pg_link
-    # print(next_pg_link)
-    # # Numbers of pages
-    # page_num_elems = soup.select('.SG_pages span')
-    # pg_num = page_num_elems[0].getText()
-    # pg_num = ''.join(e for e in pg_num if e.isalnum())
-    # print(pg_num)
-    # 乱码
+
+    print(next_pg_link)
+    # Numbers of pages
+    page_num_elems = soup.select('.SG_pages span')
+    pg_num = page_num_elems[0].getText()
+    pg_num = ''.join(e for e in pg_num if e.isalnum())
+    print(pg_num)
 
     n += 1
     print('Page %d has downloaded.' % (n))
