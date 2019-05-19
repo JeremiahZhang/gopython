@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 # Download every article from somesone's Sina Blog
 
 # TODO: Download the page of history
@@ -11,6 +11,7 @@ import os
 import sys
 import requests
 import bs4
+import ftfy
 
 # def name_decode(s):
 #     return s.decode('utf-8')
@@ -54,11 +55,12 @@ while n < end:
             print(atc_time)
 
             # Title name decode
-            # tit_name = act_soup.select('.titName')[0].getText()
-            # print(tit_name)
+            tit_name = act_soup.select('.titName')[0].getText()
+            tit_name = ftfy.fix_text(tit_name)
+            print(tit_name)
 
             html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
-                            + os.path.basename(single_atc_url)), 'wb')
+                            + tit_name + os.path.basename(single_atc_url)), 'wb')
             for chunk in res.iter_content(100000):
                 html_file.write(chunk)
 

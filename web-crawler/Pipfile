@@ -8,6 +8,7 @@ requests = "*"
 lxml = "*"
 "beautifulsoup4" = "*"
 pyperclip = "*"
+ftfy = "*"
 
 [dev-packages]
 
