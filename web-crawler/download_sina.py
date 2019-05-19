@@ -16,14 +16,14 @@ import ftfy
 url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_44.html'
 os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
-end = 63-47
+end = n+1
 
 def remove_invalid(value, invalid_chars='/:*?"<>|？'):
     for i in invalid_chars:
         value = value.replace(i, '')
     return value
 
-while n < end:
+while n <= end:
     print('Downloading articles from %s ...' % (url))
     res = requests.get(url)
     res.raise_for_status()
@@ -78,8 +78,10 @@ while n < end:
     # Numbers of pages
     page_num_elems = soup.select('.SG_pages span')
     pg_num = page_num_elems[0].getText()
-    pg_num = ''.join(e for e in pg_num if e.isalnum())
-    print(pg_num)
+    pg_num = ftfy.fix_text(pg_num)
+    # pg_num = ''.join(e for e in pg_num if e.isalnum())
+    end = int(pg_num[1:3])
+    print(end)
 
     n += 1
     print('Page %d has downloaded.' % (n))
