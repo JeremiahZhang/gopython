@@ -34,7 +34,7 @@ def pgs(soup):
     pgs_elems = soup.select('.SG_pages span')
     pg_num = pgs_elems[0].getText()
     pg_num = ftfy.fix_text(pg_num)
-    total = int(pg_num[1:3])
+    total = int(pg_num[1:4]) # Some blog have 324 pages
     return total
 
 def main():
@@ -43,9 +43,10 @@ def main():
     dir_name = input('Please enter the directory name to save the blog html files: ')
     os.makedirs(dir_name, exist_ok=True)
 
-    n = 0
+    n = 210
     soup = pg_soup(url)
     end = pgs(soup)
+    print(end)
 
     while n <= end:
         print('Downloading articles from %s ...' % (url))
@@ -71,9 +72,12 @@ def main():
                 print(atc_time)
 
                 # Title name decode
-                tit_name = act_soup.select('.titName')[0].getText()
-                tit_name = ftfy.fix_encoding(tit_name)
-                tit_name = remove_invalid(tit_name)
+                try:
+                    tit_name = act_soup.select('.titName')[0].getText()
+                    tit_name = ftfy.fix_encoding(tit_name)
+                    tit_name = remove_invalid(tit_name)
+                except IndexError:
+                    tit_name = '转载-2016年上市银行股估值和成长性前瞻'
                 print(tit_name)
               
                 try:  
@@ -96,8 +100,8 @@ def main():
         url = next_pg_link
         print(next_pg_link)
 
-        n += 1
         print('Page %d has downloaded.' % (n))
+        n += 1
 
     print('Done')
 
