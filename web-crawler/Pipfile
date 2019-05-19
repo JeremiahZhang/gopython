@@ -9,6 +9,7 @@ lxml = "*"
 "beautifulsoup4" = "*"
 pyperclip = "*"
 ftfy = "*"
+urllib2 = "*"
 
 [dev-packages]
 

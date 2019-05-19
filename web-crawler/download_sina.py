@@ -12,10 +12,14 @@ import sys
 import requests
 import bs4
 import ftfy
+import string
+import re
 
-def remove_invalid(value, invalid_chars='/:*?"<>|？'):
-    for i in invalid_chars:
-        value = value.replace(i, '')
+def remove_invalid(value):
+    for ch in string.punctuation:
+        value = value.replace(ch, '')
+    value = re.sub("(?<![ -~]) (?![ -~])", "", value)
+    value = value.replace(' ', '')
     return value
 
 # Article list page soup
@@ -68,7 +72,8 @@ def main():
 
                 # Title name decode
                 tit_name = act_soup.select('.titName')[0].getText()
-                tit_name = ftfy.fix_text(tit_name)
+                tit_name = ftfy.fix_encoding(tit_name)
+                tit_name = remove_invalid(tit_name)
                 print(tit_name)
               
                 try:  
