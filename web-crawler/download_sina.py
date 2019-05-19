@@ -13,12 +13,6 @@ import requests
 import bs4
 import ftfy
 
-# def name_decode(s):
-#     return s.decode('utf-8')
-
-# def encode(s):
-#     return s.decode('utf-8').encode(sys.stdout.encoding, 'ignore')
-
 url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_44.html'
 os.makedirs('yang_gu_sina_blog', exist_ok=True)
 n = 0
@@ -46,10 +40,6 @@ while n < end:
             # Get the html text
             act_soup = bs4.BeautifulSoup(res.text, features='lxml')
             # Get the article title name
-            # atc_titlename = act_soup.select('.titName')[0].getText()
-            # atc_titlename = atc_titlename.encode() # string-utf8
-            # atc_titlename = ''.join(e for e in atc_titlename if e.isalnum())
-            # print(atc_titlename)
             atc_time = act_soup.select('.time')[0].getText()
             atc_time = ''.join(e for e in atc_time if e.isalnum())
             print(atc_time)
@@ -60,7 +50,7 @@ while n < end:
             print(tit_name)
 
             html_file = open(os.path.join('yang_gu_sina_blog', atc_time + '-' 
-                            + tit_name + os.path.basename(single_atc_url)), 'wb')
+                            + tit_name + 'html', 'wb')
             for chunk in res.iter_content(100000):
                 html_file.write(chunk)
 
