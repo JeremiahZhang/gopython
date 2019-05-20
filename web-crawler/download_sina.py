@@ -34,18 +34,24 @@ def pgs(soup):
     pgs_elems = soup.select('.SG_pages span')
     pg_num = pgs_elems[0].getText()
     pg_num = ftfy.fix_text(pg_num)
-    total = int(pg_num[1:4]) # Some blog have 324 pages
+    total = int(pg_num[1:3]) # Some blog have 239 pages
     return total
 
 def main():
     url = input('Please enter the link of sina blog: ')
     # url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_44.html'
     dir_name = input('Please enter the directory name to save the blog html files: ')
-    os.makedirs(dir_name, exist_ok=True)
+    pg_2_down = int(input('How many pages(0: all pages, 1: 1 pages): '))
 
-    n = 210
+    os.makedirs(dir_name, exist_ok=True)
+    
+    n = 1
     soup = pg_soup(url)
-    end = pgs(soup)
+    if pg_2_down:
+        end = pg_2_down
+    else:
+        end = pgs(soup)
+
     print(end)
 
     while n <= end:
@@ -77,7 +83,7 @@ def main():
                     tit_name = ftfy.fix_encoding(tit_name)
                     tit_name = remove_invalid(tit_name)
                 except IndexError:
-                    tit_name = '转载-2016年上市银行股估值和成长性前瞻'
+                    tit_name = '转载'
                 print(tit_name)
               
                 try:  
