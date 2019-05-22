@@ -34,7 +34,8 @@ def pgs(soup):
     pgs_elems = soup.select('.SG_pages span')
     pg_num = pgs_elems[0].getText()
     pg_num = ftfy.fix_text(pg_num)
-    total = int(pg_num[1:3]) # Some blog have 239 pages
+    pg_num = ''.join(x for x in pg_num if x.isdigit())
+    total = int(pg_num) # Some blog have 239 pages
     return total
 
 def main():
