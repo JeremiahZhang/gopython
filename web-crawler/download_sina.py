@@ -39,9 +39,20 @@ def pgs(soup):
     return total
 
 def main():
-    url = input('Please enter the link of sina blog: ')
-    # url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_44.html'
-    dir_name = input('Please enter the directory name to save the blog html files: ')
+    url_num = input('Please enter the link of sina blog or enter 1.风中散发 2.养股 3.峰从海上来: ')
+    if url_num == '1':
+        url = 'http://blog.sina.com.cn/s/articlelist_1147298365_0_1.html'
+        dir_name = 'fzsf_blog'
+    elif url_num == '2':
+        url = 'http://blog.sina.com.cn/s/articlelist_1664061535_0_1.html'
+        dir_name = 'yang_blog'
+    elif url_num == '3':
+        url = 'http://blog.sina.com.cn/s/articlelist_2918184610_0_1.html'
+        dir_name = 'feng_blog'
+    else:
+        url = url_num
+        dir_name = input('Please enter the directory name to save the blog html files: ')
+
     pg_2_down = int(input('How many pages(0: all pages, 1: 1 pages): '))
 
     os.makedirs(dir_name, exist_ok=True)
