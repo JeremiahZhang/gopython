@@ -18,7 +18,7 @@ import string
 import re
 
 url = 'https://chuansongme.com/account/chinaetfs'
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0)'}
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0'}
 dir_name = 'etf_blog'
 os.makedirs(dir_name, exist_ok=True)
 
