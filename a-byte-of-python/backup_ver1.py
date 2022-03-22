@@ -20,6 +20,9 @@ if not os.path.exists(target_dir):
 	os.mkdir(target_dir)
 
 # 5. Use the zip command to put the files in a zip 
+# Here we need to install Zip and add
+# 'C:\Program Files (x86)\GnuWin32\bin' to
+# enviroment variables in Windows
 zip_command = 'zip -r {0} {1}'.format(target, 
 									  ' '.join(source))
 
