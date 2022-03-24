@@ -1,6 +1,7 @@
 class Person:
-	pass
+	def say_hi(self):
+		print('Hello, how are u?')
 
 # An object/instance of class Person
 Jeremy = Person()
-print(Jeremy)
+Jeremy.say_hi()
