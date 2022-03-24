@@ -2,7 +2,17 @@ import os
 import time
 import zipfile
 
-source = ["C:\\Users\\Jeremy\\Documents\\Wording"]
+
+def get_all_file_paths(directory):
+	file_paths = []
+	for root, directories, files in os.walk(directory):
+		for filename in files:
+			filepath = os.path.join(root, filename)
+			file_paths.append(filepath)
+	
+	return file_paths
+
+source = "C:\\Users\\Jeremy\\Documents\\Wording"
 
 target_dir = 'C:\\Users\\Jeremy\\Documents\\MyProject\\Backup'
 
@@ -25,12 +35,18 @@ else:
 	         comment.replace(' ', '_') + '.zip'
 
 print('Running:')
+
+file_paths = get_all_file_paths(source)
 print('Following files will be zipped:')
-for files in source:
+for file_name in file_paths:
+	print(file_name)
 
 with zipfile.ZipFile(target, 'w') as zip:
-		zip.write(file)
+		for file in file_paths:
+			zip.write(file)
 
+print(zip.namelist)
 print('Successfully backed up!!!')
 
 # https://www.geeksforgeeks.org/working-zip-files-python/
+# http://pymotw.com/2/zipfile/
