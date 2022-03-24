@@ -10,9 +10,11 @@ def is_palindrome(text):
 
 
 something = input("Enter text: ")
+# String remove whitespaces
 sth_without_space = something.replace(' ', '')
-print('Something without whitespace', sth_without_space)
+print('Something remove whitespace', sth_without_space)
 
+# String remove punctuations
 new_sth = sth_without_space.translate(str.maketrans('', '', string.punctuation))
 print('Something remove punctuations', new_sth)
 
