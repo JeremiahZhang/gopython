@@ -68,6 +68,7 @@ def main():
 	print(solution(x, y))
 
 # Someone's Best answer
+# https://codereview.stackexchange.com/questions/200535/finding-the-position-in-a-triangle-for-the-given-challenge
 def answer(x, y):
     y_diff = y - 1
     corner = x + y_diff
