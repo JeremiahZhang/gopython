@@ -67,6 +67,13 @@ def main():
 	y = int(input('enter y:>'))
 	print(solution(x, y))
 
+# Someone's Best answer
+def answer(x, y):
+    y_diff = y - 1
+    corner = x + y_diff
+    id = corner * (corner + 1) // 2
+    id -= y_diff
+    return str(id)
 
 if __name__ == '__main__':
 	main()
