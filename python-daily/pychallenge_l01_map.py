@@ -24,9 +24,9 @@ def solution(my_string):
 	return text
 
 def solution_trans(my_string):
-	# first_string = string.ascii_lowercase + string.ascii_uppercase
-	x = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-	y = 'cdefghijklmnopqrstuvwxyzabCDEFGHIJKLMNOPQRSTUVWXYZAB'
+	x = string.ascii_lowercase + string.ascii_uppercase
+	y = string.ascii_lowercase[2:] + string.ascii_lowercase[:2] \
+	    + string.ascii_uppercase[2:] + string.ascii_uppercase[:2]
 	mytable = my_string.maketrans(x, y)
 	return(my_string.translate(mytable))
 
