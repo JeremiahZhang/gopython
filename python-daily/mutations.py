@@ -1,4 +1,5 @@
 def mutate_string(string, position, character):
+    """Change character in string[position]"""
     lst = list(string)
     lst[position] = character
     return(''.join(lst))
