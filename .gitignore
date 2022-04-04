@@ -1,6 +1,7 @@
 # 隐藏文件 不被push
 
 *.pyc
+adult_data.csv
 
 # eBook build output
 *.epub
