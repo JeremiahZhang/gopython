@@ -1,7 +1,8 @@
 # 隐藏文件 不被push
 
 *.pyc
-adult_data.csv
+data-analysis-with-python/*.csv
+
 
 # eBook build output
 *.epub
