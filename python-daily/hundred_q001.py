@@ -1,4 +1,5 @@
 def factor(n):
+	"""Compute the factorial of n"""
 	factor = n
 	while n > 1:
 		factor = factor * (n-1)
