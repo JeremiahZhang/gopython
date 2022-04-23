@@ -4,6 +4,7 @@
 data-analysis-with-python/*.csv
 data-analysis-with-python/*.png
 statistics-for-data-science-with-python/*.png
+statistics-for-data-science-with-python/*.csv
 
 # eBook build output
 *.epub
