@@ -22,6 +22,7 @@
     - [gopython/khan-intro2html-css-making-webpages](https://github.com/JeremiahZhang/gopython/tree/master/khan-intro2html-css-making-webpages) 参考: [Intro to HTML/CSS: Making webpages | Computer programming | Khan Academy](https://www.khanacademy.org/computing/computer-programming/html-css)的学习内容
     - [khan-intro2sql-querying-managing-data](https://github.com/JeremiahZhang/gopython/tree/master/khan-intro2sql-querying-managing-data) 参考: [Intro to SQL: Querying and managing data | Khan Academy](https://www.khanacademy.org/computing/computer-programming/sql)的学习内容
     - [gopython/mdn-web](https://github.com/JeremiahZhang/gopython/tree/master/mdn-web) 参考 [HTML | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML) 学习内容
+    - [CSS 编程 - Scaler Topics](https://www.scaler.com/topics/css/).
     - AI 人工智能 
         - [AI](https://github.com/JeremiahZhang/gopython/tree/master/AI)
 
